@@ -1,0 +1,221 @@
+{
+  "round": 3,
+  "agent_responses": [
+    {
+      "agent_id": 1,
+      "name": "Maya Chen",
+      "city": "Toronto",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 2,
+      "name": "Priya Sharma",
+      "city": "Brampton",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 3,
+      "name": "Ahmed Hassan",
+      "city": "Mississauga",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 4,
+      "name": "Sarah Okafor",
+      "city": "Ottawa",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 8,
+      "key_concern": "demographic"
+    },
+    {
+      "agent_id": 5,
+      "name": "Robert Tremblay",
+      "city": "Montreal",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 10,
+      "key_concern": "demographic and policy"
+    },
+    {
+      "agent_id": 6,
+      "name": "Kevin Liu",
+      "city": "Vancouver",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 7,
+      "name": "Linda Fong",
+      "city": "Markham",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 10,
+      "key_concern": "demographic"
+    },
+    {
+      "agent_id": 8,
+      "name": "Jordan Whitfield",
+      "city": "Hamilton",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 10,
+      "key_concern": "demographic"
+    },
+    {
+      "agent_id": 9,
+      "name": "Mary Beardy",
+      "city": "Thunder Bay",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 7,
+      "key_concern": "income and affordability issue"
+    },
+    {
+      "agent_id": 10,
+      "name": "Dave Kowalski",
+      "city": "Calgary",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 8,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 11,
+      "name": "Jennifer Park",
+      "city": "Surrey",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 9,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 12,
+      "name": "Grace Adeyemi",
+      "city": "Winnipeg",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 8,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 13,
+      "name": "Frank Morrison",
+      "city": "Victoria",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 10,
+      "key_concern": "demographic"
+    },
+    {
+      "agent_id": 14,
+      "name": "Amira Youssef",
+      "city": "Halifax",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "income, affordability, demographic information"
+    },
+    {
+      "agent_id": 15,
+      "name": "Tyler Chicken",
+      "city": "Toronto",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 8,
+      "key_concern": "income"
+    },
+    {
+      "agent_id": 16,
+      "name": "Margaret Blackwood",
+      "city": "Toronto",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 17,
+      "name": "Dr. James Wright",
+      "city": "Kingston",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 18,
+      "name": "Fatima Al-Rashid",
+      "city": "Edmonton",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 8,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 19,
+      "name": "Bill Thompson",
+      "city": "Lethbridge",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 7,
+      "key_concern": "income and affordability issue"
+    },
+    {
+      "agent_id": 20,
+      "name": "Dakota Flett",
+      "city": "Saskatoon",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "demographic information"
+    },
+    {
+      "agent_id": 21,
+      "name": "Patricia Moreau",
+      "city": "Quebec City",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 9,
+      "key_concern": "demographic"
+    },
+    {
+      "agent_id": 22,
+      "name": "Raj Patel",
+      "city": "Scarborough",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 7,
+      "key_concern": "income and affordability issue"
+    },
+    {
+      "agent_id": 23,
+      "name": "Susan Beaulieu",
+      "city": "Gatineau",
+      "round": 3,
+      "sentiment": "positive",
+      "intensity": 1,
+      "key_concern": "one short phrase"
+    },
+    {
+      "agent_id": 25,
+      "name": "Wayne Chicken",
+      "city": "Fredericton",
+      "round": 3,
+      "sentiment": "mixed",
+      "intensity": 7,
+      "key_concern": "demographic information"
+    }
+  ]
+}
