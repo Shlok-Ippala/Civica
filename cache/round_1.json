@@ -10,9 +10,10 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.18,
-      "s": "positive",
-      "i": 2,
-      "c": "increased savings for future home purchase"
+      "risk": "The rapid increase in construction demand could lead to labor shortages, driving up the costs of rent and further reducing housing affordability for this low-income, student demographic in Toronto",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "18-24 year old, very low-income renters in Toronto"
     },
     {
       "agent_id": 2,
@@ -24,9 +25,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.18,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for future home purchase"
+      "risk": "Rising rents in Toronto may price out high-income 25-34 year old renters, as new construction drives up housing costs in the region and reduces affordable options for this demographic group.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "High-income 25-34 year old renters in Toronto"
     },
     {
       "agent_id": 3,
@@ -38,9 +40,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.18,
-      "s": "positive",
-      "i": 2,
-      "c": "affordable homeownership opportunities increased"
+      "risk": "The policy could drive up housing costs and reduce affordability, making it more difficult for this demographic to find suitable and affordable housing in their preferred location.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This demographic of high-income Toronto residents may be priced out of the market due to rising hous"
     },
     {
       "agent_id": 4,
@@ -52,9 +55,10 @@
       "family_size": "couple",
       "employment_type": "self_employed",
       "population_weight": 0.18,
-      "s": "positive",
-      "i": 2,
-      "c": "Encourages homeownership for renters"
+      "risk": "The policy could drive up construction costs and labor shortages, potentially delaying new housing supply and putting upward pressure on rents for the 50-64 year old high-income owner in Toronto.",
+      "severity": 3,
+      "category": "timeline",
+      "who_bears_it": "50-64 year old high-income owners in Toronto"
     },
     {
       "agent_id": 5,
@@ -66,9 +70,10 @@
       "family_size": "small_family",
       "employment_type": "gig",
       "population_weight": 0.18,
-      "s": "positive",
-      "i": 2,
-      "c": "increased savings for future home purchase"
+      "risk": "The policy's potential to increase construction costs and regional housing demand could further strain the already high shelter cost burden for low-income 25-34 year old renters in Toronto, potentiall",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income 25-34 year old renters in Toronto"
     },
     {
       "agent_id": 6,
@@ -80,9 +85,10 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.16,
-      "s": "negative",
-      "i": 2,
-      "c": "increased market competition, higher rents"
+      "risk": "The policy is unlikely to increase the supply of affordable rental housing for this demographic, as construction costs may drive up rents beyond their financial means.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This demographic of low-income renters in Montreal will face the greatest risk, as they may be price"
     },
     {
       "agent_id": 7,
@@ -94,9 +100,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.16,
-      "s": "positive",
-      "i": 2,
-      "c": "encourages saving for home purchase"
+      "risk": "Increased construction activity could drive up the cost of rent, worsening affordability for this medium-income renter couple in Montreal.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Medium-income renter couples in Montreal"
     },
     {
       "agent_id": 8,
@@ -108,9 +115,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.16,
-      "s": "positive",
-      "i": 3,
-      "c": "assists in achieving home ownership potential"
+      "risk": "The rapid increase in demand for construction labor could drive up wages in that sector, making it more difficult for this demographic to afford rent if those cost increases are passed on to tenants.",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "This demographic of 35-49 year old renters in Montreal with medium income, small families, recent im"
     },
     {
       "agent_id": 9,
@@ -122,9 +130,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.16,
-      "s": "positive",
-      "i": 2,
-      "c": "increased home affordability for couples"
+      "risk": "The policy may increase housing costs in the Montreal region, putting upward pressure on the shelter cost ratio for 50-64 year old medium-income owner-occupant couples, potentially making their housin",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "50-64 year old medium-income owner-occupant couples in Montreal"
     },
     {
       "agent_id": 10,
@@ -136,9 +145,10 @@
       "family_size": "couple",
       "employment_type": "retired",
       "population_weight": 0.16,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased affordability for housing options"
+      "risk": "The policy of building 500,000 new homes over 3 years could lead to increased construction costs and inflation, potentially driving up rents and reducing the affordability of housing for low-income 65",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "Low-income 65+ owner couples in Montreal"
     },
     {
       "agent_id": 11,
@@ -150,9 +160,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.13,
-      "s": "positive",
-      "i": 2,
-      "c": "increased housing affordability for buyers"
+      "risk": "The policy's timeline for increasing housing supply could exacerbate the rental affordability crisis for high-income 25-34 year old renters in Vancouver, as delays in construction may fail to meet ris",
+      "severity": 3,
+      "category": "timeline",
+      "who_bears_it": "High-income 25-34 year old renters in Vancouver"
     },
     {
       "agent_id": 12,
@@ -164,9 +175,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.13,
-      "s": "positive",
-      "i": 2,
-      "c": "helps reduce financial burden on family"
+      "risk": "The policy may drive up construction costs, further straining the high debt levels of this demographic as they try to afford housing in the already expensive Vancouver market.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This high-income but highly indebted demographic is most affected as they struggle to afford rising "
     },
     {
       "agent_id": 13,
@@ -178,9 +190,10 @@
       "family_size": "single",
       "employment_type": "salaried",
       "population_weight": 0.13,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for home ownership"
+      "risk": "The policy's impact on construction costs and market conditions may further decrease housing affordability for 50-64 year old renters in Vancouver, increasing their shelter cost ratio and risk of bein",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "50-64 year old renters in Vancouver with medium incomes"
     },
     {
       "agent_id": 14,
@@ -192,9 +205,10 @@
       "family_size": "couple",
       "employment_type": "retired",
       "population_weight": 0.13,
-      "s": "positive",
-      "i": 1,
-      "c": "increased affordability for housing options"
+      "risk": "The increased residential development may outpace the capacity of local infrastructure like public transit, resulting in reduced accessibility and increased costs for this low-income, retired, immigra",
+      "severity": 3,
+      "category": "infrastructure",
+      "who_bears_it": "Low-income, retired, immigrant couple in Vancouver"
     },
     {
       "agent_id": 15,
@@ -206,9 +220,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.1,
-      "s": "positive",
-      "i": 2,
-      "c": "increased savings for home ownership"
+      "risk": "Rapid increase in construction labor demand could drive up rental costs for high-income 25-34 year old renters in Calgary, straining their shelter cost ratio",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "High-income 25-34 year old renters in Calgary"
     },
     {
       "agent_id": 16,
@@ -220,9 +235,10 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.1,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased affordability for homeownership"
+      "risk": "The policy risks displacing higher-income homeowners in Calgary as increased housing supply and construction activity leads to rising land values and property taxes, making it difficult for this demog",
+      "severity": 3,
+      "category": "displacement",
+      "who_bears_it": "35-49 year old high-income homeowners with large families in Calgary"
     },
     {
       "agent_id": 17,
@@ -234,9 +250,10 @@
       "family_size": "couple",
       "employment_type": "self_employed",
       "population_weight": 0.1,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased affordability for first-time buyers"
+      "risk": "The policy's focus on increasing housing supply in certain urban areas like Calgary could lead to higher construction costs and rents, eroding the affordability and financial security of this self-emp",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This demographic group, as well as other medium-income homeowners in Calgary, would be most affected"
     },
     {
       "agent_id": 18,
@@ -248,9 +265,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.09,
-      "s": "positive",
-      "i": 2,
-      "c": "increased savings for future home"
+      "risk": "The policy's potential to drive up construction costs and housing prices in Edmonton could make it more difficult for this 25-34 renter to afford a suitable home, increasing their housing cost burden ",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This 25-34 renter in Edmonton with medium income and small family"
     },
     {
       "agent_id": 19,
@@ -262,9 +280,10 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.09,
-      "s": "positive",
-      "i": 2,
-      "c": "Makes home ownership more accessible for families"
+      "risk": "The large-scale housing construction could drive up construction material and labor costs, worsening housing affordability for this high-income, large family demographic in Edmonton.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "The high-income 35-49 year old homeowner demographic in Edmonton with a large family"
     },
     {
       "agent_id": 20,
@@ -276,9 +295,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.09,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased home affordability for buyers"
+      "risk": "While the policy aims to increase housing supply, the anticipated rise in construction costs could outpace any reduction in home prices, making new homes less affordable for the 50-64 year old owner d",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "50-64 year old homeowners in Edmonton with medium incomes"
     },
     {
       "agent_id": 21,
@@ -290,9 +310,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.07,
-      "s": "positive",
-      "i": 2,
-      "c": "Encourages home ownership among families"
+      "risk": "This policy may increase infrastructure strain in Ottawa, as the rapid influx of new housing development could outpace the capacity of local roads, public transit, and utilities, leading to overcrowdi",
+      "severity": 3,
+      "category": "infrastructure",
+      "who_bears_it": "Residents in the 35-49 age group, especially those with a high income, small families, and salaried "
     },
     {
       "agent_id": 22,
@@ -304,9 +325,10 @@
       "family_size": "single",
       "employment_type": "salaried",
       "population_weight": 0.07,
-      "s": "positive",
-      "i": 2,
-      "c": "eases path to homeownership"
+      "risk": "The rapid increase in demand for construction labor could lead to wage inflation in that sector, making it more difficult for the 25-34 renter to afford housing in the high-cost Ottawa market.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "25-34 renter in Ottawa with medium income"
     },
     {
       "agent_id": 23,
@@ -318,9 +340,10 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.05,
-      "s": "positive",
-      "i": 3,
-      "c": "eases homeownership for families like mine"
+      "risk": "Rising construction costs could price this demographic out of the housing market, as they would have to allocate a larger portion of their income towards shelter costs.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "35-49 year old, medium income, large family, salaried, born in Winnipeg residents"
     },
     {
       "agent_id": 24,
@@ -332,9 +355,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.05,
-      "s": "mixed",
-      "i": 2,
-      "c": "May benefit savings for future housing"
+      "risk": "This policy may worsen the geographic divide by directing new housing towards urban centers like Winnipeg, potentially making it harder for this low-income renter to afford housing in the city as rent",
+      "severity": 3,
+      "category": "geographic",
+      "who_bears_it": "Low-income renters in Winnipeg, particularly those with small families and higher debt loads"
     },
     {
       "agent_id": 25,
@@ -346,9 +370,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.04,
-      "s": "positive",
-      "i": 2,
-      "c": "Assists in home purchasing affordability"
+      "risk": "The policy's timeline could lead to temporary housing shortages and price volatility for 50-64 year old homeowners in Hamilton, potentially disrupting their retirement plans and financial security.",
+      "severity": 3,
+      "category": "timeline",
+      "who_bears_it": "50-64 year old homeowners in Hamilton, medium income, couple, salaried, born_here, low debt"
     },
     {
       "agent_id": 26,
@@ -360,9 +385,10 @@
       "family_size": "single",
       "employment_type": "gig",
       "population_weight": 0.04,
-      "s": "positive",
-      "i": 2,
-      "c": "helps increase homeownership opportunities"
+      "risk": "The increase in housing costs driven by the policy could further strain the finances of low-income 25-34 year old renters in Hamilton, making housing less affordable and potentially increasing their d",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income 25-34 year old renters in Hamilton"
     },
     {
       "agent_id": 27,
@@ -374,9 +400,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.04,
-      "s": "positive",
-      "i": 2,
-      "c": "eases financial burden for home purchase"
+      "risk": "The increased construction costs and potential inflation in the housing market may price out first-time buyers in Kitchener-Waterloo, making it difficult for this demographic to afford a home despite ",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This demographic of 25-34 year old, high-income, salaried, and high-debt first-time home buyers in K"
     },
     {
       "agent_id": 28,
@@ -388,9 +415,10 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.04,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for future home ownership"
+      "risk": "Increased rents and decreased affordability due to rising construction costs and housing demand pressures in Kitchener-Waterloo, exacerbating the already high housing costs for 18-24 year old low-inco",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "18-24 year old low-income renters, students, and recent immigrants in Kitchener-Waterloo"
     },
     {
       "agent_id": 29,
@@ -402,9 +430,10 @@
       "family_size": "couple",
       "employment_type": "retired",
       "population_weight": 0.03,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for home purchase"
+      "risk": "The policy could exacerbate cost-of-living pressures for low-income retired couples in Halifax, as increased demand for construction labor may drive up wages and costs, potentially leading to higher r",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income retired couples in Halifax"
     },
     {
       "agent_id": 30,
@@ -416,9 +445,10 @@
       "family_size": "single",
       "employment_type": "salaried",
       "population_weight": 0.03,
-      "s": "positive",
-      "i": 2,
-      "c": "eases transition to homeownership"
+      "risk": "The policy may drive up rents in Halifax, putting increased financial strain on 25-34 year old single, salaried renters with medium incomes and high debt.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "25-34 year old single, salaried renters with medium incomes and high debt in Halifax"
     },
     {
       "agent_id": 31,
@@ -430,9 +460,10 @@
       "family_size": "single",
       "employment_type": "retired",
       "population_weight": 0.03,
-      "s": "negative",
-      "i": 1,
-      "c": "not applicable to current homeownership status"
+      "risk": "This policy may drive up rents for existing single, retired 65+ homeowners in Victoria, further straining their fixed incomes and increasing their cost of living.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Single, retired 65+ homeowners in Victoria, BC"
     },
     {
       "agent_id": 32,
@@ -444,9 +475,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.03,
-      "s": "positive",
-      "i": 2,
-      "c": "increased homeownership affordability for families"
+      "risk": "This policy may increase the cost of housing for 35-49 year old high-income, small family, salaried owners in Victoria due to rising construction costs and potential housing demand shifts from urban m",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "High-income, small family, salaried homeowners in Victoria"
     },
     {
       "agent_id": 33,
@@ -458,9 +490,10 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "Encourages home ownership for families"
+      "risk": "This policy may increase construction costs and housing prices in Saskatoon, reducing affordability for a 35-49 year old medium income owner with a large family and moderate debt levels.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Medium income homeowners with large families in Saskatoon"
     },
     {
       "agent_id": 34,
@@ -472,9 +505,10 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 1,
-      "c": "increased financial stability for future purchase"
+      "risk": "The policy may exacerbate housing affordability challenges for 18-24 year old very_low income renters in Saskatoon, as construction costs and market inflation could keep new housing prices out of reac",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "18-24 year old very_low income renters in Saskatoon"
     },
     {
       "agent_id": 35,
@@ -486,9 +520,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased home affordability for families"
+      "risk": "Increased residential development may outpace the capacity of local infrastructure such as roads, public transit, and utilities in Regina, potentially leading to congestion and service disruptions for",
+      "severity": 3,
+      "category": "infrastructure",
+      "who_bears_it": "Established immigrant residents in the 35-49 owner demographic with medium incomes and small familie"
     },
     {
       "agent_id": 36,
@@ -500,9 +535,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased homeownership opportunities for couples"
+      "risk": "The rapid increase in demand for construction labor could drive up costs for other industries in Regina seeking skilled workers, making it more difficult for low-income renters to find affordable hous",
+      "severity": 3,
+      "category": "employment",
+      "who_bears_it": "Recent immigrants in Regina with low incomes who are renting"
     },
     {
       "agent_id": 37,
@@ -514,9 +550,10 @@
       "family_size": "couple",
       "employment_type": "retired",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased financial flexibility for retirement"
+      "risk": "The new housing construction may increase property values and cost of living in Kelowna, potentially displacing retirees on fixed incomes like this 65+ couple from their long-time homes.",
+      "severity": 3,
+      "category": "displacement",
+      "who_bears_it": "Retirees on fixed incomes in Kelowna"
     },
     {
       "agent_id": 38,
@@ -528,9 +565,10 @@
       "family_size": "small_family",
       "employment_type": "self_employed",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "encourages homeownership for young families"
+      "risk": "The policy could lead to increased housing costs and further price appreciation in the Kelowna real estate market, making it more difficult for this demographic to afford housing in their community.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "35-49 year old high-income owners in Kelowna with small families and medium debt"
     },
     {
       "agent_id": 39,
@@ -542,9 +580,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for homeownership"
+      "risk": "The policy could increase housing costs for existing homeowners in Sudbury, making it more difficult for the 50-64 year old demographic to afford their current homes.",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "50-64 year old homeowners in Sudbury with medium incomes"
     },
     {
       "agent_id": 40,
@@ -556,9 +595,10 @@
       "family_size": "single",
       "employment_type": "unemployed",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "eases transition to homeownership"
+      "risk": "This policy may increase housing costs and exacerbate affordability issues for low-income renters in Sudbury, putting greater financial strain on this demographic group.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Unemployed, low-income, 25-34 year old renters in Sudbury"
     },
     {
       "agent_id": 41,
@@ -570,9 +610,10 @@
       "family_size": "couple",
       "employment_type": "self_employed",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for homeownership"
+      "risk": "The policy may worsen housing affordability for 50-64 year old low-income couples in Northern Ontario Rural who are self-employed, as increased construction costs and housing demand could drive up ren",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income 50-64 year old self-employed couples in Northern Ontario Rural"
     },
     {
       "agent_id": 42,
@@ -584,9 +625,10 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "affordable housing for large families"
+      "risk": "The policy may drive up housing costs in the region, putting additional strain on the already limited budgets of medium-income, large families in Northern Ontario rural areas.",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "35-49 year old medium-income, large families in Northern Ontario rural areas"
     },
     {
       "agent_id": 43,
@@ -598,9 +640,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "eases financial burden for home purchase"
+      "risk": "The rapid increase in construction labor demand could drive up wages for skilled workers, putting pressure on the budgets of salaried workers in Northern BC Rural like this demographic profile, potent",
+      "severity": 2,
+      "category": "affordability",
+      "who_bears_it": "Salaried workers in Northern BC Rural with medium incomes"
     },
     {
       "agent_id": 44,
@@ -612,9 +655,10 @@
       "family_size": "single",
       "employment_type": "retired",
       "population_weight": 0.02,
-      "s": "positive",
-      "i": 2,
-      "c": "increased affordability for home ownership"
+      "risk": "The 65+ owner in Northern BC Rural, low income, single, retired, born_here, and none debt demographic faces an increased risk of displacement as new construction may drive up rental costs beyond their",
+      "severity": 3,
+      "category": "displacement",
+      "who_bears_it": "This demographic, as a fixed-income elderly population, is particularly vulnerable to the potential "
     },
     {
       "agent_id": 45,
@@ -626,9 +670,10 @@
       "family_size": "couple",
       "employment_type": "self_employed",
       "population_weight": 0.01,
-      "s": "positive",
-      "i": 2,
-      "c": "increased accessibility for affordable housing"
+      "risk": "This policy could lead to increased costs of living and reduced affordability for low-income, self-employed 50-64 year old couples in rural PEI, as the new housing supply is unlikely to be accessible ",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income, self-employed 50-64 year old couples in rural PEI"
     },
     {
       "agent_id": 46,
@@ -640,9 +685,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.01,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased savings for future home purchase"
+      "risk": "The policy's timeline could lead to temporary housing shortages, causing increased competition for limited rental units and potentially higher rents in the short term for 25-34 year old low-income ren",
+      "severity": 3,
+      "category": "timeline",
+      "who_bears_it": "25-34 year old low-income renters in PEI Rural"
     },
     {
       "agent_id": 47,
@@ -654,9 +700,10 @@
       "family_size": "large_family",
       "employment_type": "unemployed",
       "population_weight": 0.01,
-      "s": "mixed",
-      "i": 2,
-      "c": "Potential housing affordability improvement, but may not help renters"
+      "risk": "The policy may increase competition for limited rental units in Reserve Northern Ontario, worsening affordability for the 35-49 renter demographic with very low income, large family, and high unemploy",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "Low-income 35-49 year old renters with large families in Reserve Northern Ontario"
     },
     {
       "agent_id": 48,
@@ -668,9 +715,10 @@
       "family_size": "single",
       "employment_type": "unemployed",
       "population_weight": 0.01,
-      "s": "negative",
-      "i": 2,
-      "c": "increased home ownership competition for renters"
+      "risk": "The policy may further reduce affordability for the 18-24 renter demographic in Reserve Northern Ontario, as construction costs and regional housing demand are likely to increase, outpacing income and",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "This risk disproportionately affects the very low-income, single, unemployed 18-24 renter population"
     },
     {
       "agent_id": 49,
@@ -682,9 +730,10 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.01,
-      "s": "negative",
-      "i": 2,
-      "c": "affordability gaps for renters persist"
+      "risk": "Increased demand for housing in Nunavut Remote could outpace the capacity of local infrastructure such as roads, public transit, and utilities, worsening living conditions for low-income 25-34 renters",
+      "severity": 3,
+      "category": "infrastructure",
+      "who_bears_it": "Low-income 25-34 renters in Nunavut Remote"
     },
     {
       "agent_id": 50,
@@ -696,15 +745,10 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.01,
-      "s": "positive",
-      "i": 2,
-      "c": "Increased affordability for homeownership opportunities"
+      "risk": "The rapid increase in demand for construction labor could drive up housing construction costs, making it harder for this demographic to afford to purchase a home in their community",
+      "severity": 3,
+      "category": "affordability",
+      "who_bears_it": "50-64 year old middle-income homeowners in Nunavut Remote"
     }
-  ],
-  "coordinator": {
-    "emergent_finding": "Recent immigrants overwhelmingly support the policy, seeing the highest average impact score of 2.2.",
-    "coalition_map": "Young and low-income renters align in positive sentiments with high-income groups, diverging only slightly from older adults.",
-    "risk_flag": "The increased competition for homeownership creates affordability issues for existing renters.",
-    "sentiment_shift": null
-  }
+  ]
 }

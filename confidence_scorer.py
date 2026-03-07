@@ -20,18 +20,24 @@ def calculate_confidence(
     if len(rural_agents) > 8:
         score -= 1
 
-    # Deduct for high variance between rounds
-    r1_sentiments = [r["s"] for r in round1_results]
-    r2_sentiments = [r["s"] for r in round2_results]
-    r1_neg = r1_sentiments.count("negative")
-    r2_neg = r2_sentiments.count("negative")
-    if abs(r1_neg - r2_neg) > 15:
+    # Deduct for high variance between rounds (risk count shift)
+    r1_risks = sum(1 for r in round1_results if r["category"] != "none")
+    r2_risks = sum(1 for r in round2_results if r["category"] != "none")
+    if abs(r1_risks - r2_risks) > 15:
         score -= 1
 
     # Deduct for high no-response rate
-    no_response = [r for r in round1_results if r["c"] == "no response received"]
+    no_response = [r for r in round1_results if r["risk"] == "no response received"]
     if len(no_response) > 5:
         score -= 2
+
+    # Deduct if all agents agree on same category (groupthink signal)
+    r2_cats = {}
+    for r in round2_results:
+        cat = r["category"]
+        r2_cats[cat] = r2_cats.get(cat, 0) + 1
+    if r2_cats and max(r2_cats.values()) > 40:
+        score -= 1
 
     # Build reason string
     reasons = []

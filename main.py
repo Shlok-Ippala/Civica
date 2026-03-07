@@ -23,15 +23,15 @@ if __name__ == "__main__":
 
             # Print comparison summary
             print("\n=== COMPARISON RESULTS ===")
-            print(f"\nPolicy A: {policy_a}")
-            print(f"Confidence: {results_a['confidence']['score']}/10")
-            print(f"Finding: {results_a['round_2']['coordinator']['emergent_finding']}")
-            print(f"Risk: {results_a['round_2']['coordinator']['risk_flag']}")
-
-            print(f"\nPolicy B: {policy_b}")
-            print(f"Confidence: {results_b['confidence']['score']}/10")
-            print(f"Finding: {results_b['round_2']['coordinator']['emergent_finding']}")
-            print(f"Risk: {results_b['round_2']['coordinator']['risk_flag']}")
+            for label, policy, results in [("A", policy_a, results_a), ("B", policy_b, results_b)]:
+                report = results.get("risk_report", {})
+                print(f"\nPolicy {label}: {policy}")
+                print(f"  Confidence: {results.get('confidence', {}).get('score', '?')}/10")
+                print(f"  Overall risk level: {report.get('overall_risk_level', 'UNKNOWN')}")
+                print(f"  Key insight: {report.get('key_insight', 'N/A')}")
+                top_risks = report.get("risks", [])[:3]
+                for r in top_risks:
+                    print(f"  #{r['rank']} {r['title']} ({r['severity']})")
 
             # Save comparison
             comparison = {

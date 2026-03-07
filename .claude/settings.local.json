@@ -4,7 +4,8 @@
       "mcp__backboard-docs__list_pages",
       "mcp__backboard-docs__get_page",
       "WebSearch",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "mcp__backboard-docs__search_docs"
     ]
   }
 }

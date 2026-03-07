@@ -14,8 +14,10 @@ from forward_validator import seal_simulation
 load_dotenv()
 
 BACKBOARD_API_KEY = os.getenv("BACKBOARD_API_KEY", "")
-AGENT_PROVIDER = "openai"
-AGENT_MODEL = "gpt-4o-mini"
+AGENT_PROVIDER = "anthropic"
+AGENT_MODEL = "claude-3-haiku-20240307"
+PROMPT_PROVIDER = "openai"
+PROMPT_MODEL = "gpt-4o"
 COORDINATOR_PROVIDER = "openai"
 COORDINATOR_MODEL = "gpt-4o"
 DEMOGRAPHIC_GROUPS = get_demographic_breakdowns(AGENTS)
@@ -31,6 +33,11 @@ CITY_NAME_MAP = {
     "Nunavut Remote": "Nunavut",
 }
 
+RISK_CATEGORIES = [
+    "affordability", "geographic", "timeline", "displacement",
+    "fiscal", "employment", "infrastructure", "equity", "none",
+]
+
 os.makedirs("cache", exist_ok=True)
 
 
@@ -38,25 +45,132 @@ def log(msg):
     print(msg, flush=True)
 
 
-# --- Single agent call ---
+# --- City data builder (shared between rounds) ---
 
-async def call_agent(client, thread_id, agent, policy_text, round_context="none"):
+def build_city_context(agent):
     city_key = CITY_NAME_MAP.get(agent["city"], agent["city"])
     city_data = CITY_PROFILES.get(city_key, {})
-    rent_info = f"avg_rent_1br: ${city_data.get('avg_rent_1br', 'unknown')}" if city_data else "rent data unavailable"
-    vacancy_info = f"vacancy_rate: {city_data.get('vacancy_rate', 'unknown')}%" if city_data else ""
-    income_info = f"median_city_income: ${city_data.get('median_household_income', 'unknown')}" if city_data else ""
-    scir_info = f"shelter_cost_ratio: {city_data.get('shelter_cost_to_income_ratio', 'unknown')}" if city_data else ""
 
-    prompt = f"""You are a JSON classifier. Return only valid JSON. No explanation. No markdown.
+    parts = []
+    if city_data.get("avg_rent_1br"):
+        parts.append(f"avg_rent_1br: ${city_data['avg_rent_1br']:.0f}")
+    if city_data.get("avg_rent_2br"):
+        parts.append(f"avg_rent_2br: ${city_data['avg_rent_2br']:.0f}")
+    if city_data.get("vacancy_rate") is not None:
+        parts.append(f"vacancy: {city_data['vacancy_rate']}%")
+    if city_data.get("median_household_income"):
+        parts.append(f"median_income: ${city_data['median_household_income']:.0f}")
+    if city_data.get("shelter_cost_to_income_ratio"):
+        parts.append(f"shelter_cost_ratio: {city_data['shelter_cost_to_income_ratio']}")
+    if city_data.get("unemployment_rate") is not None:
+        parts.append(f"unemployment: {city_data['unemployment_rate']}%")
+    if city_data.get("population"):
+        parts.append(f"pop: {city_data['population']:.0f}")
+    if city_data.get("population_growth_rate") is not None:
+        parts.append(f"pop_growth: {city_data['population_growth_rate']}%")
+    if city_data.get("housing_starts_annual"):
+        parts.append(f"housing_starts: {city_data['housing_starts_annual']}")
+    city_line = ", ".join(parts) if parts else "city data unavailable"
 
-Profile: {agent['age_bracket']} {agent['tenure']} in {agent['city']}, {agent['income_bracket']} income, {agent['family_size']}, {agent['employment_type']}, {agent['immigration_status']}, {agent['debt_load']} debt
-Real city data: {rent_info}, {vacancy_info}, {income_info}, {scir_info}
+    age_income_line = ""
+    income_by_age = city_data.get("income_by_age", {})
+    if agent["age_bracket"] in income_by_age:
+        age_income_line = f"\nDemographic income: median for {agent['age_bracket']} in {agent['city']}: ${income_by_age[agent['age_bracket']]:.0f}"
+
+    return city_line, age_income_line
+
+
+# --- Prompt Generator: one expensive call to frame the analysis ---
+
+async def generate_policy_brief(client, asst_id, policy_text, policy_classification):
+    """Call an expensive model once to produce an economic brief and diverse risk angles."""
+    prompt = f"""You are a senior policy economist. Analyze this Canadian government policy and produce a briefing that junior analysts will use to identify risks across different demographic groups.
+
 Policy: {policy_text}
-Round context: {round_context}
+Classification: {json.dumps(policy_classification)}
 
-Return exactly: {{"s":"positive/negative/mixed","i":1|2|3,"c":"max 8 words describing concern or benefit"}}
-Where i means: 1=low impact, 2=medium impact, 3=high impact"""
+Your job:
+1. Explain the policy's ECONOMIC MECHANISMS — how does it actually work? What are the first-order effects (direct), second-order effects (market responses), and third-order effects (behavioral changes)?
+2. Identify 6-8 DISTINCT risk angles that different demographic groups might face. These should span different categories: {", ".join(c for c in RISK_CATEGORIES if c != "none")}. Not every policy has risks in every category — only include genuine ones.
+3. For each risk angle, note which demographic groups (by age, income, tenure, geography, employment) are most exposed.
+
+CRITICAL: Only identify risks that the policy CREATES or WORSENS — not pre-existing problems the policy fails to fully solve. "Housing is still expensive" is not a risk of a housing supply policy. "Construction boom causes labor shortages that raise costs across the economy" IS a risk.
+
+Return exactly this JSON:
+{{
+    "economic_mechanisms": "2-3 sentences explaining how this policy actually works economically — include supply/demand effects, price signals, labor market impacts, fiscal implications",
+    "risk_angles": [
+        {{
+            "category": "one of: {"|".join(c for c in RISK_CATEGORIES if c != "none")}",
+            "angle": "one sentence describing this specific risk angle",
+            "most_exposed": "which demographic groups should examine this"
+        }}
+    ]
+}}"""
+
+    try:
+        thread = await client.create_thread(asst_id)
+        response = await client.add_message(
+            thread_id=thread.thread_id,
+            content=prompt,
+            llm_provider=PROMPT_PROVIDER,
+            model_name=PROMPT_MODEL,
+            stream=False,
+        )
+        raw = response.content.strip().replace("```json", "").replace("```", "").strip()
+        return json.loads(raw)
+    except Exception as e:
+        log(f"  [WARN] Prompt generator failed: {e}")
+        return None
+
+
+def assign_risk_angle(agent, risk_angles):
+    """Assign a risk angle to an agent based on demographic fit."""
+    if not risk_angles:
+        return None
+    # Distribute angles across agents to ensure coverage
+    # Use agent_id as index to spread evenly
+    idx = (agent["id"] - 1) % len(risk_angles)
+    return risk_angles[idx]
+
+
+# --- Round 1: Independent risk identification ---
+
+async def call_agent_r1(client, thread_id, agent, policy_text, policy_brief=None):
+    city_line, age_income_line = build_city_context(agent)
+
+    # Build the prompt using the policy brief if available
+    if policy_brief:
+        assigned = assign_risk_angle(agent, policy_brief.get("risk_angles", []))
+        angle_line = f"\nPriority risk angle to examine: {assigned['category']} — {assigned['angle']}" if assigned else ""
+
+        prompt = f"""You are a policy risk analyst. Examine this policy through the lens of ONE specific demographic group.
+
+Economic context (from senior analyst):
+{policy_brief['economic_mechanisms']}
+
+Demographic lens: {agent['age_bracket']} {agent['tenure']} in {agent['city']}, {agent['income_bracket']} income, {agent['family_size']}, {agent['employment_type']}, {agent['immigration_status']}, {agent['debt_load']} debt
+Real city data: {city_line}{age_income_line}
+Policy: {policy_text}
+{angle_line}
+
+Using the economic context and real data, identify the single most significant risk this policy CREATES OR WORSENS for someone matching this demographic profile. You MUST ground your analysis in the economic mechanisms described above — do not contradict them. Do NOT flag pre-existing problems the policy fails to fully solve — only flag things that get WORSE because of this policy. If there is genuinely no risk created by this policy, set category to "none" — that is valid and important signal.
+
+Return only valid JSON, no explanation:
+{{"risk":"one sentence describing the specific risk grounded in the data","severity":1|2|3,"category":"{"|".join(RISK_CATEGORIES)}","who_bears_it":"brief description of who is most affected"}}
+Where severity means: 1=minor concern, 2=significant risk, 3=severe risk"""
+    else:
+        prompt = f"""You are a policy risk analyst. Examine this policy through the lens of ONE specific demographic group to identify the most significant risk they would face.
+
+Demographic lens: {agent['age_bracket']} {agent['tenure']} in {agent['city']}, {agent['income_bracket']} income, {agent['family_size']}, {agent['employment_type']}, {agent['immigration_status']}, {agent['debt_load']} debt
+Real city data: {city_line}{age_income_line}
+Policy: {policy_text}
+
+Using the real data, identify the single most significant risk this policy creates for someone matching this demographic profile. If there is genuinely no meaningful risk, set category to "none" — that is valid and useful signal.
+
+Return only valid JSON, no explanation:
+{{"risk":"one sentence describing the specific risk grounded in the data","severity":1|2|3,"category":"{"|".join(RISK_CATEGORIES)}","who_bears_it":"brief description of who is most affected"}}
+Where severity means: 1=minor concern, 2=significant risk, 3=severe risk"""
 
     fallback = {
         "agent_id": agent["id"],
@@ -68,9 +182,10 @@ Where i means: 1=low impact, 2=medium impact, 3=high impact"""
         "family_size": agent["family_size"],
         "employment_type": agent["employment_type"],
         "population_weight": agent["population_weight"],
-        "s": "mixed",
-        "i": 2,
-        "c": "no response received",
+        "risk": "no response received",
+        "severity": 1,
+        "category": "none",
+        "who_bears_it": "unknown",
     }
 
     for attempt in range(2):
@@ -82,14 +197,11 @@ Where i means: 1=low impact, 2=medium impact, 3=high impact"""
                 model_name=AGENT_MODEL,
                 stream=False,
             )
-            raw = response.content.strip()
-            # Strip markdown fences if present
-            clean = raw.replace("```json", "").replace("```", "").strip()
-            parsed = json.loads(clean)
-            assert "s" in parsed and "i" in parsed and "c" in parsed
-            s = parsed["s"] if parsed["s"] in ("positive", "negative", "mixed") else "mixed"
-            i_val = parsed["i"] if isinstance(parsed["i"], int) and 1 <= parsed["i"] <= 3 else 2
-            c = str(parsed["c"])[:80]
+            raw = response.content.strip().replace("```json", "").replace("```", "").strip()
+            parsed = json.loads(raw)
+            assert "risk" in parsed and "severity" in parsed and "category" in parsed
+            severity = parsed["severity"] if isinstance(parsed["severity"], int) and 1 <= parsed["severity"] <= 3 else 1
+            category = parsed["category"] if parsed["category"] in RISK_CATEGORIES else "none"
             return {
                 "agent_id": agent["id"],
                 "city": agent["city"],
@@ -100,9 +212,108 @@ Where i means: 1=low impact, 2=medium impact, 3=high impact"""
                 "family_size": agent["family_size"],
                 "employment_type": agent["employment_type"],
                 "population_weight": agent["population_weight"],
-                "s": s,
-                "i": i_val,
-                "c": c,
+                "risk": str(parsed["risk"])[:200],
+                "severity": severity,
+                "category": category,
+                "who_bears_it": str(parsed.get("who_bears_it", ""))[:100],
+            }
+        except Exception:
+            if attempt == 0:
+                continue
+            return fallback
+
+    return fallback
+
+
+# --- Round 2: Cross-pollination and cascade detection ---
+
+def build_round2_context(round1_results):
+    risks_by_category = {}
+    for r in round1_results:
+        cat = r["category"]
+        if cat == "none":
+            continue
+        if cat not in risks_by_category:
+            risks_by_category[cat] = []
+        risks_by_category[cat].append(r["risk"])
+
+    lines = []
+    for cat, risks in risks_by_category.items():
+        unique_risks = list(set(risks))[:3]
+        lines.append(f"- {cat} ({len(risks)} agents): {'; '.join(unique_risks)}")
+
+    no_risk_count = sum(1 for r in round1_results if r["category"] == "none")
+    lines.append(f"- no risk identified: {no_risk_count} agents")
+
+    return "Risks identified in Round 1:\n" + "\n".join(lines)
+
+
+async def call_agent_r2(client, thread_id, agent, policy_text, round2_context):
+    city_line, age_income_line = build_city_context(agent)
+
+    prompt = f"""You are a policy risk analyst. In Round 1, risks were identified across 50 demographic groups. Now examine whether any of these risks ALSO affect your demographic group, or if risks combine to create cascade effects.
+
+Demographic lens: {agent['age_bracket']} {agent['tenure']} in {agent['city']}, {agent['income_bracket']} income, {agent['family_size']}, {agent['employment_type']}, {agent['immigration_status']}, {agent['debt_load']} debt
+Real city data: {city_line}{age_income_line}
+Policy: {policy_text}
+
+{round2_context}
+
+Considering all risks above, what is the most significant risk for your demographic group? It can be:
+- A risk from Round 1 that also affects you (even if you didn't flag it initially)
+- A cascade effect where multiple risks compound (e.g., labor shortage → delays → cost overruns → tax increases)
+- A new risk you see now that wasn't apparent before
+- "none" if genuinely no risk applies after reviewing everything
+
+Return only valid JSON, no explanation:
+{{"risk":"one sentence — the most significant risk after considering all evidence","severity":1|2|3,"category":"{"|".join(RISK_CATEGORIES)}","who_bears_it":"brief description","cascade":"null or one sentence describing how risks compound"}}"""
+
+    fallback = {
+        "agent_id": agent["id"],
+        "city": agent["city"],
+        "tenure": agent["tenure"],
+        "age_bracket": agent["age_bracket"],
+        "income_bracket": agent["income_bracket"],
+        "immigration_status": agent["immigration_status"],
+        "family_size": agent["family_size"],
+        "employment_type": agent["employment_type"],
+        "population_weight": agent["population_weight"],
+        "risk": "no response received",
+        "severity": 1,
+        "category": "none",
+        "who_bears_it": "unknown",
+        "cascade": None,
+    }
+
+    for attempt in range(2):
+        try:
+            response = await client.add_message(
+                thread_id=thread_id,
+                content=prompt,
+                llm_provider=AGENT_PROVIDER,
+                model_name=AGENT_MODEL,
+                stream=False,
+            )
+            raw = response.content.strip().replace("```json", "").replace("```", "").strip()
+            parsed = json.loads(raw)
+            assert "risk" in parsed and "severity" in parsed and "category" in parsed
+            severity = parsed["severity"] if isinstance(parsed["severity"], int) and 1 <= parsed["severity"] <= 3 else 1
+            category = parsed["category"] if parsed["category"] in RISK_CATEGORIES else "none"
+            return {
+                "agent_id": agent["id"],
+                "city": agent["city"],
+                "tenure": agent["tenure"],
+                "age_bracket": agent["age_bracket"],
+                "income_bracket": agent["income_bracket"],
+                "immigration_status": agent["immigration_status"],
+                "family_size": agent["family_size"],
+                "employment_type": agent["employment_type"],
+                "population_weight": agent["population_weight"],
+                "risk": str(parsed["risk"])[:200],
+                "severity": severity,
+                "category": category,
+                "who_bears_it": str(parsed.get("who_bears_it", ""))[:100],
+                "cascade": str(parsed.get("cascade", ""))[:200] if parsed.get("cascade") else None,
             }
         except Exception:
             if attempt == 0:
@@ -119,11 +330,10 @@ async def create_thread(client, asst_id):
     return thread.thread_id
 
 
-async def run_all_agents(client, asst_id, agents, policy_text, round_context="none"):
+async def run_all_agents(client, asst_id, agents, call_fn, **kwargs):
     batch_size = 4
     results = []
 
-    # Create all threads in parallel
     threads = await asyncio.gather(
         *[create_thread(client, asst_id) for _ in agents]
     )
@@ -133,7 +343,7 @@ async def run_all_agents(client, asst_id, agents, policy_text, round_context="no
         batch_threads = threads[i : i + batch_size]
         batch_results = await asyncio.gather(
             *[
-                call_agent(client, tid, a, policy_text, round_context)
+                call_fn(client, tid, a, **kwargs)
                 for tid, a in zip(batch_threads, batch_agents)
             ],
             return_exceptions=True,
@@ -142,73 +352,80 @@ async def run_all_agents(client, asst_id, agents, policy_text, round_context="no
     return results
 
 
-# --- Round 2 context builder ---
+# --- Coordinator: Risk synthesis ---
 
-def build_round2_context(round1_results):
-    total = len(round1_results)
-    neg = [r for r in round1_results if r["s"] == "negative"]
-    pos = [r for r in round1_results if r["s"] == "positive"]
-    mixed = [r for r in round1_results if r["s"] == "mixed"]
-    avg_i = sum(r["i"] for r in round1_results) / total if total else 0
-    top_concerns = sorted(
-        set(r["c"] for r in round1_results if r["s"] == "negative"),
-        key=lambda c: sum(1 for r in round1_results if r["c"] == c),
-        reverse=True,
-    )[:5]
-    renter_sentiment = [r["s"] for r in round1_results if r["tenure"] == "renter"]
-    owner_sentiment = [r["s"] for r in round1_results if r["tenure"] == "owner"]
+def build_coordinator_prompt(policy_text, round1_results, round2_results):
+    # Cluster risks by category
+    def risk_cluster(results, category):
+        cluster = [r for r in results if r["category"] == category]
+        if not cluster:
+            return None
+        risks = list(set(r["risk"] for r in cluster))[:5]
+        cities = list(set(r["city"] for r in cluster))
+        demographics = list(set(f"{r['age_bracket']} {r['tenure']} {r['income_bracket']}" for r in cluster))
+        avg_severity = sum(r["severity"] for r in cluster) / len(cluster)
+        return {
+            "count": len(cluster),
+            "avg_severity": round(avg_severity, 1),
+            "sample_risks": risks,
+            "cities": cities,
+            "demographics": demographics[:5],
+        }
 
-    return (
-        f"R1 summary: {len(neg)}/50 negative, {len(pos)}/50 positive, {len(mixed)}/50 mixed. "
-        f"Avg impact: {avg_i:.1f}/3. "
-        f"Top concerns: {', '.join(top_concerns) if top_concerns else 'none'}. "
-        f"Renters: {renter_sentiment.count('negative')} neg / {renter_sentiment.count('positive')} pos. "
-        f"Owners: {owner_sentiment.count('negative')} neg / {owner_sentiment.count('positive')} pos."
-    )
+    clusters = {}
+    for cat in RISK_CATEGORIES:
+        if cat == "none":
+            continue
+        c = risk_cluster(round2_results, cat)
+        if c:
+            clusters[cat] = c
 
+    # Cascade effects from R2
+    cascades = [r["cascade"] for r in round2_results if r.get("cascade")]
 
-# --- Coordinator ---
+    no_risk_r1 = sum(1 for r in round1_results if r["category"] == "none")
+    no_risk_r2 = sum(1 for r in round2_results if r["category"] == "none")
 
-def build_coordinator_prompt(policy_text, round_results, round_num):
-    def group_summary(group_results):
-        if not group_results:
-            return "no data"
-        neg = sum(1 for r in group_results if r["s"] == "negative")
-        pos = sum(1 for r in group_results if r["s"] == "positive")
-        avg = sum(r["i"] for r in group_results) / len(group_results)
-        return f"{neg} neg / {pos} pos / avg_impact {avg:.1f}"
-
-    return f"""You are analyzing Canadian policy impact across real StatsCan 2021 demographic groups.
+    return f"""You are a senior policy risk analyst synthesizing findings from 50 demographic-specific risk assessments of a Canadian policy.
 
 Policy: {policy_text}
-Round: {round_num}/2
 
-Demographic breakdown:
-- All renters ({len(DEMOGRAPHIC_GROUPS['renters'])} agents): {group_summary([r for r in round_results if r["tenure"] == "renter"])}
-- All owners ({len(DEMOGRAPHIC_GROUPS['owners'])} agents): {group_summary([r for r in round_results if r["tenure"] == "owner"])}
-- Age 18-34: {group_summary([r for r in round_results if r["age_bracket"] in ["18-24", "25-34"]])}
-- Age 65+: {group_summary([r for r in round_results if r["age_bracket"] == "65+"])}
-- Low income: {group_summary([r for r in round_results if r["income_bracket"] in ["very_low", "low"]])}
-- High income: {group_summary([r for r in round_results if r["income_bracket"] in ["high", "very_high"]])}
-- Recent immigrants: {group_summary([r for r in round_results if r["immigration_status"] in ["recent_immigrant", "refugee"]])}
-- Rural/remote: {group_summary([r for r in round_results if any(x in r["city"] for x in ["Northern", "Rural", "Nunavut", "PEI", "Reserve"])])}
+Risk clusters from Round 2 (after cross-pollination):
+{json.dumps(clusters, indent=2)}
 
-Top negative concerns: {list(set(r["c"] for r in round_results if r["s"] == "negative"))[:8]}
+Cascade effects identified:
+{json.dumps(cascades, indent=2) if cascades else "None identified"}
 
-Full agent results:
-{json.dumps(round_results, indent=2)}
+Agents reporting no risk: {no_risk_r1} in Round 1, {no_risk_r2} in Round 2
+
+Produce a risk report. Rank risks by: (1) how many diverse demographic groups flagged them, (2) severity, (3) whether cascade effects amplify them. A risk flagged by both renters AND owners across multiple cities is higher signal than one flagged by similar agents.
+
+CRITICAL DISTINCTION: Only include risks that the policy CREATES or WORSENS. Do NOT include pre-existing problems that the policy merely fails to fully solve — that is policy insufficiency, not policy risk. For example, if housing is already unaffordable and the policy doesn't fix it completely, that is NOT a risk of the policy. A risk is something that gets WORSE because of the policy (e.g., labor shortages caused by rapid construction, displacement from development zones, infrastructure strain from new density).
+
+For each risk, provide a REASONING CHAIN that walks the reader through the logic step by step: what economic mechanism THIS POLICY triggers, what data points support the risk, who is exposed and why their characteristics make them vulnerable, and how confident we should be in this conclusion.
 
 Return exactly this JSON and nothing else:
 {{
-  "emergent_finding": "one sentence — the non-obvious finding nobody predicted",
-  "coalition_map": "one sentence — which demographic groups aligned and which diverged",
-  "risk_flag": "one sentence — the most dangerous unintended consequence",
-  "sentiment_shift": "one sentence — how Round 2 opinions changed vs Round 1 (Round 2 only, else null)"
+  "risks": [
+    {{
+      "rank": 1,
+      "title": "short risk title",
+      "severity": "HIGH|MEDIUM|LOW",
+      "reasoning": "3-5 sentence reasoning chain: (1) the economic mechanism at play, (2) the specific data points from city profiles that support this risk, (3) which demographic groups are most exposed and why their characteristics make them vulnerable, (4) how confident we are based on how many independent agent groups flagged this",
+      "affected_groups": "who bears this risk",
+      "agents_flagged": 0,
+      "cities": ["list", "of", "affected", "cities"],
+      "cascade_effect": "how this risk compounds with others, or null"
+    }}
+  ],
+  "blind_spots": "one sentence — what demographics or perspectives are missing from this analysis",
+  "overall_risk_level": "HIGH|MEDIUM|LOW",
+  "key_insight": "one sentence — the single most important non-obvious finding"
 }}"""
 
 
-async def run_coordinator(client, asst_id, policy_text, round_results, round_num):
-    prompt = build_coordinator_prompt(policy_text, round_results, round_num)
+async def run_coordinator(client, asst_id, policy_text, round1_results, round2_results):
+    prompt = build_coordinator_prompt(policy_text, round1_results, round2_results)
     try:
         thread = await client.create_thread(asst_id)
         response = await client.add_message(
@@ -218,16 +435,15 @@ async def run_coordinator(client, asst_id, policy_text, round_results, round_num
             model_name=COORDINATOR_MODEL,
             stream=False,
         )
-        raw = response.content.strip()
-        clean = raw.replace("```json", "").replace("```", "").strip()
-        return json.loads(clean)
+        raw = response.content.strip().replace("```json", "").replace("```", "").strip()
+        return json.loads(raw)
     except Exception as e:
         log(f"  [WARN] Coordinator failed: {e}")
         return {
-            "emergent_finding": "coordinator unavailable",
-            "coalition_map": "coordinator unavailable",
-            "risk_flag": "coordinator unavailable",
-            "sentiment_shift": None,
+            "risks": [],
+            "blind_spots": "coordinator unavailable",
+            "overall_risk_level": "UNKNOWN",
+            "key_insight": "coordinator unavailable",
         }
 
 
@@ -236,16 +452,17 @@ async def run_coordinator(client, asst_id, policy_text, round_results, round_num
 async def run_simulation(policy_text):
     client = BackboardClient(api_key=BACKBOARD_API_KEY)
 
-    log(f"\nPolicySim starting: '{policy_text}'")
-    log(f"Agents: {len(AGENTS)} | Rounds: 2 | Agent model: {AGENT_PROVIDER}/{AGENT_MODEL} | Coordinator: {COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}")
+    log(f"\nCivica Risk Analysis: '{policy_text}'")
+    log(f"Agents: {len(AGENTS)} | Rounds: 2 | Agent model: {AGENT_PROVIDER}/{AGENT_MODEL}")
+    log(f"Prompt generator: {PROMPT_PROVIDER}/{PROMPT_MODEL} | Coordinator: {COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}")
     log(f"Renters: {len(DEMOGRAPHIC_GROUPS['renters'])} | Owners: {len(DEMOGRAPHIC_GROUPS['owners'])}")
     log(f"Rural/remote: {len(DEMOGRAPHIC_GROUPS['rural'])} | Recent immigrants: {len(DEMOGRAPHIC_GROUPS['recent_immigrants'])}\n")
     start = time.time()
 
     # Create assistant
     assistant = await client.create_assistant(
-        name="Civica Policy Classifier",
-        system_prompt="You are a JSON classifier that evaluates policy impact on Canadian demographics. Always return valid JSON only, no markdown or explanation.",
+        name="Civica Risk Analyst",
+        system_prompt="You are a policy risk analyst. You identify risks in government policies by examining them through specific demographic lenses. Always return valid JSON only.",
     )
     asst_id = assistant.assistant_id
     log(f"Created Backboard assistant: {asst_id}")
@@ -255,52 +472,65 @@ async def run_simulation(policy_text):
     policy_classification = await classify_policy(client, asst_id, policy_text)
     log(f"Policy classified: {policy_classification['type']} | affects: {policy_classification['primary_affected']}")
 
-    # ROUND 1
-    log("Round 1: Cold reaction...")
+    # Generate policy brief (one expensive call)
+    log("Generating policy brief...")
+    pb_start = time.time()
+    policy_brief = await generate_policy_brief(client, asst_id, policy_text, policy_classification)
+    if policy_brief:
+        log(f"Policy brief generated in {time.time() - pb_start:.1f}s")
+        log(f"Economic mechanisms: {policy_brief['economic_mechanisms'][:200]}...")
+        log(f"Risk angles: {len(policy_brief.get('risk_angles', []))} — {', '.join(a['category'] for a in policy_brief.get('risk_angles', []))}")
+    else:
+        log("Policy brief failed — agents will use default prompts")
+
+    # ROUND 1: Independent risk identification
+    log("\nRound 1: Independent risk identification...")
     r1_start = time.time()
-    round1_results = await run_all_agents(client, asst_id, AGENTS, policy_text, round_context="none")
-    r1_time = time.time() - r1_start
-    r1_neg = sum(1 for r in round1_results if r["s"] == "negative")
-    r1_pos = sum(1 for r in round1_results if r["s"] == "positive")
-    r1_mix = sum(1 for r in round1_results if r["s"] == "mixed")
-    r1_avg = sum(r["i"] for r in round1_results) / len(round1_results) if round1_results else 0
-    log(f"Round 1 complete in {r1_time:.1f}s — {r1_pos} pos / {r1_neg} neg / {r1_mix} mixed — avg impact {r1_avg:.1f}/3")
-
-    # Pre-compute Round 2 context
-    round2_context = build_round2_context(round1_results)
-    log(f"R2 context: {round2_context}\n")
-
-    # Filter active agents for Round 2 — only intensity >= 2
-    active_ids = {r["agent_id"] for r in round1_results if r["i"] >= 2}
-    active_agents = [a for a in AGENTS if a["id"] in active_ids]
-    inactive_results = [
-        {**r, "c": "no change from round 1"} for r in round1_results if r["i"] < 2
-    ]
-    log(f"Round 2: {len(active_agents)} active agents, {len(inactive_results)} unchanged\n")
-
-    # ROUND 2 + COORDINATOR ROUND 1 — run in parallel
-    log("Round 2 + Round 1 coordinator running in parallel...")
-    r2_start = time.time()
-    round2_active, coordinator_r1 = await asyncio.gather(
-        run_all_agents(client, asst_id, active_agents, policy_text, round_context=round2_context),
-        run_coordinator(client, asst_id, policy_text, round1_results, 1),
+    round1_results = await run_all_agents(
+        client, asst_id, AGENTS, call_agent_r1,
+        policy_text=policy_text,
+        policy_brief=policy_brief,
     )
-    round2_results = round2_active + inactive_results
-    r2_time = time.time() - r2_start
-    r2_neg = sum(1 for r in round2_results if r["s"] == "negative")
-    r2_pos = sum(1 for r in round2_results if r["s"] == "positive")
-    r2_mix = sum(1 for r in round2_results if r["s"] == "mixed")
-    r2_avg = sum(r["i"] for r in round2_results) / len(round2_results) if round2_results else 0
-    log(f"Round 2 + Coordinator R1 complete in {r2_time:.1f}s — {r2_pos} pos / {r2_neg} neg / {r2_mix} mixed — avg impact {r2_avg:.1f}/3")
+    r1_time = time.time() - r1_start
+    r1_risks = sum(1 for r in round1_results if r["category"] != "none")
+    r1_none = sum(1 for r in round1_results if r["category"] == "none")
+    r1_avg_sev = sum(r["severity"] for r in round1_results if r["category"] != "none") / max(r1_risks, 1)
+    log(f"Round 1 complete in {r1_time:.1f}s — {r1_risks} risks identified, {r1_none} no-risk, avg severity {r1_avg_sev:.1f}/3")
 
-    # COORDINATOR ROUND 2
-    log("\nCoordinator synthesizing Round 2...")
-    c2_start = time.time()
-    coordinator_r2 = await run_coordinator(client, asst_id, policy_text, round2_results, 2)
-    log(f"Coordinator R2 complete in {time.time() - c2_start:.1f}s")
+    # Show R1 risk categories
+    r1_cats = {}
+    for r in round1_results:
+        cat = r["category"]
+        r1_cats[cat] = r1_cats.get(cat, 0) + 1
+    log(f"R1 categories: {dict(sorted(r1_cats.items(), key=lambda x: -x[1]))}")
+
+    # Build Round 2 context
+    round2_context = build_round2_context(round1_results)
+    log(f"\n{round2_context}\n")
+
+    # ROUND 2: Cross-pollination and cascade detection (all agents participate)
+    log("Round 2: Cross-pollination and cascade detection...")
+    r2_start = time.time()
+    round2_results = await run_all_agents(
+        client, asst_id, AGENTS, call_agent_r2,
+        policy_text=policy_text,
+        round2_context=round2_context,
+    )
+    r2_time = time.time() - r2_start
+    r2_risks = sum(1 for r in round2_results if r["category"] != "none")
+    r2_none = sum(1 for r in round2_results if r["category"] == "none")
+    r2_avg_sev = sum(r["severity"] for r in round2_results if r["category"] != "none") / max(r2_risks, 1)
+    r2_cascades = sum(1 for r in round2_results if r.get("cascade"))
+    log(f"Round 2 complete in {r2_time:.1f}s — {r2_risks} risks, {r2_none} no-risk, avg severity {r2_avg_sev:.1f}/3, {r2_cascades} cascade effects")
+
+    # COORDINATOR: Synthesize risk report
+    log("\nCoordinator synthesizing risk report...")
+    c_start = time.time()
+    risk_report = await run_coordinator(client, asst_id, policy_text, round1_results, round2_results)
+    log(f"Coordinator complete in {time.time() - c_start:.1f}s")
 
     total_time = time.time() - start
-    log(f"\nSimulation complete in {total_time:.1f}s")
+    log(f"\nAnalysis complete in {total_time:.1f}s")
 
     # Save outputs
     output = {
@@ -311,27 +541,47 @@ async def run_simulation(policy_text):
             "agent": f"{AGENT_PROVIDER}/{AGENT_MODEL}",
             "coordinator": f"{COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}",
         },
-        "round_1": {"agents": round1_results, "coordinator": coordinator_r1},
-        "round_2": {"agents": round2_results, "coordinator": coordinator_r2},
+        "round_1": {"agents": round1_results},
+        "round_2": {"agents": round2_results},
+        "risk_report": risk_report,
     }
 
     with open("cache/round_1.json", "w") as f:
-        json.dump({"agents": round1_results, "coordinator": coordinator_r1}, f, indent=2)
+        json.dump({"agents": round1_results}, f, indent=2)
     with open("cache/round_2.json", "w") as f:
-        json.dump({"agents": round2_results, "coordinator": coordinator_r2}, f, indent=2)
+        json.dump({"agents": round2_results}, f, indent=2)
     with open("cache/full_simulation.json", "w") as f:
         json.dump(output, f, indent=2)
 
+    # Print risk report
     log("\n" + "=" * 70)
-    log("  RESULTS")
+    log(f"  RISK REPORT: {policy_text}")
+    log(f"  Overall risk level: {risk_report.get('overall_risk_level', 'UNKNOWN')}")
     log("=" * 70)
-    log(f"  R1 Finding:  {coordinator_r1['emergent_finding']}")
-    log(f"  R1 Risk:     {coordinator_r1['risk_flag']}")
-    log(f"  R1 Coalition:{coordinator_r1['coalition_map']}")
-    log(f"  R2 Finding:  {coordinator_r2['emergent_finding']}")
-    log(f"  R2 Shift:    {coordinator_r2['sentiment_shift']}")
-    log(f"  R2 Coalition:{coordinator_r2['coalition_map']}")
-    log(f"  R2 Risk:     {coordinator_r2['risk_flag']}")
+
+    for risk in risk_report.get("risks", []):
+        log(f"\n  #{risk['rank']} {risk['title']} (severity: {risk['severity']})")
+        log(f"     Affected: {risk.get('affected_groups', 'N/A')}")
+        log(f"     Cities: {', '.join(risk['cities']) if risk.get('cities') else 'N/A'}")
+        log(f"     Agents flagged: {risk.get('agents_flagged', '?')}")
+        log(f"\n     Reasoning:")
+        reasoning = risk.get('reasoning', risk.get('description', 'N/A'))
+        # Word-wrap reasoning at ~80 chars for readability
+        words = reasoning.split()
+        line = "       "
+        for word in words:
+            if len(line) + len(word) + 1 > 85:
+                log(line)
+                line = "       " + word
+            else:
+                line += " " + word if line.strip() else "       " + word
+        if line.strip():
+            log(line)
+        if risk.get("cascade_effect"):
+            log(f"\n     Cascade: {risk['cascade_effect']}")
+
+    log(f"\n  Key insight: {risk_report.get('key_insight', 'N/A')}")
+    log(f"  Blind spots: {risk_report.get('blind_spots', 'N/A')}")
     log("=" * 70)
 
     # Calculate confidence score
@@ -339,7 +589,7 @@ async def run_simulation(policy_text):
         policy_classification,
         CITY_PROFILES,
         round1_results,
-        round2_results
+        round2_results,
     )
     output["confidence"] = confidence
     output["policy_classification"] = policy_classification
@@ -348,7 +598,7 @@ async def run_simulation(policy_text):
     seal_id = seal_simulation(policy_text, output)
     output["seal_id"] = seal_id
 
-    # Save updated output with confidence and classification
+    # Save updated output
     with open("cache/full_simulation.json", "w") as f:
         json.dump(output, f, indent=2)
 
