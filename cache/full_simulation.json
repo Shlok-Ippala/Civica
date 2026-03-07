@@ -1,7 +1,11 @@
 {
-  "policy": "Canada establishes Build Canada Homes as a federal Crown corporation to build affordable housing on public lands using modern construction methods, prioritizing low-income households, seniors, and Indigenous communities",
-  "total_time_seconds": 82.11,
+  "policy": "Canada implements a $10,000 first-time buyer tax credit",
+  "total_time_seconds": 105.1,
   "agents_total": 50,
+  "models": {
+    "agent": "openai/gpt-4o-mini",
+    "coordinator": "openai/gpt-4o"
+  },
   "round_1": {
     "agents": [
       {
@@ -14,9 +18,9 @@
         "family_size": "single",
         "employment_type": "student",
         "population_weight": 0.18,
-        "s": "mixed",
+        "s": "positive",
         "i": 2,
-        "c": "no response received"
+        "c": "increased savings for future home purchase"
       },
       {
         "agent_id": 2,
@@ -29,8 +33,8 @@
         "employment_type": "salaried",
         "population_weight": 0.18,
         "s": "positive",
-        "i": 1,
-        "c": "low impact"
+        "i": 2,
+        "c": "increased affordability for future home purchase"
       },
       {
         "agent_id": 3,
@@ -43,8 +47,8 @@
         "employment_type": "salaried",
         "population_weight": 0.18,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "affordable homeownership opportunities increased"
       },
       {
         "agent_id": 4,
@@ -57,8 +61,8 @@
         "employment_type": "self_employed",
         "population_weight": 0.18,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "Encourages homeownership for renters"
       },
       {
         "agent_id": 5,
@@ -71,8 +75,8 @@
         "employment_type": "gig",
         "population_weight": 0.18,
         "s": "positive",
-        "i": 1,
-        "c": "builds affordable housing, prioritizes low-income households, seniors, and Indig"
+        "i": 2,
+        "c": "increased savings for future home purchase"
       },
       {
         "agent_id": 6,
@@ -84,9 +88,9 @@
         "family_size": "single",
         "employment_type": "student",
         "population_weight": 0.16,
-        "s": "mixed",
+        "s": "negative",
         "i": 2,
-        "c": "max 8 words describing concern or benefit"
+        "c": "increased market competition, higher rents"
       },
       {
         "agent_id": 7,
@@ -100,7 +104,7 @@
         "population_weight": 0.16,
         "s": "positive",
         "i": 2,
-        "c": "maximum 8 words describing concern or benefit"
+        "c": "encourages saving for home purchase"
       },
       {
         "agent_id": 8,
@@ -114,7 +118,7 @@
         "population_weight": 0.16,
         "s": "positive",
         "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "c": "assists in achieving home ownership potential"
       },
       {
         "agent_id": 9,
@@ -126,9 +130,9 @@
         "family_size": "couple",
         "employment_type": "salaried",
         "population_weight": 0.16,
-        "s": "mixed",
+        "s": "positive",
         "i": 2,
-        "c": "Affordable housing, social programs, community involvement"
+        "c": "increased home affordability for couples"
       },
       {
         "agent_id": 10,
@@ -142,7 +146,7 @@
         "population_weight": 0.16,
         "s": "positive",
         "i": 2,
-        "c": "low impact"
+        "c": "Increased affordability for housing options"
       },
       {
         "agent_id": 11,
@@ -155,8 +159,8 @@
         "employment_type": "salaried",
         "population_weight": 0.13,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "increased housing affordability for buyers"
       },
       {
         "agent_id": 12,
@@ -168,9 +172,9 @@
         "family_size": "small_family",
         "employment_type": "salaried",
         "population_weight": 0.13,
-        "s": "mixed",
-        "i": 3,
-        "c": "high impact"
+        "s": "positive",
+        "i": 2,
+        "c": "helps reduce financial burden on family"
       },
       {
         "agent_id": 13,
@@ -183,8 +187,8 @@
         "employment_type": "salaried",
         "population_weight": 0.13,
         "s": "positive",
-        "i": 1,
-        "c": "Build Canada Homes, modern construction methods, low-income, seniors, Indigenous"
+        "i": 2,
+        "c": "increased affordability for home ownership"
       },
       {
         "agent_id": 14,
@@ -198,7 +202,7 @@
         "population_weight": 0.13,
         "s": "positive",
         "i": 1,
-        "c": "The policy aims to provide affordable housing and support for low-income househo"
+        "c": "increased affordability for housing options"
       },
       {
         "agent_id": 15,
@@ -212,7 +216,7 @@
         "population_weight": 0.1,
         "s": "positive",
         "i": 2,
-        "c": "high"
+        "c": "increased savings for home ownership"
       },
       {
         "agent_id": 16,
@@ -224,9 +228,9 @@
         "family_size": "large_family",
         "employment_type": "salaried",
         "population_weight": 0.1,
-        "s": "mixed",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "s": "positive",
+        "i": 2,
+        "c": "Increased affordability for homeownership"
       },
       {
         "agent_id": 17,
@@ -239,8 +243,8 @@
         "employment_type": "self_employed",
         "population_weight": 0.1,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "Increased affordability for first-time buyers"
       },
       {
         "agent_id": 18,
@@ -252,9 +256,9 @@
         "family_size": "small_family",
         "employment_type": "salaried",
         "population_weight": 0.09,
-        "s": "mixed",
-        "i": 3,
-        "c": "None"
+        "s": "positive",
+        "i": 2,
+        "c": "increased savings for future home"
       },
       {
         "agent_id": 19,
@@ -266,9 +270,9 @@
         "family_size": "large_family",
         "employment_type": "salaried",
         "population_weight": 0.09,
-        "s": "mixed",
+        "s": "positive",
         "i": 2,
-        "c": "max 8 words describing concern or benefit"
+        "c": "Makes home ownership more accessible for families"
       },
       {
         "agent_id": 20,
@@ -281,8 +285,8 @@
         "employment_type": "salaried",
         "population_weight": 0.09,
         "s": "positive",
-        "i": 3,
-        "c": "housing"
+        "i": 2,
+        "c": "Increased home affordability for buyers"
       },
       {
         "agent_id": 21,
@@ -295,8 +299,8 @@
         "employment_type": "salaried",
         "population_weight": 0.07,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "Encourages home ownership among families"
       },
       {
         "agent_id": 22,
@@ -308,9 +312,9 @@
         "family_size": "single",
         "employment_type": "salaried",
         "population_weight": 0.07,
-        "s": "mixed",
+        "s": "positive",
         "i": 2,
-        "c": "high impact"
+        "c": "eases path to homeownership"
       },
       {
         "agent_id": 23,
@@ -322,9 +326,9 @@
         "family_size": "large_family",
         "employment_type": "salaried",
         "population_weight": 0.05,
-        "s": "mixed",
-        "i": 2,
-        "c": "high impact"
+        "s": "positive",
+        "i": 3,
+        "c": "eases homeownership for families like mine"
       },
       {
         "agent_id": 24,
@@ -336,9 +340,9 @@
         "family_size": "small_family",
         "employment_type": "salaried",
         "population_weight": 0.05,
-        "s": "positive",
+        "s": "mixed",
         "i": 2,
-        "c": "low"
+        "c": "May benefit savings for future housing"
       },
       {
         "agent_id": 25,
@@ -352,7 +356,7 @@
         "population_weight": 0.04,
         "s": "positive",
         "i": 2,
-        "c": "low"
+        "c": "Assists in home purchasing affordability"
       },
       {
         "agent_id": 26,
@@ -365,8 +369,8 @@
         "employment_type": "gig",
         "population_weight": 0.04,
         "s": "positive",
-        "i": 1,
-        "c": "low impact"
+        "i": 2,
+        "c": "helps increase homeownership opportunities"
       },
       {
         "agent_id": 27,
@@ -378,9 +382,9 @@
         "family_size": "couple",
         "employment_type": "salaried",
         "population_weight": 0.04,
-        "s": "mixed",
+        "s": "positive",
         "i": 2,
-        "c": "low impact"
+        "c": "eases financial burden for home purchase"
       },
       {
         "agent_id": 28,
@@ -392,9 +396,9 @@
         "family_size": "single",
         "employment_type": "student",
         "population_weight": 0.04,
-        "s": "mixed",
-        "i": 1,
-        "c": "none"
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for future home ownership"
       },
       {
         "agent_id": 29,
@@ -408,7 +412,7 @@
         "population_weight": 0.03,
         "s": "positive",
         "i": 2,
-        "c": "high impact"
+        "c": "increased affordability for home purchase"
       },
       {
         "agent_id": 30,
@@ -421,8 +425,8 @@
         "employment_type": "salaried",
         "population_weight": 0.03,
         "s": "positive",
-        "i": 1,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "eases transition to homeownership"
       },
       {
         "agent_id": 31,
@@ -434,9 +438,9 @@
         "family_size": "single",
         "employment_type": "retired",
         "population_weight": 0.03,
-        "s": "positive",
+        "s": "negative",
         "i": 1,
-        "c": "minimal impact on policy approval, but supports community development and housin"
+        "c": "not applicable to current homeownership status"
       },
       {
         "agent_id": 32,
@@ -449,8 +453,8 @@
         "employment_type": "salaried",
         "population_weight": 0.03,
         "s": "positive",
-        "i": 1,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "increased homeownership affordability for families"
       },
       {
         "agent_id": 33,
@@ -463,8 +467,8 @@
         "employment_type": "salaried",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 1,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "Encourages home ownership for families"
       },
       {
         "agent_id": 34,
@@ -478,7 +482,7 @@
         "population_weight": 0.02,
         "s": "positive",
         "i": 1,
-        "c": "maximum 8 words"
+        "c": "increased financial stability for future purchase"
       },
       {
         "agent_id": 35,
@@ -492,7 +496,7 @@
         "population_weight": 0.02,
         "s": "positive",
         "i": 2,
-        "c": "max 8 words describing concern or benefit"
+        "c": "increased home affordability for families"
       },
       {
         "agent_id": 36,
@@ -506,7 +510,7 @@
         "population_weight": 0.02,
         "s": "positive",
         "i": 2,
-        "c": "build affordable housing on public lands with modern construction methods"
+        "c": "increased homeownership opportunities for couples"
       },
       {
         "agent_id": 37,
@@ -518,9 +522,9 @@
         "family_size": "couple",
         "employment_type": "retired",
         "population_weight": 0.02,
-        "s": "mixed",
-        "i": 1,
-        "c": "high impact"
+        "s": "positive",
+        "i": 2,
+        "c": "increased financial flexibility for retirement"
       },
       {
         "agent_id": 38,
@@ -534,7 +538,7 @@
         "population_weight": 0.02,
         "s": "positive",
         "i": 2,
-        "c": "Build Canada Homes provides affordable housing on public lands and prioritizes l"
+        "c": "encourages homeownership for young families"
       },
       {
         "agent_id": 39,
@@ -547,8 +551,8 @@
         "employment_type": "salaried",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 3,
-        "c": "high"
+        "i": 2,
+        "c": "increased affordability for homeownership"
       },
       {
         "agent_id": 40,
@@ -561,8 +565,8 @@
         "employment_type": "unemployed",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 1,
-        "c": "low"
+        "i": 2,
+        "c": "eases transition to homeownership"
       },
       {
         "agent_id": 41,
@@ -575,8 +579,8 @@
         "employment_type": "self_employed",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 1,
-        "c": "Build Canada Homes is a federal Crown corporation aiming to provide affordable h"
+        "i": 2,
+        "c": "increased affordability for homeownership"
       },
       {
         "agent_id": 42,
@@ -588,9 +592,9 @@
         "family_size": "large_family",
         "employment_type": "salaried",
         "population_weight": 0.02,
-        "s": "mixed",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "s": "positive",
+        "i": 2,
+        "c": "affordable housing for large families"
       },
       {
         "agent_id": 43,
@@ -603,8 +607,8 @@
         "employment_type": "salaried",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "eases financial burden for home purchase"
       },
       {
         "agent_id": 44,
@@ -617,8 +621,8 @@
         "employment_type": "retired",
         "population_weight": 0.02,
         "s": "positive",
-        "i": 1,
-        "c": "housing for low-income households, seniors, and Indigenous communities"
+        "i": 2,
+        "c": "increased affordability for home ownership"
       },
       {
         "agent_id": 45,
@@ -631,8 +635,8 @@
         "employment_type": "self_employed",
         "population_weight": 0.01,
         "s": "positive",
-        "i": 1,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "increased accessibility for affordable housing"
       },
       {
         "agent_id": 46,
@@ -645,8 +649,8 @@
         "employment_type": "salaried",
         "population_weight": 0.01,
         "s": "positive",
-        "i": 1,
-        "c": "Build Canada Homes policy supports low-income housing projects, benefiting the c"
+        "i": 2,
+        "c": "Increased savings for future home purchase"
       },
       {
         "agent_id": 47,
@@ -659,8 +663,8 @@
         "employment_type": "unemployed",
         "population_weight": 0.01,
         "s": "mixed",
-        "i": 1,
-        "c": "high impact"
+        "i": 2,
+        "c": "Potential housing affordability improvement, but may not help renters"
       },
       {
         "agent_id": 48,
@@ -672,9 +676,9 @@
         "family_size": "single",
         "employment_type": "unemployed",
         "population_weight": 0.01,
-        "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "s": "negative",
+        "i": 2,
+        "c": "increased home ownership competition for renters"
       },
       {
         "agent_id": 49,
@@ -686,9 +690,9 @@
         "family_size": "small_family",
         "employment_type": "salaried",
         "population_weight": 0.01,
-        "s": "mixed",
+        "s": "negative",
         "i": 2,
-        "c": "Canadians' concerns about affordable housing, especially for low-income families"
+        "c": "affordability gaps for renters persist"
       },
       {
         "agent_id": 50,
@@ -701,14 +705,14 @@
         "employment_type": "salaried",
         "population_weight": 0.01,
         "s": "positive",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
+        "i": 2,
+        "c": "Increased affordability for homeownership opportunities"
       }
     ],
     "coordinator": {
-      "emergent_finding": "Despite explicitly prioritizing low-income households and seniors, these groups reported some of the lowest average impact scores, while high-income owners perceived the greatest positive impact from the policy.",
-      "coalition_map": "High-income owners largely aligned in their perception of significant positive impact, diverging from low-income individuals, seniors, and younger renters who reported lower average impacts and more mixed sentiments.",
-      "risk_flag": "The primary risk is that the policy may not effectively address the needs of its most prioritized demographics, potentially leading to unmet expectations and erosion of trust among low-income households and seniors.",
+      "emergent_finding": "Recent immigrants overwhelmingly support the policy, seeing the highest average impact score of 2.2.",
+      "coalition_map": "Young and low-income renters align in positive sentiments with high-income groups, diverging only slightly from older adults.",
+      "risk_flag": "The increased competition for homeownership creates affordability issues for existing renters.",
       "sentiment_shift": null
     }
   },
@@ -724,443 +728,9 @@
         "family_size": "single",
         "employment_type": "student",
         "population_weight": 0.18,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 3,
-        "city": "Toronto",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "very_high",
-        "immigration_status": "established_immigrant",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.18,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 4,
-        "city": "Toronto",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "self_employed",
-        "population_weight": 0.18,
-        "s": "mixed",
-        "i": 1,
-        "c": "none"
-      },
-      {
-        "agent_id": 6,
-        "city": "Montreal",
-        "tenure": "renter",
-        "age_bracket": "18-24",
-        "income_bracket": "very_low",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "student",
-        "population_weight": 0.16,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 7,
-        "city": "Montreal",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.16,
-        "s": "mixed",
+        "s": "negative",
         "i": 2,
-        "c": "Renters: 0 neg / 15 pos. Owners: 0 neg / 20 pos."
-      },
-      {
-        "agent_id": 8,
-        "city": "Montreal",
-        "tenure": "renter",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "recent_immigrant",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.16,
-        "s": "mixed",
-        "i": 2,
-        "c": "20 positive / 20 negative"
-      },
-      {
-        "agent_id": 9,
-        "city": "Montreal",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.16,
-        "s": "positive",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 10,
-        "city": "Montreal",
-        "tenure": "owner",
-        "age_bracket": "65+",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "retired",
-        "population_weight": 0.16,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 11,
-        "city": "Vancouver",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.13,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 12,
-        "city": "Vancouver",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "very_high",
-        "immigration_status": "established_immigrant",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.13,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 15,
-        "city": "Calgary",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.1,
-        "s": "mixed",
-        "i": 3,
-        "c": "none of the above"
-      },
-      {
-        "agent_id": 16,
-        "city": "Calgary",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "very_high",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "salaried",
-        "population_weight": 0.1,
-        "s": "mixed",
-        "i": 2,
-        "c": "Owners benefit from the priority of low-income households and seniors"
-      },
-      {
-        "agent_id": 17,
-        "city": "Calgary",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "established_immigrant",
-        "family_size": "couple",
-        "employment_type": "self_employed",
-        "population_weight": 0.1,
-        "s": "mixed",
-        "i": 2,
-        "c": "low impact"
-      },
-      {
-        "agent_id": 18,
-        "city": "Edmonton",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "medium",
-        "immigration_status": "recent_immigrant",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.09,
-        "s": "mixed",
-        "i": 2,
-        "c": "renters and owners share the cost, and the corporation aims to improve low-incom"
-      },
-      {
-        "agent_id": 19,
-        "city": "Edmonton",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "salaried",
-        "population_weight": 0.09,
-        "s": "mixed",
-        "i": 3,
-        "c": "mixed"
-      },
-      {
-        "agent_id": 20,
-        "city": "Edmonton",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.09,
-        "s": "mixed",
-        "i": 2,
-        "c": "low impact"
-      },
-      {
-        "agent_id": 21,
-        "city": "Ottawa",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.07,
-        "s": "mixed",
-        "i": 3,
-        "c": "all positive"
-      },
-      {
-        "agent_id": 22,
-        "city": "Ottawa",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "salaried",
-        "population_weight": 0.07,
-        "s": "mixed",
-        "i": 3,
-        "c": "max 8 words describing concern or benefit"
-      },
-      {
-        "agent_id": 23,
-        "city": "Winnipeg",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "salaried",
-        "population_weight": 0.05,
-        "s": "mixed",
-        "i": 3,
-        "c": "none"
-      },
-      {
-        "agent_id": 24,
-        "city": "Winnipeg",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "refugee",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.05,
-        "s": "mixed",
-        "i": 2,
-        "c": "renter in Winnipeg, low income, small_family, salaried, refugee, medium debt"
-      },
-      {
-        "agent_id": 25,
-        "city": "Hamilton",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.04,
-        "s": "mixed",
-        "i": 2,
-        "c": "no response received"
-      },
-      {
-        "agent_id": 27,
-        "city": "Kitchener-Waterloo",
-        "tenure": "owner",
-        "age_bracket": "25-34",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.04,
-        "s": "mixed",
-        "i": 2,
-        "c": "moderate impact"
-      },
-      {
-        "agent_id": 29,
-        "city": "Halifax",
-        "tenure": "owner",
-        "age_bracket": "65+",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "retired",
-        "population_weight": 0.03,
-        "s": "mixed",
-        "i": 1,
-        "c": "none of the above"
-      },
-      {
-        "agent_id": 35,
-        "city": "Regina",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "established_immigrant",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 2,
-        "c": "low impact"
-      },
-      {
-        "agent_id": 36,
-        "city": "Regina",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "recent_immigrant",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 3,
-        "c": "recent immigrants, low income, low debt, low rent, medium debt"
-      },
-      {
-        "agent_id": 38,
-        "city": "Kelowna",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "self_employed",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 3,
-        "c": "positive/negative"
-      },
-      {
-        "agent_id": 39,
-        "city": "Sudbury",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 2,
-        "c": "no response received"
-      },
-      {
-        "agent_id": 42,
-        "city": "Northern Ontario Rural",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 2,
-        "c": "the policy aims to build affordable housing on public lands using modern constru"
-      },
-      {
-        "agent_id": 43,
-        "city": "Northern BC Rural",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 2,
-        "c": "low impact"
-      },
-      {
-        "agent_id": 48,
-        "city": "Reserve Northern Ontario",
-        "tenure": "renter",
-        "age_bracket": "18-24",
-        "income_bracket": "very_low",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "unemployed",
-        "population_weight": 0.01,
-        "s": "mixed",
-        "i": 3,
-        "c": "very_low income, single, unemployed, born_here, none debt"
-      },
-      {
-        "agent_id": 49,
-        "city": "Nunavut Remote",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.01,
-        "s": "mixed",
-        "i": 2,
-        "c": "low impact"
-      },
-      {
-        "agent_id": 50,
-        "city": "Nunavut Remote",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "salaried",
-        "population_weight": 0.01,
-        "s": "mixed",
-        "i": 2,
-        "c": "R1 summary: 0/50 negative, 35/50 positive, 15/50 mixed."
+        "c": "affordability gaps for renters persist"
       },
       {
         "agent_id": 2,
@@ -1173,8 +743,36 @@
         "employment_type": "salaried",
         "population_weight": 0.18,
         "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
+        "i": 2,
+        "c": "increased homeownership opportunities for renters"
+      },
+      {
+        "agent_id": 3,
+        "city": "Toronto",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.18,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for first-time buyers"
+      },
+      {
+        "agent_id": 4,
+        "city": "Toronto",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.18,
+        "s": "positive",
+        "i": 2,
+        "c": "increased accessibility for first-time buyers"
       },
       {
         "agent_id": 5,
@@ -1186,9 +784,107 @@
         "family_size": "small_family",
         "employment_type": "gig",
         "population_weight": 0.18,
-        "s": "positive",
+        "s": "negative",
         "i": 1,
-        "c": "no change from round 1"
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 6,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.16,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 7,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "s": "positive",
+        "i": 2,
+        "c": "increased potential for homeownership"
+      },
+      {
+        "agent_id": 8,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "recent_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 9,
+        "city": "Montreal",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "s": "positive",
+        "i": 2,
+        "c": "benefits first-time home buyers significantly"
+      },
+      {
+        "agent_id": 10,
+        "city": "Montreal",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.16,
+        "s": "positive",
+        "i": 2,
+        "c": "increased financial security for seniors"
+      },
+      {
+        "agent_id": 11,
+        "city": "Vancouver",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.13,
+        "s": "positive",
+        "i": 2,
+        "c": "increased competition for home ownership"
+      },
+      {
+        "agent_id": 12,
+        "city": "Vancouver",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.13,
+        "s": "positive",
+        "i": 2,
+        "c": "increased access for first-time buyers"
       },
       {
         "agent_id": 13,
@@ -1200,9 +896,485 @@
         "family_size": "single",
         "employment_type": "salaried",
         "population_weight": 0.13,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 15,
+        "city": "Calgary",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.1,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 16,
+        "city": "Calgary",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.1,
         "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
+        "i": 2,
+        "c": "supports home ownership for large families"
+      },
+      {
+        "agent_id": 17,
+        "city": "Calgary",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "established_immigrant",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.1,
+        "s": "positive",
+        "i": 2,
+        "c": "benefits first-time homebuyers significantly"
+      },
+      {
+        "agent_id": 18,
+        "city": "Edmonton",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "recent_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 19,
+        "city": "Edmonton",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "s": "positive",
+        "i": 2,
+        "c": "increased access for first-time buyers"
+      },
+      {
+        "agent_id": 20,
+        "city": "Edmonton",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "s": "positive",
+        "i": 2,
+        "c": "increased access to homeownership for couples"
+      },
+      {
+        "agent_id": 21,
+        "city": "Ottawa",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.07,
+        "s": "positive",
+        "i": 2,
+        "c": "Increased accessibility for first-time buyers"
+      },
+      {
+        "agent_id": 22,
+        "city": "Ottawa",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "salaried",
+        "population_weight": 0.07,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 23,
+        "city": "Winnipeg",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.05,
+        "s": "positive",
+        "i": 3,
+        "c": "increased homeownership opportunities for families"
+      },
+      {
+        "agent_id": 24,
+        "city": "Winnipeg",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "refugee",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.05,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 25,
+        "city": "Hamilton",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.04,
+        "s": "positive",
+        "i": 2,
+        "c": "increased opportunity for first-time buyers"
+      },
+      {
+        "agent_id": 26,
+        "city": "Hamilton",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "gig",
+        "population_weight": 0.04,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 27,
+        "city": "Kitchener-Waterloo",
+        "tenure": "owner",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.04,
+        "s": "positive",
+        "i": 2,
+        "c": "increased accessibility for first-time buyers"
+      },
+      {
+        "agent_id": 28,
+        "city": "Kitchener-Waterloo",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "recent_immigrant",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.04,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 29,
+        "city": "Halifax",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.03,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for future homebuyers"
+      },
+      {
+        "agent_id": 30,
+        "city": "Halifax",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "salaried",
+        "population_weight": 0.03,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 32,
+        "city": "Victoria",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.03,
+        "s": "positive",
+        "i": 3,
+        "c": "increased access for first-time buyers"
+      },
+      {
+        "agent_id": 33,
+        "city": "Saskatoon",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 3,
+        "c": "increased home ownership opportunities for families"
+      },
+      {
+        "agent_id": 35,
+        "city": "Regina",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for first-time buyers"
+      },
+      {
+        "agent_id": 36,
+        "city": "Regina",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "recent_immigrant",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 37,
+        "city": "Kelowna",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased accessibility to homeownership"
+      },
+      {
+        "agent_id": 38,
+        "city": "Kelowna",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "self_employed",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for first-time buyers"
+      },
+      {
+        "agent_id": 39,
+        "city": "Sudbury",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 3,
+        "c": "increased homeownership opportunities for buyers"
+      },
+      {
+        "agent_id": 40,
+        "city": "Sudbury",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "unemployed",
+        "population_weight": 0.02,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 41,
+        "city": "Northern Ontario Rural",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for home buyers"
+      },
+      {
+        "agent_id": 42,
+        "city": "Northern Ontario Rural",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased affordability for first-time buyers"
+      },
+      {
+        "agent_id": 43,
+        "city": "Northern BC Rural",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased homeownership opportunities for families"
+      },
+      {
+        "agent_id": 44,
+        "city": "Northern BC Rural",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "retired",
+        "population_weight": 0.02,
+        "s": "positive",
+        "i": 2,
+        "c": "increased access for low-income seniors"
+      },
+      {
+        "agent_id": 45,
+        "city": "PEI Rural",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.01,
+        "s": "positive",
+        "i": 2,
+        "c": "increased accessibility to home ownership"
+      },
+      {
+        "agent_id": 46,
+        "city": "PEI Rural",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "s": "mixed",
+        "i": 2,
+        "c": "increased homeownership competition for renters"
+      },
+      {
+        "agent_id": 47,
+        "city": "Reserve Northern Ontario",
+        "tenure": "renter",
+        "age_bracket": "35-49",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "unemployed",
+        "population_weight": 0.01,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 48,
+        "city": "Reserve Northern Ontario",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "unemployed",
+        "population_weight": 0.01,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 49,
+        "city": "Nunavut Remote",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "s": "negative",
+        "i": 2,
+        "c": "affordability gaps for renters persist"
+      },
+      {
+        "agent_id": 50,
+        "city": "Nunavut Remote",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "s": "positive",
+        "i": 2,
+        "c": "increased homeownership opportunities for couples"
       },
       {
         "agent_id": 14,
@@ -1219,48 +1391,6 @@
         "c": "no change from round 1"
       },
       {
-        "agent_id": 26,
-        "city": "Hamilton",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "gig",
-        "population_weight": 0.04,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 28,
-        "city": "Kitchener-Waterloo",
-        "tenure": "renter",
-        "age_bracket": "18-24",
-        "income_bracket": "very_low",
-        "immigration_status": "recent_immigrant",
-        "family_size": "single",
-        "employment_type": "student",
-        "population_weight": 0.04,
-        "s": "mixed",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 30,
-        "city": "Halifax",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "salaried",
-        "population_weight": 0.03,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
         "agent_id": 31,
         "city": "Victoria",
         "tenure": "owner",
@@ -1270,35 +1400,7 @@
         "family_size": "single",
         "employment_type": "retired",
         "population_weight": 0.03,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 32,
-        "city": "Victoria",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "high",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.03,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 33,
-        "city": "Saskatoon",
-        "tenure": "owner",
-        "age_bracket": "35-49",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "salaried",
-        "population_weight": 0.02,
-        "s": "positive",
+        "s": "negative",
         "i": 1,
         "c": "no change from round 1"
       },
@@ -1315,111 +1417,32 @@
         "s": "positive",
         "i": 1,
         "c": "no change from round 1"
-      },
-      {
-        "agent_id": 37,
-        "city": "Kelowna",
-        "tenure": "owner",
-        "age_bracket": "65+",
-        "income_bracket": "medium",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "retired",
-        "population_weight": 0.02,
-        "s": "mixed",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 40,
-        "city": "Sudbury",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "unemployed",
-        "population_weight": 0.02,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 41,
-        "city": "Northern Ontario Rural",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "self_employed",
-        "population_weight": 0.02,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 44,
-        "city": "Northern BC Rural",
-        "tenure": "owner",
-        "age_bracket": "65+",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "single",
-        "employment_type": "retired",
-        "population_weight": 0.02,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 45,
-        "city": "PEI Rural",
-        "tenure": "owner",
-        "age_bracket": "50-64",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "couple",
-        "employment_type": "self_employed",
-        "population_weight": 0.01,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 46,
-        "city": "PEI Rural",
-        "tenure": "renter",
-        "age_bracket": "25-34",
-        "income_bracket": "low",
-        "immigration_status": "born_here",
-        "family_size": "small_family",
-        "employment_type": "salaried",
-        "population_weight": 0.01,
-        "s": "positive",
-        "i": 1,
-        "c": "no change from round 1"
-      },
-      {
-        "agent_id": 47,
-        "city": "Reserve Northern Ontario",
-        "tenure": "renter",
-        "age_bracket": "35-49",
-        "income_bracket": "very_low",
-        "immigration_status": "born_here",
-        "family_size": "large_family",
-        "employment_type": "unemployed",
-        "population_weight": 0.01,
-        "s": "mixed",
-        "i": 1,
-        "c": "no change from round 1"
       }
     ],
     "coordinator": {
-      "emergent_finding": "The policy, designed to prioritize low-income households, seniors, and Indigenous communities, appears to generate a higher average positive impact for high-income groups (avg 2.3) than for its intended beneficiaries (low-income avg 1.6, age 65+ avg 1.3), suggesting a potentially diffuse benefit structure or a 'trickle-up' effect benefiting the affluent.",
-      "coalition_map": "All demographic groups reported only positive or mixed impacts with no negative concerns; however, the policy's intended beneficiaries (low-income, seniors, rural/remote, and recent immigrants) experienced lower average impact scores compared to high-income individuals, while renters and owners showed an unexpected alignment with identical average impacts.",
-      "risk_flag": "The most significant risk is that the policy's benefits may be too diffuse, failing to deliver sufficiently concentrated positive impacts to the priority groups (low-income, seniors, Indigenous communities) despite explicit targeting, which could lead to substantial public investment without effectively addressing core affordability challenges for the most vulnerable populations.",
-      "sentiment_shift": "Compared to Round 1, there was a notable shift in sentiment in Round 2, with the number of agents reporting a 'positive' impact decreasing from 35 to 15, and the number reporting 'mixed' impact increasing from 15 to 35, indicating a more nuanced and less uniformly positive perception of the policy's effects over time."
+      "emergent_finding": "Despite significant support among owners, renters, especially recent immigrants and low-income groups, continue facing affordability challenges.",
+      "coalition_map": "Owners across all income and age brackets strongly aligned in support, while renters, particularly students and the very low-income, diverged in opinion.",
+      "risk_flag": "The persistent affordability gaps for renters may increase socio-economic divides, particularly affecting young and new immigrant populations.",
+      "sentiment_shift": "In Round 2, sentiment among some renter groups became slightly more positive, though overall discontent remains high."
     }
-  }
+  },
+  "confidence": {
+    "score": 9,
+    "out_of": 10,
+    "reason": "strong StatsCan data coverage for this policy type; national scope matches agent distribution well; all agents responded successfully",
+    "caveat": "This is a hypothesis generation tool. Findings should be validated against real survey data before informing policy decisions."
+  },
+  "policy_classification": {
+    "type": "tax",
+    "primary_affected": "youth",
+    "market": "ownership",
+    "geography": "national",
+    "time_horizon": "short_term",
+    "key_attributes": [
+      "first_time_buyers",
+      "middle_income",
+      "urban_residents"
+    ]
+  },
+  "seal_id": "b812aac7"
 }

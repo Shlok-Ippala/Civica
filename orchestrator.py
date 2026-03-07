@@ -1,21 +1,37 @@
 import asyncio
-import aiohttp
 import json
 import os
 import time
 
-import google.generativeai as genai
+from backboard import BackboardClient
 from dotenv import load_dotenv
 from agents import AGENTS, get_demographic_breakdowns
+from data_pipeline import load_city_profiles
+from policy_classifier import classify_policy
+from confidence_scorer import calculate_confidence
+from forward_validator import seal_simulation
 
 load_dotenv()
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "qwen2.5:0.5b"
+BACKBOARD_API_KEY = os.getenv("BACKBOARD_API_KEY", "")
+AGENT_PROVIDER = "openai"
+AGENT_MODEL = "gpt-4o-mini"
+COORDINATOR_PROVIDER = "openai"
+COORDINATOR_MODEL = "gpt-4o"
 DEMOGRAPHIC_GROUPS = get_demographic_breakdowns(AGENTS)
-os.makedirs("cache", exist_ok=True)
+CITY_PROFILES = load_city_profiles()
 
-genai.configure(api_key=os.getenv("GEMINI_API_KEY", ""))
+# Map agent city names to data_pipeline city names
+CITY_NAME_MAP = {
+    "Kitchener-Waterloo": "Kitchener",
+    "Northern Ontario Rural": "Northern Ontario",
+    "Northern BC Rural": "Northern BC",
+    "PEI Rural": "PEI",
+    "Reserve Northern Ontario": "Indigenous Reserve Northern Ontario",
+    "Nunavut Remote": "Nunavut",
+}
+
+os.makedirs("cache", exist_ok=True)
 
 
 def log(msg):
@@ -24,26 +40,23 @@ def log(msg):
 
 # --- Single agent call ---
 
-async def call_agent(session, agent, policy_text, round_context="none"):
+async def call_agent(client, thread_id, agent, policy_text, round_context="none"):
+    city_key = CITY_NAME_MAP.get(agent["city"], agent["city"])
+    city_data = CITY_PROFILES.get(city_key, {})
+    rent_info = f"avg_rent_1br: ${city_data.get('avg_rent_1br', 'unknown')}" if city_data else "rent data unavailable"
+    vacancy_info = f"vacancy_rate: {city_data.get('vacancy_rate', 'unknown')}%" if city_data else ""
+    income_info = f"median_city_income: ${city_data.get('median_household_income', 'unknown')}" if city_data else ""
+    scir_info = f"shelter_cost_ratio: {city_data.get('shelter_cost_to_income_ratio', 'unknown')}" if city_data else ""
+
     prompt = f"""You are a JSON classifier. Return only valid JSON. No explanation. No markdown.
 
 Profile: {agent['age_bracket']} {agent['tenure']} in {agent['city']}, {agent['income_bracket']} income, {agent['family_size']}, {agent['employment_type']}, {agent['immigration_status']}, {agent['debt_load']} debt
+Real city data: {rent_info}, {vacancy_info}, {income_info}, {scir_info}
 Policy: {policy_text}
 Round context: {round_context}
 
 Return exactly: {{"s":"positive/negative/mixed","i":1|2|3,"c":"max 8 words describing concern or benefit"}}
 Where i means: 1=low impact, 2=medium impact, 3=high impact"""
-
-    payload = {
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "format": "json",
-        "options": {
-            "num_predict": 60,
-            "temperature": 0.7,
-        },
-    }
 
     fallback = {
         "agent_id": agent["id"],
@@ -62,28 +75,35 @@ Where i means: 1=low impact, 2=medium impact, 3=high impact"""
 
     for attempt in range(2):
         try:
-            async with session.post(OLLAMA_URL, json=payload, timeout=aiohttp.ClientTimeout(total=15)) as resp:
-                data = await resp.json()
-                raw = data.get("response", "{}")
-                parsed = json.loads(raw)
-                assert "s" in parsed and "i" in parsed and "c" in parsed
-                s = parsed["s"] if parsed["s"] in ("positive", "negative", "mixed") else "mixed"
-                i_val = parsed["i"] if isinstance(parsed["i"], int) and 1 <= parsed["i"] <= 3 else 2
-                c = str(parsed["c"])[:80]
-                return {
-                    "agent_id": agent["id"],
-                    "city": agent["city"],
-                    "tenure": agent["tenure"],
-                    "age_bracket": agent["age_bracket"],
-                    "income_bracket": agent["income_bracket"],
-                    "immigration_status": agent["immigration_status"],
-                    "family_size": agent["family_size"],
-                    "employment_type": agent["employment_type"],
-                    "population_weight": agent["population_weight"],
-                    "s": s,
-                    "i": i_val,
-                    "c": c,
-                }
+            response = await client.add_message(
+                thread_id=thread_id,
+                content=prompt,
+                llm_provider=AGENT_PROVIDER,
+                model_name=AGENT_MODEL,
+                stream=False,
+            )
+            raw = response.content.strip()
+            # Strip markdown fences if present
+            clean = raw.replace("```json", "").replace("```", "").strip()
+            parsed = json.loads(clean)
+            assert "s" in parsed and "i" in parsed and "c" in parsed
+            s = parsed["s"] if parsed["s"] in ("positive", "negative", "mixed") else "mixed"
+            i_val = parsed["i"] if isinstance(parsed["i"], int) and 1 <= parsed["i"] <= 3 else 2
+            c = str(parsed["c"])[:80]
+            return {
+                "agent_id": agent["id"],
+                "city": agent["city"],
+                "tenure": agent["tenure"],
+                "age_bracket": agent["age_bracket"],
+                "income_bracket": agent["income_bracket"],
+                "immigration_status": agent["immigration_status"],
+                "family_size": agent["family_size"],
+                "employment_type": agent["employment_type"],
+                "population_weight": agent["population_weight"],
+                "s": s,
+                "i": i_val,
+                "c": c,
+            }
         except Exception:
             if attempt == 0:
                 continue
@@ -94,23 +114,31 @@ Where i means: 1=low impact, 2=medium impact, 3=high impact"""
 
 # --- Batch runner ---
 
-async def warm_model(session):
-    """Fire one dummy call to load model into memory before real run"""
-    await call_agent(session, AGENTS[0], "warmup", "none")
-    print("Model warmed.", flush=True)
+async def create_thread(client, asst_id):
+    thread = await client.create_thread(asst_id)
+    return thread.thread_id
 
 
-async def run_all_agents(agents, policy_text, round_context="none"):
+async def run_all_agents(client, asst_id, agents, policy_text, round_context="none"):
     batch_size = 4
     results = []
-    async with aiohttp.ClientSession() as session:
-        for i in range(0, len(agents), batch_size):
-            batch = agents[i : i + batch_size]
-            batch_results = await asyncio.gather(
-                *[call_agent(session, a, policy_text, round_context) for a in batch],
-                return_exceptions=True,
-            )
-            results += [r for r in batch_results if not isinstance(r, Exception)]
+
+    # Create all threads in parallel
+    threads = await asyncio.gather(
+        *[create_thread(client, asst_id) for _ in agents]
+    )
+
+    for i in range(0, len(agents), batch_size):
+        batch_agents = agents[i : i + batch_size]
+        batch_threads = threads[i : i + batch_size]
+        batch_results = await asyncio.gather(
+            *[
+                call_agent(client, tid, a, policy_text, round_context)
+                for tid, a in zip(batch_threads, batch_agents)
+            ],
+            return_exceptions=True,
+        )
+        results += [r for r in batch_results if not isinstance(r, Exception)]
     return results
 
 
@@ -139,7 +167,7 @@ def build_round2_context(round1_results):
     )
 
 
-# --- Coordinator (Gemini) ---
+# --- Coordinator ---
 
 def build_coordinator_prompt(policy_text, round_results, round_num):
     def group_summary(group_results):
@@ -179,12 +207,18 @@ Return exactly this JSON and nothing else:
 }}"""
 
 
-async def run_coordinator(policy_text, round_results, round_num):
+async def run_coordinator(client, asst_id, policy_text, round_results, round_num):
     prompt = build_coordinator_prompt(policy_text, round_results, round_num)
     try:
-        model = genai.GenerativeModel("gemini-2.5-flash")
-        response = model.generate_content(prompt)
-        raw = response.text.strip()
+        thread = await client.create_thread(asst_id)
+        response = await client.add_message(
+            thread_id=thread.thread_id,
+            content=prompt,
+            llm_provider=COORDINATOR_PROVIDER,
+            model_name=COORDINATOR_MODEL,
+            stream=False,
+        )
+        raw = response.content.strip()
         clean = raw.replace("```json", "").replace("```", "").strip()
         return json.loads(clean)
     except Exception as e:
@@ -200,20 +234,31 @@ async def run_coordinator(policy_text, round_results, round_num):
 # --- Main simulation loop ---
 
 async def run_simulation(policy_text):
+    client = BackboardClient(api_key=BACKBOARD_API_KEY)
+
     log(f"\nPolicySim starting: '{policy_text}'")
-    log(f"Agents: {len(AGENTS)} | Rounds: 2 | Model: {OLLAMA_MODEL}")
+    log(f"Agents: {len(AGENTS)} | Rounds: 2 | Agent model: {AGENT_PROVIDER}/{AGENT_MODEL} | Coordinator: {COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}")
     log(f"Renters: {len(DEMOGRAPHIC_GROUPS['renters'])} | Owners: {len(DEMOGRAPHIC_GROUPS['owners'])}")
     log(f"Rural/remote: {len(DEMOGRAPHIC_GROUPS['rural'])} | Recent immigrants: {len(DEMOGRAPHIC_GROUPS['recent_immigrants'])}\n")
     start = time.time()
 
-    # WARM MODEL
-    async with aiohttp.ClientSession() as session:
-        await warm_model(session)
+    # Create assistant
+    assistant = await client.create_assistant(
+        name="Civica Policy Classifier",
+        system_prompt="You are a JSON classifier that evaluates policy impact on Canadian demographics. Always return valid JSON only, no markdown or explanation.",
+    )
+    asst_id = assistant.assistant_id
+    log(f"Created Backboard assistant: {asst_id}")
+
+    # Classify policy
+    log("Classifying policy...")
+    policy_classification = await classify_policy(client, asst_id, policy_text)
+    log(f"Policy classified: {policy_classification['type']} | affects: {policy_classification['primary_affected']}")
 
     # ROUND 1
     log("Round 1: Cold reaction...")
     r1_start = time.time()
-    round1_results = await run_all_agents(AGENTS, policy_text, round_context="none")
+    round1_results = await run_all_agents(client, asst_id, AGENTS, policy_text, round_context="none")
     r1_time = time.time() - r1_start
     r1_neg = sum(1 for r in round1_results if r["s"] == "negative")
     r1_pos = sum(1 for r in round1_results if r["s"] == "positive")
@@ -237,8 +282,8 @@ async def run_simulation(policy_text):
     log("Round 2 + Round 1 coordinator running in parallel...")
     r2_start = time.time()
     round2_active, coordinator_r1 = await asyncio.gather(
-        run_all_agents(active_agents, policy_text, round_context=round2_context),
-        run_coordinator(policy_text, round1_results, 1),
+        run_all_agents(client, asst_id, active_agents, policy_text, round_context=round2_context),
+        run_coordinator(client, asst_id, policy_text, round1_results, 1),
     )
     round2_results = round2_active + inactive_results
     r2_time = time.time() - r2_start
@@ -251,7 +296,7 @@ async def run_simulation(policy_text):
     # COORDINATOR ROUND 2
     log("\nCoordinator synthesizing Round 2...")
     c2_start = time.time()
-    coordinator_r2 = await run_coordinator(policy_text, round2_results, 2)
+    coordinator_r2 = await run_coordinator(client, asst_id, policy_text, round2_results, 2)
     log(f"Coordinator R2 complete in {time.time() - c2_start:.1f}s")
 
     total_time = time.time() - start
@@ -262,6 +307,10 @@ async def run_simulation(policy_text):
         "policy": policy_text,
         "total_time_seconds": round(total_time, 2),
         "agents_total": len(AGENTS),
+        "models": {
+            "agent": f"{AGENT_PROVIDER}/{AGENT_MODEL}",
+            "coordinator": f"{COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}",
+        },
         "round_1": {"agents": round1_results, "coordinator": coordinator_r1},
         "round_2": {"agents": round2_results, "coordinator": coordinator_r2},
     }
@@ -284,5 +333,26 @@ async def run_simulation(policy_text):
     log(f"  R2 Coalition:{coordinator_r2['coalition_map']}")
     log(f"  R2 Risk:     {coordinator_r2['risk_flag']}")
     log("=" * 70)
+
+    # Calculate confidence score
+    confidence = calculate_confidence(
+        policy_classification,
+        CITY_PROFILES,
+        round1_results,
+        round2_results
+    )
+    output["confidence"] = confidence
+    output["policy_classification"] = policy_classification
+
+    # Seal for forward validation
+    seal_id = seal_simulation(policy_text, output)
+    output["seal_id"] = seal_id
+
+    # Save updated output with confidence and classification
+    with open("cache/full_simulation.json", "w") as f:
+        json.dump(output, f, indent=2)
+
+    log(f"\nConfidence: {confidence['score']}/10 — {confidence['reason']}")
+    log(f"Seal ID: {seal_id}")
 
     return output

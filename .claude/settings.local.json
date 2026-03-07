@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__backboard-docs__list_pages",
+      "mcp__backboard-docs__get_page",
+      "WebSearch",
+      "Bash(python:*)"
+    ]
+  }
+}

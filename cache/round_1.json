@@ -10,9 +10,9 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.18,
-      "s": "mixed",
+      "s": "positive",
       "i": 2,
-      "c": "no response received"
+      "c": "increased savings for future home purchase"
     },
     {
       "agent_id": 2,
@@ -25,8 +25,8 @@
       "employment_type": "salaried",
       "population_weight": 0.18,
       "s": "positive",
-      "i": 1,
-      "c": "low impact"
+      "i": 2,
+      "c": "increased affordability for future home purchase"
     },
     {
       "agent_id": 3,
@@ -39,8 +39,8 @@
       "employment_type": "salaried",
       "population_weight": 0.18,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "affordable homeownership opportunities increased"
     },
     {
       "agent_id": 4,
@@ -53,8 +53,8 @@
       "employment_type": "self_employed",
       "population_weight": 0.18,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "Encourages homeownership for renters"
     },
     {
       "agent_id": 5,
@@ -67,8 +67,8 @@
       "employment_type": "gig",
       "population_weight": 0.18,
       "s": "positive",
-      "i": 1,
-      "c": "builds affordable housing, prioritizes low-income households, seniors, and Indig"
+      "i": 2,
+      "c": "increased savings for future home purchase"
     },
     {
       "agent_id": 6,
@@ -80,9 +80,9 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.16,
-      "s": "mixed",
+      "s": "negative",
       "i": 2,
-      "c": "max 8 words describing concern or benefit"
+      "c": "increased market competition, higher rents"
     },
     {
       "agent_id": 7,
@@ -96,7 +96,7 @@
       "population_weight": 0.16,
       "s": "positive",
       "i": 2,
-      "c": "maximum 8 words describing concern or benefit"
+      "c": "encourages saving for home purchase"
     },
     {
       "agent_id": 8,
@@ -110,7 +110,7 @@
       "population_weight": 0.16,
       "s": "positive",
       "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "c": "assists in achieving home ownership potential"
     },
     {
       "agent_id": 9,
@@ -122,9 +122,9 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.16,
-      "s": "mixed",
+      "s": "positive",
       "i": 2,
-      "c": "Affordable housing, social programs, community involvement"
+      "c": "increased home affordability for couples"
     },
     {
       "agent_id": 10,
@@ -138,7 +138,7 @@
       "population_weight": 0.16,
       "s": "positive",
       "i": 2,
-      "c": "low impact"
+      "c": "Increased affordability for housing options"
     },
     {
       "agent_id": 11,
@@ -151,8 +151,8 @@
       "employment_type": "salaried",
       "population_weight": 0.13,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "increased housing affordability for buyers"
     },
     {
       "agent_id": 12,
@@ -164,9 +164,9 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.13,
-      "s": "mixed",
-      "i": 3,
-      "c": "high impact"
+      "s": "positive",
+      "i": 2,
+      "c": "helps reduce financial burden on family"
     },
     {
       "agent_id": 13,
@@ -179,8 +179,8 @@
       "employment_type": "salaried",
       "population_weight": 0.13,
       "s": "positive",
-      "i": 1,
-      "c": "Build Canada Homes, modern construction methods, low-income, seniors, Indigenous"
+      "i": 2,
+      "c": "increased affordability for home ownership"
     },
     {
       "agent_id": 14,
@@ -194,7 +194,7 @@
       "population_weight": 0.13,
       "s": "positive",
       "i": 1,
-      "c": "The policy aims to provide affordable housing and support for low-income househo"
+      "c": "increased affordability for housing options"
     },
     {
       "agent_id": 15,
@@ -208,7 +208,7 @@
       "population_weight": 0.1,
       "s": "positive",
       "i": 2,
-      "c": "high"
+      "c": "increased savings for home ownership"
     },
     {
       "agent_id": 16,
@@ -220,9 +220,9 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.1,
-      "s": "mixed",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "s": "positive",
+      "i": 2,
+      "c": "Increased affordability for homeownership"
     },
     {
       "agent_id": 17,
@@ -235,8 +235,8 @@
       "employment_type": "self_employed",
       "population_weight": 0.1,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "Increased affordability for first-time buyers"
     },
     {
       "agent_id": 18,
@@ -248,9 +248,9 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.09,
-      "s": "mixed",
-      "i": 3,
-      "c": "None"
+      "s": "positive",
+      "i": 2,
+      "c": "increased savings for future home"
     },
     {
       "agent_id": 19,
@@ -262,9 +262,9 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.09,
-      "s": "mixed",
+      "s": "positive",
       "i": 2,
-      "c": "max 8 words describing concern or benefit"
+      "c": "Makes home ownership more accessible for families"
     },
     {
       "agent_id": 20,
@@ -277,8 +277,8 @@
       "employment_type": "salaried",
       "population_weight": 0.09,
       "s": "positive",
-      "i": 3,
-      "c": "housing"
+      "i": 2,
+      "c": "Increased home affordability for buyers"
     },
     {
       "agent_id": 21,
@@ -291,8 +291,8 @@
       "employment_type": "salaried",
       "population_weight": 0.07,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "Encourages home ownership among families"
     },
     {
       "agent_id": 22,
@@ -304,9 +304,9 @@
       "family_size": "single",
       "employment_type": "salaried",
       "population_weight": 0.07,
-      "s": "mixed",
+      "s": "positive",
       "i": 2,
-      "c": "high impact"
+      "c": "eases path to homeownership"
     },
     {
       "agent_id": 23,
@@ -318,9 +318,9 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.05,
-      "s": "mixed",
-      "i": 2,
-      "c": "high impact"
+      "s": "positive",
+      "i": 3,
+      "c": "eases homeownership for families like mine"
     },
     {
       "agent_id": 24,
@@ -332,9 +332,9 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.05,
-      "s": "positive",
+      "s": "mixed",
       "i": 2,
-      "c": "low"
+      "c": "May benefit savings for future housing"
     },
     {
       "agent_id": 25,
@@ -348,7 +348,7 @@
       "population_weight": 0.04,
       "s": "positive",
       "i": 2,
-      "c": "low"
+      "c": "Assists in home purchasing affordability"
     },
     {
       "agent_id": 26,
@@ -361,8 +361,8 @@
       "employment_type": "gig",
       "population_weight": 0.04,
       "s": "positive",
-      "i": 1,
-      "c": "low impact"
+      "i": 2,
+      "c": "helps increase homeownership opportunities"
     },
     {
       "agent_id": 27,
@@ -374,9 +374,9 @@
       "family_size": "couple",
       "employment_type": "salaried",
       "population_weight": 0.04,
-      "s": "mixed",
+      "s": "positive",
       "i": 2,
-      "c": "low impact"
+      "c": "eases financial burden for home purchase"
     },
     {
       "agent_id": 28,
@@ -388,9 +388,9 @@
       "family_size": "single",
       "employment_type": "student",
       "population_weight": 0.04,
-      "s": "mixed",
-      "i": 1,
-      "c": "none"
+      "s": "positive",
+      "i": 2,
+      "c": "increased affordability for future home ownership"
     },
     {
       "agent_id": 29,
@@ -404,7 +404,7 @@
       "population_weight": 0.03,
       "s": "positive",
       "i": 2,
-      "c": "high impact"
+      "c": "increased affordability for home purchase"
     },
     {
       "agent_id": 30,
@@ -417,8 +417,8 @@
       "employment_type": "salaried",
       "population_weight": 0.03,
       "s": "positive",
-      "i": 1,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "eases transition to homeownership"
     },
     {
       "agent_id": 31,
@@ -430,9 +430,9 @@
       "family_size": "single",
       "employment_type": "retired",
       "population_weight": 0.03,
-      "s": "positive",
+      "s": "negative",
       "i": 1,
-      "c": "minimal impact on policy approval, but supports community development and housin"
+      "c": "not applicable to current homeownership status"
     },
     {
       "agent_id": 32,
@@ -445,8 +445,8 @@
       "employment_type": "salaried",
       "population_weight": 0.03,
       "s": "positive",
-      "i": 1,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "increased homeownership affordability for families"
     },
     {
       "agent_id": 33,
@@ -459,8 +459,8 @@
       "employment_type": "salaried",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 1,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "Encourages home ownership for families"
     },
     {
       "agent_id": 34,
@@ -474,7 +474,7 @@
       "population_weight": 0.02,
       "s": "positive",
       "i": 1,
-      "c": "maximum 8 words"
+      "c": "increased financial stability for future purchase"
     },
     {
       "agent_id": 35,
@@ -488,7 +488,7 @@
       "population_weight": 0.02,
       "s": "positive",
       "i": 2,
-      "c": "max 8 words describing concern or benefit"
+      "c": "increased home affordability for families"
     },
     {
       "agent_id": 36,
@@ -502,7 +502,7 @@
       "population_weight": 0.02,
       "s": "positive",
       "i": 2,
-      "c": "build affordable housing on public lands with modern construction methods"
+      "c": "increased homeownership opportunities for couples"
     },
     {
       "agent_id": 37,
@@ -514,9 +514,9 @@
       "family_size": "couple",
       "employment_type": "retired",
       "population_weight": 0.02,
-      "s": "mixed",
-      "i": 1,
-      "c": "high impact"
+      "s": "positive",
+      "i": 2,
+      "c": "increased financial flexibility for retirement"
     },
     {
       "agent_id": 38,
@@ -530,7 +530,7 @@
       "population_weight": 0.02,
       "s": "positive",
       "i": 2,
-      "c": "Build Canada Homes provides affordable housing on public lands and prioritizes l"
+      "c": "encourages homeownership for young families"
     },
     {
       "agent_id": 39,
@@ -543,8 +543,8 @@
       "employment_type": "salaried",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 3,
-      "c": "high"
+      "i": 2,
+      "c": "increased affordability for homeownership"
     },
     {
       "agent_id": 40,
@@ -557,8 +557,8 @@
       "employment_type": "unemployed",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 1,
-      "c": "low"
+      "i": 2,
+      "c": "eases transition to homeownership"
     },
     {
       "agent_id": 41,
@@ -571,8 +571,8 @@
       "employment_type": "self_employed",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 1,
-      "c": "Build Canada Homes is a federal Crown corporation aiming to provide affordable h"
+      "i": 2,
+      "c": "increased affordability for homeownership"
     },
     {
       "agent_id": 42,
@@ -584,9 +584,9 @@
       "family_size": "large_family",
       "employment_type": "salaried",
       "population_weight": 0.02,
-      "s": "mixed",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "s": "positive",
+      "i": 2,
+      "c": "affordable housing for large families"
     },
     {
       "agent_id": 43,
@@ -599,8 +599,8 @@
       "employment_type": "salaried",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "eases financial burden for home purchase"
     },
     {
       "agent_id": 44,
@@ -613,8 +613,8 @@
       "employment_type": "retired",
       "population_weight": 0.02,
       "s": "positive",
-      "i": 1,
-      "c": "housing for low-income households, seniors, and Indigenous communities"
+      "i": 2,
+      "c": "increased affordability for home ownership"
     },
     {
       "agent_id": 45,
@@ -627,8 +627,8 @@
       "employment_type": "self_employed",
       "population_weight": 0.01,
       "s": "positive",
-      "i": 1,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "increased accessibility for affordable housing"
     },
     {
       "agent_id": 46,
@@ -641,8 +641,8 @@
       "employment_type": "salaried",
       "population_weight": 0.01,
       "s": "positive",
-      "i": 1,
-      "c": "Build Canada Homes policy supports low-income housing projects, benefiting the c"
+      "i": 2,
+      "c": "Increased savings for future home purchase"
     },
     {
       "agent_id": 47,
@@ -655,8 +655,8 @@
       "employment_type": "unemployed",
       "population_weight": 0.01,
       "s": "mixed",
-      "i": 1,
-      "c": "high impact"
+      "i": 2,
+      "c": "Potential housing affordability improvement, but may not help renters"
     },
     {
       "agent_id": 48,
@@ -668,9 +668,9 @@
       "family_size": "single",
       "employment_type": "unemployed",
       "population_weight": 0.01,
-      "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "s": "negative",
+      "i": 2,
+      "c": "increased home ownership competition for renters"
     },
     {
       "agent_id": 49,
@@ -682,9 +682,9 @@
       "family_size": "small_family",
       "employment_type": "salaried",
       "population_weight": 0.01,
-      "s": "mixed",
+      "s": "negative",
       "i": 2,
-      "c": "Canadians' concerns about affordable housing, especially for low-income families"
+      "c": "affordability gaps for renters persist"
     },
     {
       "agent_id": 50,
@@ -697,14 +697,14 @@
       "employment_type": "salaried",
       "population_weight": 0.01,
       "s": "positive",
-      "i": 3,
-      "c": "max 8 words describing concern or benefit"
+      "i": 2,
+      "c": "Increased affordability for homeownership opportunities"
     }
   ],
   "coordinator": {
-    "emergent_finding": "Despite explicitly prioritizing low-income households and seniors, these groups reported some of the lowest average impact scores, while high-income owners perceived the greatest positive impact from the policy.",
-    "coalition_map": "High-income owners largely aligned in their perception of significant positive impact, diverging from low-income individuals, seniors, and younger renters who reported lower average impacts and more mixed sentiments.",
-    "risk_flag": "The primary risk is that the policy may not effectively address the needs of its most prioritized demographics, potentially leading to unmet expectations and erosion of trust among low-income households and seniors.",
+    "emergent_finding": "Recent immigrants overwhelmingly support the policy, seeing the highest average impact score of 2.2.",
+    "coalition_map": "Young and low-income renters align in positive sentiments with high-income groups, diverging only slightly from older adults.",
+    "risk_flag": "The increased competition for homeownership creates affordability issues for existing renters.",
     "sentiment_shift": null
   }
 }
