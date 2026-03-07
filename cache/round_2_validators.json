@@ -1,0 +1,3858 @@
+[
+  {
+    "agent_id": 1,
+    "city": "Toronto",
+    "tenure": "renter",
+    "age_bracket": "18-24",
+    "income_bracket": "very_low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "student",
+    "population_weight": 0.18,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a student with very low income, the increased demand for construction workers could significantly impact job opportunities and lead to higher costs and delays for the infrastructure projects I rely on."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter in Toronto, the high population density and strain on existing infrastructure would directly affect my access to reliable and efficient public services."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With my very low income and high debt, any increase in government spending and debt could negatively impact the availability of social services and programs that I rely on."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a renter with very low income, I am unlikely to be involved in speculative behavior that would drive up housing prices."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at high risk of displacement due to gentrification and the development of higher-income housing in Toronto."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk specifically affects Indigenous communities, which I am not a part of."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a student, the potential for compromised building quality could affect the safety and livability of student housing."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter in Toronto, the strain on the city's infrastructure would directly impact my access to essential services and quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, any increase in property taxes due to gentrification could make my housing even less affordable."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at high risk of displacement due to gentrification and the development of higher-income housing in Toronto."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased difficulty accessing affordable housing due to high competition and limited supply",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 2,
+    "city": "Toronto",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.18,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 25-34 year old with a high income in Toronto, I would be impacted by increased labor shortages in the construction industry, which could lead to delays and higher costs for housing projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Given the high population density and low vacancy rate in Toronto, the rapid home construction could strain the city's existing infrastructure and lead to inefficient service delivery, which would significantly impact my quality of life as a resident."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income earner, I would be indirectly affected by the increased government debt required to expand infrastructure to support the new housing, as it could lead to higher taxes or reduced public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter in Toronto, I am not directly exposed to speculative behavior in the housing market, which would primarily impact homeowners and prospective buyers."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am unlikely to be displaced by gentrification in low-income areas of Toronto, as the new developments would likely target higher-income residents like myself."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous resident of Toronto, I would not be directly impacted by increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income renter, I could be indirectly affected by the potential quality issues in new housing construction, as it could lead to higher rents or reduced housing supply."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of the highly populated city of Toronto, I would be significantly impacted by the strain on the city's infrastructure due to the rapid housing construction, leading to congestion, utility shortfalls, and a lower quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income renter, I could be indirectly affected by the potential increase in property taxes due to rising property values, which could lead to higher rents."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter in Toronto, I am unlikely to be directly displaced by gentrification, as the new housing developments would likely target residents with a similar income level to mine."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Shortage of affordable rental housing options for high-income renters",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 3,
+    "city": "Toronto",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "very_high",
+    "immigration_status": "established_immigrant",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.18,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 35-49 year old salaried worker in Toronto, the rapid construction of 500,000 homes could lead to labor shortages that divert workers from other important infrastructure projects, potentially causing delays and increased costs that would impact my housing and living situation."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Toronto's high population density and insufficient infrastructure to support rapid housing growth could lead to strained services and inefficiencies, directly affecting my quality of life as a resident."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income earner, I may be impacted by increased government debt and higher taxes required to expand infrastructure to support the rapid housing growth, though the severity is mitigated by my financial standing."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am less likely to be directly affected by speculative behavior and housing price volatility, which would primarily impact lower-income renters."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a higher-income homeowner, I am less likely to be displaced by gentrification and new developments targeting higher-income earners in Toronto."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant in Toronto, I am not directly affected by the risk of increased socioeconomic disparities in Indigenous communities, which is a separate issue requiring targeted interventions."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I could be impacted by potential quality issues due to rushed construction projects and contractor shortages, though the severity is mitigated by my established financial position."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of Toronto, the strain on infrastructure due to the rapid housing construction could directly impact my quality of life through congestion, utility shortfalls, and deteriorating services."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "While I am a higher-income homeowner, the potential for increased property taxes due to rising property values could still have a moderate impact on my financial situation."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a higher-income homeowner in Toronto, I am not at risk of being displaced by gentrification and the development of new housing."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 4,
+    "city": "Toronto",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "self_employed",
+    "population_weight": 0.18,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a self-employed individual with a high income, I am not as affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of Toronto, with its high population density, I am likely to be impacted by the strain on existing infrastructure and urban systems due to the rapid home construction."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income self-employed individual, I am not as affected by the potential increase in government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am less likely to be affected by speculative behavior leading to increased housing prices."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am not at risk of displacement due to gentrification and development of higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a resident of Toronto, I am not part of an Indigenous community, and this risk does not apply to my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be impacted by building quality risks due to rapid scaling and contractor shortages, though not as severely as a first-time homebuyer."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of Toronto, with its large population and high housing starts, I am likely to be affected by the strain on infrastructure due to the surge in housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am less likely to be impacted by increased property taxes due to rising property values."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am not at risk of displacement due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Potential for increased rental costs and reduced rental affordability for non-homeowners.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 5,
+    "city": "Toronto",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "recent_immigrant",
+    "family_size": "small_family",
+    "employment_type": "gig",
+    "population_weight": 0.18,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a gig worker in the 25-34 age group, I may be impacted by labor shortages in the construction industry, which could lead to delays and increased costs for infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Toronto, the rapid home construction could outpace infrastructure expansion, leading to inefficiencies and congestion in the transit, road networks, and utilities that I rely on."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, I may be impacted by the increased government debt from public investment in infrastructure expansions, which could lead to higher taxes or reduced public services in the future."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being priced out of the market due to speculative behavior leading to increased housing prices, reducing my affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced from my current neighborhood due to gentrification and the construction of higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me, as I am not part of an Indigenous community."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a recent immigrant, I may be affected by the potential compromises in building quality due to rushed construction projects and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Toronto, I will be affected by the increased strain on the city's infrastructure due to the rapid housing construction, which could lead to congestion, utility shortfalls, and a deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced due to increased property taxes as a result of the new housing development and rising property values."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced due to gentrification caused by the increased housing development."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Lack of affordable housing options for small families",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 6,
+    "city": "Montreal",
+    "tenure": "renter",
+    "age_bracket": "18-24",
+    "income_bracket": "very_low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "student",
+    "population_weight": 0.16,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a young renter in Montreal with very low income, I may struggle to find construction work due to high demand, which could impact my ability to afford rent."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a high population density in Montreal and a surge in new housing, the existing infrastructure may become strained, potentially leading to inefficient service delivery and congestion, which could affect my daily life as a renter."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, any increase in government debt due to infrastructure expansions could lead to higher taxes or reduced social services, which would significantly impact my financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a very low income, I would be at high risk of being priced out of the housing market if speculative behavior leads to increased prices, making it even more difficult for me to afford rent or own a home in the future."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I'm at a high risk of being displaced due to gentrification and the development of higher-income housing in Montreal, which could make it challenging for me to find affordable housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk specifically relates to Indigenous communities, which does not apply to my demographic profile as a young, single renter in Montreal."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, poor construction quality due to rapid scaling could negatively impact my living conditions, potentially leading to safety issues or higher maintenance costs."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The increased housing construction in Montreal could strain the existing infrastructure, leading to congestion and deteriorating quality of life, which would directly impact me as a renter."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, any increase in property taxes due to rising property values could significantly impact my ability to afford rent, potentially leading to displacement."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I'm at a high risk of being displaced due to gentrification and the development of higher-income housing in Montreal, which could make it challenging for me to find affordable housing."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased difficulty in accessing affordable rental housing due to high demand and limited supply",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 7,
+    "city": "Montreal",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.16,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Montreal, the increased demand for construction workers could lead to labor shortages and delays, potentially impacting the construction of new rental housing and rental prices."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Montreal's high population density and the rapid housing construction could strain the city's existing infrastructure, leading to inefficient service delivery and potential disruptions."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, increased government debt from infrastructure expansions could lead to higher taxes or reduced public services, potentially affecting my household budget."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Montreal's housing market is not characterized by low vacancy rates or speculative behavior, so this risk is unlikely to directly affect me."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income renter in Montreal, I am not at high risk of displacement due to gentrification in my area."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which are not part of my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "While building quality risks could affect the rental housing market, as a renter, I may only be indirectly impacted by this issue."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Montreal, the strain on the city's infrastructure due to rapid housing construction could impact my quality of life and access to public services."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, increased property taxes due to rising property values could negatively affect my housing affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to low-income populations, which does not align with my medium-income renter profile in Montreal."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased strain on rental housing supply due to the policy's focus on homeownership",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 8,
+    "city": "Montreal",
+    "tenure": "renter",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "recent_immigrant",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.16,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Montreal, the construction boom could lead to labor shortages that drive up housing costs and make it harder for me to find affordable rentals."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in the high-density city of Montreal, I would be affected by the strain on existing infrastructure and public services caused by the rapid housing construction."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter with medium income and high debt, I may be impacted by increased government spending on infrastructure that could lead to higher taxes or reduced public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter, I am at risk of being priced out of the market due to speculative behavior driving up housing prices in Montreal, where vacancy rates are already low."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a recent immigrant with medium income, I am vulnerable to displacement and gentrification if new housing development targets higher-income earners in Montreal."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile as a renter in Montreal."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I could be affected by lower-quality construction if the rapid scaling leads to building quality issues in Montreal."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in the high-density city of Montreal, I would be affected by the strain on infrastructure caused by the surge in housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter with medium income, I could be impacted by rising property taxes due to new housing development and gentrification in Montreal."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a recent immigrant with medium income, I am at risk of being displaced due to gentrification and rising rents in Montreal."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for rental housing due to influx of new residents",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 9,
+    "city": "Montreal",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.16,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried worker in Montreal, I am unlikely to be affected by labor shortages in the construction industry, as my employment is not directly tied to the construction sector."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a medium income and living in a high-density city like Montreal, I may be impacted by increased strain on existing infrastructure and urban systems, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am unlikely to be directly affected by increased government debt from public investment in infrastructure expansions, as I am not the primary taxpayer funding these projects."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Montreal, I am not likely to be affected by speculative behavior leading to increased prices, as my income and location are not as vulnerable to such market volatility."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Montreal, I am not likely to be displaced due to gentrification and development favoring higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Montreal, I am not part of an Indigenous community and therefore not affected by increased socioeconomic disparities in those communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Montreal, I may be impacted by building quality risks due to rapid scaling and contractor shortages, as this could affect the overall quality and value of my property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in the high-density city of Montreal, I may be affected by increased strain on infrastructure due to the surge in housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income homeowner, I may be impacted by potential increases in property taxes due to rising property values in my area."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Montreal, I am not likely to be displaced due to gentrification, as my income and tenure status provide some protection against such displacement."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased maintenance costs for aging infrastructure",
+      "category": "infrastructure",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 10,
+    "city": "Montreal",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "retired",
+    "population_weight": 0.16,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired 65+ year old couple in Montreal with low income, I am not affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid home construction in Montreal could strain the existing infrastructure and urban systems, leading to inefficient service delivery that would impact my quality of life as a retiree."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The significant infrastructure investments required to support the rapid home construction in Montreal could increase government debt, which could impact my low-income retirement."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income retiree, I am not likely to engage in speculative behavior or be impacted by increased housing prices."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income retiree who owns my home in Montreal, I am not at risk of displacement due to gentrification."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as a retiree living in Montreal, as it is specifically focused on Indigenous communities in Northern Ontario."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a retiree, I would be concerned about the potential for compromised building quality due to rushed construction projects and contractor shortages in Montreal."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid housing construction in Montreal could strain the existing infrastructure, leading to congestion, utility shortfalls, and a deteriorating quality of life for me as a retiree."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income retiree who owns my home in Montreal, I am not at risk of displacement or affordability issues due to increased property taxes."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income retiree who owns my home in Montreal, I am not at risk of displacement due to gentrification."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 11,
+    "city": "Vancouver",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.13,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 25-34 year old renter in Vancouver with a high income, I may be affected by labor shortages in the construction industry which could lead to increased costs and delays for new housing development."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With Vancouver's high population density and the rapid construction of 500,000 new homes, the existing infrastructure and urban systems may face increased strain, leading to inefficient service delivery that could impact my household."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am not directly impacted by government debt from public infrastructure investments, as I do not directly contribute to or benefit from this type of spending."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am not as susceptible to housing price volatility or reduced affordability from speculative behavior in the market."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am less likely to be displaced by gentrification and development targeting higher-income housing in Vancouver."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile as a high-income renter in Vancouver."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income renter, I may be impacted by building quality risks due to rapid scaling and contractor shortages, which could affect the quality and safety of new housing developments."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid housing construction in Vancouver could strain the city's existing infrastructure, leading to congestion, utility shortfalls, and a deteriorating quality of life, which could impact my household."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am less likely to be directly affected by increased property taxes due to rising property values from new housing development."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter, I am not at risk of displacement due to gentrification in Vancouver."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased cost of rent due to high demand for housing",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 12,
+    "city": "Vancouver",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "very_high",
+    "immigration_status": "established_immigrant",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.13,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 35-49 year old salaried worker in Vancouver with a very high income, I may be impacted by labor shortages in the construction industry due to the rapid housing construction, leading to increased costs and delays for other infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Given Vancouver's high population density and my established immigrant status, the rapid housing construction is likely to strain the existing infrastructure and urban systems, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income individual with a small family, I may be impacted by the increased government debt from public investment in infrastructure expansions, as this could lead to higher taxes or reduced public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a very high income and established immigrant status, I may be affected by speculative behavior in the housing market, leading to increased prices and reduced affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income individual in Vancouver, I am less likely to be directly impacted by increased gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant in Vancouver, I am not directly affected by the increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner with a high income, I may be impacted by potential building quality risks due to the rapid scaling and contractor shortage, as it could affect the value of my property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Given Vancouver's high population density, the increased housing construction could worsen the strain on the city's infrastructure, affecting my quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner with high debt, I may be impacted by increased property taxes due to rising property values, potentially affecting my overall financial situation."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income individual in Vancouver, I am less likely to be directly impacted by the displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 13,
+    "city": "Vancouver",
+    "tenure": "renter",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "salaried",
+    "population_weight": 0.13,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 50-64 year old renter in Vancouver with a medium income, I am not directly impacted by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Vancouver, which has a high population density and ongoing infrastructure challenges, the rapid increase in housing construction could strain existing infrastructure and lead to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I could be indirectly impacted by increased government debt from infrastructure expansions, as this could lead to higher taxes or reduced public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a renter, I am not directly affected by speculative behavior in the housing market."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in a medium-income demographic, I could be at risk of displacement due to gentrification and development targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a renter, I am not directly affected by building quality risks during rapid construction."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in the highly populated city of Vancouver, I could be impacted by the strain on infrastructure from increased housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I could be indirectly affected by increased property taxes due to rising property values from new housing development."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I could be at risk of displacement due to gentrification from increased housing development."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased demand for rental housing leading to higher rents",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 14,
+    "city": "Vancouver",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "low",
+    "immigration_status": "established_immigrant",
+    "family_size": "couple",
+    "employment_type": "retired",
+    "population_weight": 0.13,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, low-income couple in Vancouver, I am not directly affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Vancouver, I may experience increased strain on existing infrastructure and urban systems due to the rapid home construction."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income retired couple, I may be impacted by increased government debt and potential reductions in public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income retired couple, I am not likely to be engaged in speculative behavior in the housing market."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income retired couple in Vancouver, I am at risk of displacement due to increased gentrification and development targeting higher-income residents."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired established immigrant in Vancouver, I am not directly affected by the socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple, I am not directly affected by building quality risks due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Vancouver, I may experience increased strain on infrastructure due to the rapid housing construction in large metro areas."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income retired couple in Vancouver, I am at risk of displacement and affordability issues due to increased property taxes."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income retired couple in Vancouver, I am at risk of displacement due to gentrification caused by the increased housing developments."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Reduced access to healthcare and social services due to strained public budgets",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 15,
+    "city": "Calgary",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.1,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 25-34 year old renter in Calgary, I may face increased competition for construction jobs, leading to potential delays or higher costs for my housing needs."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With Calgary's growing population and high housing starts, the rapid construction of 500,000 homes could strain the city's existing infrastructure and services."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "As a high-income renter, I may not be directly impacted by increased government debt, but it could affect the overall economic climate in Calgary."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "With Calgary's current rental vacancy rate of 5%, there is less risk of speculative behavior driving up prices in my market."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter in Calgary, I am less likely to be directly displaced by gentrification in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not directly apply to my demographic profile as a non-Indigenous renter in Calgary."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I may be affected by potential quality issues arising from rapid construction scaling, leading to maintenance problems or safety concerns."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Calgary's growing population and high housing starts could strain the city's infrastructure, potentially leading to congestion and deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "While I am less likely to be directly displaced, increased property taxes due to rising property values could indirectly affect my cost of living as a renter in Calgary."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income renter in Calgary, I am not at risk of displacement due to gentrification in low-income areas."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased demand for rental housing leading to higher rents",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 16,
+    "city": "Calgary",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "very_high",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "salaried",
+    "population_weight": 0.1,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried employee in a large family with high income, I am less likely to be affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a large family and living in a city with high population density, I am likely to be affected by the increased strain on existing infrastructure and urban systems."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income earner, I am less likely to be affected by the increased government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "With a very high income, I am less likely to be affected by speculative behavior leading to increased housing prices."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner with a high income, I am less likely to be affected by increased gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which I do not belong to."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner with a high income, I am less likely to be affected by building quality risks due to rapid scaling and contractor shortage."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of a large metropolitan area, I am likely to be affected by the increased strain on infrastructure due to the surge in housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by the increase in property taxes due to rising property values."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner with a high income, I am less likely to be affected by the displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Affordability issues due to rising home prices and increasing interest rates",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 17,
+    "city": "Calgary",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "established_immigrant",
+    "family_size": "couple",
+    "employment_type": "self_employed",
+    "population_weight": 0.1,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a self-employed individual, I may face increased competition for construction workers, leading to higher labor costs and potential delays in my own projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a couple living in Calgary, we may experience increased strain on existing infrastructure and urban systems, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "As an established immigrant with a medium income, I may be less directly impacted by increased government debt from infrastructure expansions, as long as the costs are managed responsibly."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Calgary, I am less likely to be affected by speculative behavior in certain markets, as my city data shows a relatively balanced housing supply and demand."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant with a medium income and a couple living in Calgary, I am less likely to be directly affected by gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant living in Calgary, I am not part of an Indigenous community, and this risk does not directly apply to my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a self-employed individual, I may be impacted by potential building quality issues due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a couple living in Calgary, we may experience increased infrastructure strain due to the rapid housing construction in large metro areas."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner with a medium income, I am less likely to be directly affected by increased property taxes leading to displacement and affordability issues."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant with a medium income, I am less likely to be directly affected by the displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 18,
+    "city": "Edmonton",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "medium",
+    "immigration_status": "recent_immigrant",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.09,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a recent immigrant in Edmonton, I may face challenges finding construction work due to labor shortages, which could impact my employment and income."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Edmonton, the strain on existing infrastructure and urban systems due to rapid housing construction could lead to inefficient service delivery and impact my quality of life."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, the increased government debt from public investment in infrastructure expansions could lead to higher taxes or reduced public services, affecting my financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a recent immigrant with medium debt, I may be vulnerable to the effects of speculative behavior and increased housing prices, reducing my affordability and ability to find suitable housing."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a medium-income renter, I could be at risk of displacement due to gentrification and the construction of higher-income housing in Edmonton."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as I am not part of an Indigenous community."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, any building quality issues due to rapid scaling could impact the quality and safety of my living accommodations."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Edmonton, the strain on the city's infrastructure due to increased housing construction could lead to congestion, utility shortfalls, and a deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a medium-income renter, I could be affected by increased property taxes due to rising property values, further reducing my housing affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a medium-income renter, I could be at risk of displacement due to gentrification and the construction of higher-income housing in Edmonton."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 19,
+    "city": "Edmonton",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "salaried",
+    "population_weight": 0.09,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income, salaried employee in Edmonton, I am not likely to be affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a large family and medium debt, I may be affected by the strain on existing infrastructure and urban systems in Edmonton, potentially leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income earner, I am not likely to be directly affected by increased government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "With my high income and ownership status, I am not likely to be affected by speculative behavior leading to increased prices in the Edmonton housing market."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Edmonton, I am not likely to be affected by increased gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous person living in Edmonton, I am not likely to be affected by increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by building quality risks due to rapid scaling and contractor shortages in the Edmonton housing market."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a large family, I may be affected by the increased strain on infrastructure in Edmonton due to the rapid housing construction."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am not likely to be affected by displacement and affordability issues due to higher property taxes in Edmonton."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Edmonton, I am not likely to be affected by the displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased housing costs for renters in Edmonton due to the policy's impact on the local housing market.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 20,
+    "city": "Edmonton",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.09,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 50-64 year old salaried worker in Edmonton with a medium income, I am not directly affected by labor shortages in the construction industry since my employment is not tied to that sector."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid home construction in Edmonton could strain existing infrastructure and urban systems, leading to inefficient service delivery, which could impact my daily life as a resident."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income salaried worker, I am not directly responsible for government debt or infrastructure funding, so this risk does not directly affect me."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Edmonton with a medium income, I am not directly affected by speculative behavior in other housing markets like PEI or Sudbury."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Edmonton with a medium income, I am not at risk of displacement or gentrification in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried worker born in Edmonton, I am not directly affected by socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Edmonton, the risk of rushed construction and compromised building quality due to contractor shortages could impact the value and safety of my home."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The increased housing construction in Edmonton could worsen infrastructure strain, leading to congestion, utility shortfalls, and a deteriorating quality of life for me as a resident."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Edmonton, the potential for increased property values and taxes due to new housing development could impact my cost of living and ability to remain in my home."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Edmonton with a medium income, I am not at risk of displacement due to gentrification in low-income areas."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Rising mortgage rates and interest costs affecting affordability for new homebuyers",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 21,
+    "city": "Ottawa",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.07,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As an Ottawa resident with a high income and a small family, I may face increased labor competition for construction jobs, potentially leading to higher costs and delays in my own home projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With Ottawa's growing population and housing starts, the rapid construction of 500,000 homes nationwide may strain the city's existing infrastructure, leading to inefficient service delivery that affects my daily life."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income, salaried individual, I may be affected by increased government debt and public spending on infrastructure expansions, which could impact my tax burden and the overall fiscal environment."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Ottawa, I am less likely to be affected by speculative behavior in other housing markets, as my own property values are not directly tied to those locations."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a high-income area, I am not at risk of displacement due to gentrification and redevelopment targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a Canadian born and residing in Ottawa, I am not a member of an Indigenous community and therefore not directly affected by the risk of increased socioeconomic disparities in those regions."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by building quality risks due to rapid scaling and contractor shortages, potentially leading to issues with my own property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Ottawa, I may be affected by infrastructure strain due to the increased housing construction in large metro areas like my city."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by increased property taxes due to rising property values, which could impact my overall cost of living."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Ottawa, I am not at risk of displacement due to gentrification, as my demographic profile is not targeted by such developments."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased demand for rental housing leading to higher rents for individuals in the target demographic.",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 22,
+    "city": "Ottawa",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "salaried",
+    "population_weight": 0.07,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Ottawa with a medium income, I may face increased rental costs and limited housing options due to labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Ottawa's existing infrastructure may face strain due to the rapid influx of new residents, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker, I may face increased taxes or reduced public services if the government takes on significant debt to expand infrastructure in Ottawa."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I may be affected by increased housing prices due to speculative behavior, reducing my ability to afford housing in Ottawa."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I may be at risk of displacement due to increased development targeting higher-income residents in Ottawa."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile as a renter in Ottawa."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "As a renter, I may be impacted by potential quality issues in new housing developments, but this is a minor concern for my situation."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Ottawa's infrastructure may face strain due to the rapid influx of new residents, affecting my quality of life as a renter."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter with medium income and high debt, I may be affected by increased property taxes due to rising property values in Ottawa."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I may be at risk of displacement due to gentrification and increased housing costs in Ottawa."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 23,
+    "city": "Winnipeg",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "salaried",
+    "population_weight": 0.05,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried employee in Winnipeg, the rapid housing construction could drive up construction costs and labor shortages, potentially impacting my community."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a large family and medium income, I may be affected by the strain on Winnipeg's infrastructure and services due to the rapid housing expansion."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am not directly affected by the government's debt from infrastructure investments."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "My medium income and existing homeownership status make me less vulnerable to speculative price increases in the Winnipeg market."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am not at risk of displacement due to gentrification in Winnipeg."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried, medium-income resident of Winnipeg, I am not part of an Indigenous community, and this risk does not directly apply to me."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by potential quality issues due to rapid construction scaling in Winnipeg."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a large family and medium income, I may be impacted by the strain on Winnipeg's infrastructure as a result of the housing construction surge."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am less vulnerable to the effects of increased property taxes due to development in Winnipeg."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Winnipeg, I am not at risk of displacement due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "The rapid housing construction in Winnipeg may lead to a temporary shortage of rental housing, increasing rents for those seeking to rent.",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 24,
+    "city": "Winnipeg",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "refugee",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.05,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter in Winnipeg, I may face increased competition for construction jobs, potentially diverting labor from other important infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Given Winnipeg's population growth and my status as a renter, the rapid home construction may strain the existing infrastructure and urban systems, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, I may be impacted by increased government debt from public investment in infrastructure expansions without proportional revenue increases."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Winnipeg, I am vulnerable to speculative behavior leading to increased housing prices, which could reduce my housing affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced due to gentrification and the development of higher-income housing in Winnipeg."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities in Northern Ontario, which does not apply to my demographic profile as a 25-34 renter in Winnipeg."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Winnipeg, I may be affected by potential building quality issues due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Winnipeg, the increased housing construction in large metro areas like Toronto may worsen infrastructure strain and negatively impact my quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter in Winnipeg, I may be affected by displacement and affordability issues due to new housing development potentially leading to higher property taxes."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Nunavut, which does not apply to my demographic profile as a 25-34 renter in Winnipeg."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for affordable rental housing due to influx of new residents",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 25,
+    "city": "Hamilton",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.04,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried employee in Hamilton, I am less likely to be affected by labor shortages in the construction industry, as I am not directly involved in construction work."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income homeowner in Hamilton, the increased strain on existing infrastructure and urban systems could lead to inefficient service delivery, which could significantly impact my daily life."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am less likely to be directly affected by increased government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Hamilton, I am less likely to be affected by speculative behavior leading to increased prices in certain markets."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Hamilton, I am less likely to be displaced due to gentrification and increased development targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous Canadian living in Hamilton, I am not directly affected by the risk of increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "As a homeowner in Hamilton, the risk of building quality issues due to rapid scaling and contractor shortage could have a minor impact on the quality of new housing in my area."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Hamilton, the increased housing construction in large metro areas could worsen infrastructure strain and lead to congestion, utility shortfalls, and deteriorating quality of life in my city."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Hamilton, I am less likely to be affected by displacement and affordability issues due to increased property taxes from new housing development."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in Hamilton, I am less likely to be displaced due to gentrification and increased housing development."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased demand for rental housing leading to higher rents",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 26,
+    "city": "Hamilton",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "gig",
+    "population_weight": 0.04,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a gig worker in Hamilton with low income, I would be affected by labor shortages and increased construction costs that could impact other infrastructure projects and my employment prospects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With Hamilton's high population density and low vacancy rates, the rapid home construction could strain the existing infrastructure and services, leading to inefficiencies that would negatively impact my ability to access public transit and utilities."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be affected by increased government debt and potential cuts to social services or infrastructure upgrades that could impact my access to affordable housing and public amenities."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Speculative behavior in the housing market could lead to increased rents in Hamilton, further reducing the affordability of housing for low-income renters like myself."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Hamilton, I would be at risk of displacement due to gentrification and the construction of higher-income housing that may not be accessible to me."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which I am not a part of as a renter in Hamilton."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter, I may be impacted by potential issues with building quality due to rushed construction, though the severity may be lower than for homeowners."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter in Hamilton, I would be affected by the strain on infrastructure caused by the rapid housing construction, leading to reduced quality of life and access to public services."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be at risk of displacement and affordability issues due to rising property taxes and gentrification in Hamilton."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Hamilton, I would be at risk of displacement due to gentrification and the construction of higher-income housing that may not be accessible to me."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 27,
+    "city": "Kitchener-Waterloo",
+    "tenure": "owner",
+    "age_bracket": "25-34",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.04,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker in the Kitchener-Waterloo area, the increased labor demand for construction workers could lead to hiring challenges and potential delays for infrastructure projects in my local area."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a high population growth rate of 3.78% and a relatively high population of 622,497 in Kitchener-Waterloo, the rapid home construction could strain existing infrastructure and lead to inefficient service delivery, directly impacting my quality of life."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a high-income couple with high debt, the increased government spending on infrastructure expansions could lead to higher taxes, which may further impact my personal financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Given the relatively high vacancy rate of 4.2% in Kitchener-Waterloo, the risk of speculative behavior and increased housing prices is lower in my local area compared to the examples provided."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income couple, I am less likely to be directly impacted by gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a resident of Kitchener-Waterloo, this risk specific to Indigenous communities in Northern Ontario does not directly apply to my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid scaling of housing construction could potentially impact the quality of new homes, which could be a concern as a homeowner in Kitchener-Waterloo."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of Kitchener-Waterloo, the increased housing construction in larger metro areas like Toronto could worsen the infrastructure strain in my local region, leading to deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, the potential increase in property taxes due to rising property values could impact my overall financial situation."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income couple in Kitchener-Waterloo, I am less likely to be directly impacted by the displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased housing demand may lead to higher rental costs, negatively impacting affordability for young professionals like myself.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 28,
+    "city": "Kitchener-Waterloo",
+    "tenure": "renter",
+    "age_bracket": "18-24",
+    "income_bracket": "very_low",
+    "immigration_status": "recent_immigrant",
+    "family_size": "single",
+    "employment_type": "student",
+    "population_weight": 0.04,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a student with very low income, I may be affected by labor shortages in the construction industry, which could lead to increased costs and delays for housing projects I depend on."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Kitchener-Waterloo, I may face increased strain on existing infrastructure and urban systems due to the rapid home construction, potentially leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a recent immigrant with high debt, I may be affected by increased government debt from public investment in infrastructure expansions without proportional revenue increases, which could impact the services and support I rely on."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter with very low income, I am particularly vulnerable to speculative behavior leading to increased housing prices in the Kitchener-Waterloo area, potentially making affordable housing even more inaccessible."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a single, low-income renter, I am at risk of displacement due to gentrification and the development of higher-income housing in the Kitchener-Waterloo area."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile as a recent immigrant in Kitchener-Waterloo."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a student with limited resources, I may be affected by building quality risks due to rapid scaling and contractor shortages, which could impact the quality and safety of the housing I can access."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Kitchener-Waterloo, I may be affected by the increased housing construction in large metro areas, which could worsen infrastructure strain and negatively impact my quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am particularly vulnerable to displacement and affordability issues due to increased property taxes resulting from new housing developments in Kitchener-Waterloo."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of displacement due to gentrification caused by increased housing developments in the Kitchener-Waterloo area."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased difficulty in accessing affordable housing options due to the policy's focus on new construction rather than preserving and expanding existing affordable housing units.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 29,
+    "city": "Halifax",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "retired",
+    "population_weight": 0.03,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, low-income couple in Halifax, I am not directly affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple, I am not directly impacted by increased strain on existing infrastructure and urban systems in Halifax."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income, retired couple, I am not directly responsible for government debt or infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income, retired couple, I am not directly involved in speculative real estate behavior in Halifax."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, low-income couple in Halifax, I am not at risk of displacement due to gentrification."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous, retired couple in Halifax, I am not directly affected by socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple, I am not directly impacted by building quality risks due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, low-income couple in Halifax, I am not directly affected by infrastructure strain in large metro areas."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income, retired couple in Halifax, increased property taxes due to new housing development could significantly impact my affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, low-income couple in Halifax, I am not at risk of displacement due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased cost of living due to higher utility rates",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 30,
+    "city": "Halifax",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "salaried",
+    "population_weight": 0.03,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 25-34 renter in Halifax with medium income, I am not directly affected by labor shortages in the construction industry in other cities like Ottawa."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid housing construction in Canada may strain the existing infrastructure in Halifax, leading to inefficient service delivery, as the city has a relatively high population density and growth rate."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter with medium income and high debt, I may be affected by increased government debt and potential tax hikes to fund infrastructure expansions in Halifax, which could reduce my affordability."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "The speculation risk is more relevant in cities with low vacancy rates, such as PEI and Sudbury, rather than Halifax, which has a 2.5% vacancy rate."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I may be at risk of displacement due to gentrification and higher-income housing developments in Halifax, which could reduce the availability of affordable rental units."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities in Northern Ontario, which is not my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is more relevant for cities with a high volume of housing starts, such as Toronto, Vancouver, and Montreal, rather than Halifax."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a renter in Halifax, the increased housing construction in large metro areas may worsen infrastructure strain, leading to congestion and deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I may be affected by increased property taxes due to rising property values in Halifax, potentially reducing my affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income renter, I may be at risk of displacement due to gentrification and increased housing development in Halifax, which could further marginalize low-income populations."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for rental units due to influx of new residents, leading to higher rents.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 31,
+    "city": "Victoria",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "retired",
+    "population_weight": 0.03,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired, single, 65+ homeowner in Victoria with a medium income and no debt, I am not likely to be impacted by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a retiree relying on local infrastructure and services, the rapid housing construction in Victoria could strain existing infrastructure and lead to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a retired homeowner, increased government debt from infrastructure expansions could impact the quality and availability of public services I rely on."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner, I am less likely to be affected by speculative housing behavior that could impact affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Victoria, I am not likely to be displaced by gentrification and development targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous retiree in Victoria, I am not directly affected by the risk of increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I could be impacted by potential building quality issues due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a retiree relying on local infrastructure in Victoria, the strain on infrastructure from increased housing construction could negatively impact my quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I could be affected by increased property taxes due to rising property values from new housing development."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Victoria, I am not likely to be displaced by gentrification and development targeting higher-income housing."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased cost of living for retirees due to rising property taxes and utility costs",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 32,
+    "city": "Victoria",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.03,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a salaried worker in a high-income industry, the labor shortage in the construction sector could lead to increased costs and delays for infrastructure projects, which could impact my quality of life."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With Victoria's growing population and high population density, the rapid housing construction could strain the existing infrastructure and lead to inefficient service delivery, affecting my commute and access to public services."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income earner, the increased government debt from infrastructure spending is unlikely to have a direct impact on me."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Given my high-income status and small family, I am less susceptible to the effects of speculative behavior and increased housing prices."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Victoria, I am unlikely to be displaced or affected by gentrification in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous person living in Victoria, the impact on Indigenous communities is not directly relevant to my situation."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, the potential for building quality issues due to rapid scaling and contractor shortages could negatively impact the value and condition of my property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Victoria, the increased housing construction in larger metro areas like Toronto could worsen infrastructure strain and impact the quality of life in my city."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner, I am less likely to be affected by increased property taxes due to new housing developments."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income homeowner in Victoria, I am unlikely to be displaced by gentrification in low-income areas."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased housing costs in Victoria due to the national policy",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 33,
+    "city": "Saskatoon",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 35-49 year old medium income homeowner in Saskatoon, the increased labor demand for construction workers could lead to longer wait times and higher costs for home repairs and renovations, which is significant for my situation."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With Saskatoon's population growth of 2.26%, the rapid home construction could strain the city's existing infrastructure like roads and utilities, leading to inefficient service delivery that impacts my daily life."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium income homeowner, I am not directly impacted by increased government debt from infrastructure expansions, as this would not directly affect my personal finances."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "With Saskatoon's relatively high vacancy rate of 3.2%, the risk of speculative behavior and housing price volatility is lower compared to other markets, so this does not directly affect me as a homeowner."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium income homeowner in Saskatoon, I am not at high risk of displacement due to gentrification, as my neighborhood is unlikely to undergo rapid redevelopment targeting higher-income earners."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a Canadian born resident of Saskatoon, I am not directly impacted by socioeconomic disparities in Indigenous communities in other regions."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, the risk of building quality issues due to rushed construction projects and contractor shortages could impact the value and livability of my home, which is significant for my situation."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Saskatoon's population growth of 2.26% means the rapid housing construction could strain the city's infrastructure, leading to congestion and reduced quality of life, which is significant for me as a resident."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium income homeowner, increases in property values and taxes due to new housing development could impact my personal finances, which is significant for my situation."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium income homeowner in Saskatoon, I am not at high risk of displacement due to gentrification, as my neighborhood is unlikely to undergo rapid redevelopment targeting higher-income earners."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased costs of living due to rising rents and home prices",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 34,
+    "city": "Saskatoon",
+    "tenure": "renter",
+    "age_bracket": "18-24",
+    "income_bracket": "very_low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "student",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As an 18-24 renter in Saskatoon with a very low income, I would be highly impacted by labor shortages in the construction industry driving up costs and delays for new housing."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The rapid housing construction could strain Saskatoon's existing infrastructure and urban systems, leading to inefficient service delivery, which would significantly impact my access to essential services as a low-income renter."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income renter, I would not be directly affected by increased government debt from infrastructure expansions, as I do not pay taxes or directly contribute to the fiscal impacts."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Given Saskatoon's relatively low average rent for 1-bedroom ($1,263) and 2-bedroom ($1,553) units, as well as a 3.2% vacancy rate, the risk of speculative behavior and increased prices is lower in my local market compared to other high-cost areas."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be at high risk of displacement due to gentrification and the development of higher-income housing in Saskatoon."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specifically focused on Indigenous communities, which does not apply to my demographic profile as a non-Indigenous renter in Saskatoon."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter, I would be directly impacted by any quality issues or construction defects that arise from the rapid scaling of housing projects, potentially affecting the safety and livability of my rental unit."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Saskatoon's infrastructure would likely be strained by the surge in housing construction, leading to congestion, utility shortfalls, and a deterioration in my quality of life as a renter."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be at high risk of displacement and affordability issues if property taxes increase due to new housing developments in Saskatoon."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The risk of low-income populations being displaced due to gentrification would apply to me as a low-income renter in Saskatoon."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Limited access to affordable housing options as a student with very low income",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 35,
+    "city": "Regina",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "established_immigrant",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker in Regina, the construction labor shortage may lead to delays in infrastructure projects that could impact my commute and cost of living."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Given Regina's relatively low population and housing starts, the rapid addition of 500,000 homes across Canada may strain the local infrastructure and service delivery in my city."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income earner with low debt, I am unlikely to be significantly impacted by increased government debt from infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Regina's rental market has a higher vacancy rate and is less susceptible to speculative behavior compared to the high-demand areas mentioned."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant with a medium income in Regina, I am less likely to be displaced by gentrification and higher-income housing developments."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile as an established immigrant in Regina."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid scaling of housing construction may lead to quality issues, which could impact my home as a homeowner in Regina."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "While Regina has a relatively lower population than the large metro areas mentioned, the influx of new housing may still strain the local infrastructure."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Regina, I am less likely to be impacted by displacement and affordability issues due to rising property taxes."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As an established immigrant with a medium income in Regina, I am less likely to be displaced by gentrification compared to low-income populations in other regions."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased cost of living due to rising housing and rental prices",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 36,
+    "city": "Regina",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "recent_immigrant",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a recent immigrant in Regina, I may face increased competition for construction jobs and could experience delays in other infrastructure projects due to labor shortages."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Regina's existing infrastructure may face increased strain due to the rapid housing construction, potentially leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, I may be affected by increased government debt and potential tax hikes to fund infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "The risk of speculative behavior and price volatility is less likely to affect me as a low-income renter in Regina, which has a higher rental vacancy rate and lower population density compared to the cities mentioned."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a low-income renter in Regina, I am less likely to be directly affected by gentrification and displacement in low-income areas, as the policy does not specifically target high-income housing in my city."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as I am not part of an Indigenous community."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a recent immigrant and low-income renter, I may be affected by the potential for compromised building quality due to rapid construction and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Regina's infrastructure may face strain due to the influx of new housing, potentially leading to congestion and deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, I may be affected by increased property taxes due to rising property values, potentially leading to affordability issues and displacement."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is less likely to affect me as a low-income renter in Regina, as the policy does not specifically target high-income housing development in my city."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for affordable rental units due to influx of new residents.",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 37,
+    "city": "Kelowna",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "retired",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple in Kelowna with a medium income, I am not directly affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Kelowna's infrastructure and urban systems may face increased strain due to the rapid home construction, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple with no debt, I am not directly affected by increased government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The policy may trigger speculative behavior in the Kelowna housing market, leading to increased prices and reduced affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple in Kelowna with a medium income, I am not at risk of being displaced due to gentrification in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as a retired couple in Kelowna, as it specifically concerns socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple in Kelowna, I am not directly affected by building quality risks due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Kelowna's infrastructure may face increased strain due to the surge in housing construction, leading to congestion, utility shortfalls, and deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The increase in property values and taxes due to new housing development in Kelowna may impact my cost of living as a retired couple."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a retired couple in Kelowna with a medium income, I am not at risk of being displaced due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Reduced access to healthcare and social services due to increased population and infrastructure strain.",
+      "category": "infrastructure",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 38,
+    "city": "Kelowna",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "high",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "self_employed",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a self-employed individual in Kelowna, I am not directly affected by labor shortages in the construction industry in other cities."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Kelowna has a relatively high population of 235,473 and is experiencing rapid growth at 2.83%. The rapid construction of 500,000 homes could strain Kelowna's existing infrastructure and lead to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a high-income, self-employed individual, I am not directly affected by increased government debt from public investment in infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a homeowner in Kelowna, I could be impacted by speculative behavior leading to increased housing prices, reducing affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "While I am not in a low-income area, the policy could lead to gentrification and displacement of lower-income residents in Kelowna."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous individual living in Kelowna, I am not directly affected by increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I could be impacted by building quality risks due to rapid scaling and contractor shortages, even in Kelowna."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Kelowna's population of 235,473 and rapid growth at 2.83% means the surge in housing construction could strain the city's infrastructure, leading to congestion and deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Kelowna, I could be affected by increased property taxes due to rising property values, which could impact affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "While I am not in a low-income area, the policy could lead to gentrification and displacement of lower-income residents in Kelowna."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased demand for rental housing due to rising mortgage rates",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 39,
+    "city": "Sudbury",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker in Sudbury, the labor shortage in the construction industry could impact the timeline and cost of new home construction, leading to disruptions in other infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Sudbury's population growth and low vacancy rate could strain existing infrastructure, leading to inefficient service delivery, which would negatively impact my quality of life as a medium-income resident."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income couple with low debt, I am not directly affected by increased government debt from infrastructure expansions."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Sudbury's low vacancy rate and my status as a homeowner make me vulnerable to speculative behavior that could drive up housing prices, negatively impacting my ability to afford my home in the future."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income couple with a salaried position, I am not at risk of displacement due to gentrification in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-Indigenous resident of Sudbury, I am not directly affected by the risk of increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I am concerned about the potential for compromised building quality due to the rapid scaling of construction projects in Sudbury."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Sudbury's population growth and infrastructure constraints could lead to congestion, utility shortfalls, and a deteriorating quality of life, which would impact me as a resident."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I am concerned that the increased development could lead to higher property taxes, which could strain my medium-income household budget."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income couple residing in Sudbury, I am not at risk of displacement due to gentrification in low-income areas."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 40,
+    "city": "Sudbury",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "unemployed",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As an unemployed renter in Sudbury, I may face increased competition for construction jobs, potentially diverting labor from other important infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Sudbury's existing infrastructure and urban systems may face increased strain from the rapid home construction, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The government's investment in infrastructure expansion to support the new homes may increase debt, which could affect me as a low-income renter."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a renter in Sudbury with a low-income and medium debt, I may be severely impacted by speculative behavior that drives up housing prices and reduces affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of displacement due to gentrification and development targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk is specific to Indigenous communities, which does not apply to my demographic profile."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As an unemployed renter, I may be affected by potential building quality issues due to rapid scaling and contractor shortages."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Sudbury's infrastructure may face strain from the increased housing construction, potentially leading to deteriorating quality of life for me as a renter."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced by higher property taxes resulting from new housing developments."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of being displaced by gentrification caused by the increased housing developments."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for affordable rental housing due to high demand for new housing",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 41,
+    "city": "Northern Ontario Rural",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "self_employed",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a self-employed individual in Northern Ontario Rural, I may face increased competition for labor due to the construction demands, which could impact my business and lead to higher costs."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a low-income and living in a rural area, I may be more reliant on existing infrastructure, which could become strained by the rapid housing construction, leading to reduced service quality."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income individual, I may be impacted by increased government debt and potential cuts to public services, which could further strain my financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a low-income and living in a rural area, I may be more vulnerable to the effects of speculative behavior and housing price volatility, which could reduce my ability to afford a home."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income individual, I am at risk of being displaced due to gentrification and the development of higher-income housing in my area."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a rural resident in Northern Ontario, I may be part of an Indigenous community that faces increased socioeconomic disparities if the policy does not specifically address the unique challenges in these areas."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by potential quality issues due to rushed construction, which could impact the value and safety of my property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "Living in a rural area, I may be affected by the strain on infrastructure in larger metropolitan areas, as resources and attention may be diverted away from my community."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income homeowner, I am at risk of being displaced due to increased property taxes resulting from the new housing developments and rising property values."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income individual living in a rural area, I am vulnerable to displacement due to gentrification and the potential development of higher-income housing in my community."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased costs of living due to rising inflation and economic pressures",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 42,
+    "city": "Northern Ontario Rural",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a medium-income salaried worker in Northern Ontario Rural, the rapid housing construction could drive up labor costs and divert workers from other important infrastructure projects, potentially impacting service delivery and costs in my area."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "With a declining population and low housing starts in my rural Northern Ontario area, the rapid influx of new homes could strain the existing infrastructure and lead to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income salaried worker in a rural area, I am unlikely to be directly impacted by increased government debt from infrastructure investments, as my tax burden and cost of living are relatively low."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "With a medium income and large family, I am not as susceptible to speculative behavior leading to increased prices in my rural Northern Ontario area, which has a relatively low cost of living."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural Northern Ontario area, I am not at risk of displacement due to gentrification and development targeting higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Northern Ontario, including indigenous communities, I am concerned that the policy may overlook the unique housing challenges and socioeconomic disparities in these areas."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 1,
+        "reason": "While the rapid scaling of construction projects could impact building quality, as a rural homeowner, I may be less affected than urban residents."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The strain on infrastructure in my rural Northern Ontario area could be exacerbated by the influx of new housing, leading to deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural area, I am less likely to be affected by increased property taxes due to new housing developments."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural Northern Ontario area, I am not at risk of displacement due to gentrification and development targeting higher-income housing."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased costs of living due to rising construction and material prices",
+      "category": "affordability",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 43,
+    "city": "Northern BC Rural",
+    "tenure": "owner",
+    "age_bracket": "35-49",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker in the medium-income range, I may face increased competition for construction jobs in my area, which could lead to delays in infrastructure projects and higher costs."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of a small northern BC town, the rapid housing construction in larger cities could strain my local infrastructure and utility systems, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "While my personal debt level is medium, the need for significant public investment in infrastructure to support the housing expansion could increase government debt, potentially affecting my taxes and access to public services."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner in a small northern town, I am unlikely to be affected by speculative behavior in larger urban markets."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "I am not a low-income resident in an urban area, so I am unlikely to be directly impacted by gentrification and displacement in larger cities."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of a small northern town, I may be indirectly affected by the policy's potential to overlook the needs of Indigenous communities in my region, leading to increased socioeconomic disparities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in a small northern town, I may be impacted by quality issues in the rapid construction of new homes, potentially affecting the value and safety of my own property."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of a small northern town, the influx of new residents and housing in larger metro areas could strain the infrastructure in my local community, leading to congestion, utility shortfalls, and a lower quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner, I may be affected by increased property taxes due to rising property values in my local area, potentially affecting my personal finances."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a medium-income homeowner, I am not at risk of displacement due to gentrification in my small northern town."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased housing costs and reduced affordability in small northern towns due to the policy's focus on large metro areas",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 44,
+    "city": "Northern BC Rural",
+    "tenure": "owner",
+    "age_bracket": "65+",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "retired",
+    "population_weight": 0.02,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "I am a 65+ retired, low-income resident in Northern BC Rural, so I am not affected by labor shortages in the construction industry."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I am likely to be affected by increased strain on existing infrastructure and urban systems due to the rapid home construction in larger cities."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income 65+ resident in Northern BC Rural, I may be impacted by increased government debt from public investment in infrastructure expansions without proportional revenue increases."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I am not affected by speculative behavior leading to increased prices in certain markets."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I am not affected by increased gentrification and displacement in low-income areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 65+ retired, low-income resident in Northern BC Rural, I may be affected by increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I am not directly affected by building quality risks due to rapid scaling and contractor shortage."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I may be indirectly affected by increased housing construction in large metro areas and the resulting strain on infrastructure."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income 65+ retired resident in Northern BC Rural, I may be affected by displacement and affordability issues due to new housing development potentially leading to higher property taxes."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a 65+ retired resident in Northern BC Rural, I am not directly affected by displacement of low-income populations due to gentrification."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased cost of living due to rising inflation and housing prices",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 45,
+    "city": "PEI Rural",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "self_employed",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "My low-income, self-employed status in a rural PEI area means I am less likely to be affected by labor shortages in the construction industry, which is typically focused on urban centers."
+      },
+      {
+        "risk_index": 2,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a resident of a rural PEI area, I am less likely to be impacted by increased strain on existing infrastructure and urban systems, which are more prevalent in highly populated urban centers."
+      },
+      {
+        "risk_index": 3,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "My low-income status and rural location in PEI mean I am less likely to be affected by increased government debt from public investment in infrastructure expansions, as this is more likely to impact high-population urban centers."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in a rural PEI area with low vacancy rates, I could be vulnerable to speculative behavior and increased housing prices, which could negatively impact my affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural PEI area, I am less likely to be affected by increased gentrification and displacement in low-income urban areas."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a non-indigenous resident of rural PEI, I am not directly affected by the risk of increased socioeconomic disparities in Indigenous communities."
+      },
+      {
+        "risk_index": 7,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural PEI area, I am less likely to be impacted by building quality risks due to rapid scaling and contractor shortages, which are more prevalent in high-population urban centers."
+      },
+      {
+        "risk_index": 8,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a resident of a rural PEI area, I am less likely to be affected by increased housing construction in large metro areas and the resulting strain on infrastructure."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in a rural PEI area, I could be vulnerable to increased property taxes due to rising property values, which could impact my affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in a rural PEI area, I am less likely to be affected by the displacement of low-income populations due to gentrification, which is more prevalent in high-cost urban areas."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Reduced access to public services and amenities due to increased demand from new residents",
+      "category": "infrastructure",
+      "severity": 2
+    }
+  },
+  {
+    "agent_id": 46,
+    "city": "PEI Rural",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in PEI Rural, I am highly dependent on the construction industry for employment, so labor shortages could significantly impact my ability to find work."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a small family and limited infrastructure in rural PEI, the rapid construction of 500,000 homes could overwhelm the existing systems, leading to inefficient service delivery and reduced quality of life."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a low-income renter, I am concerned that increased government debt from infrastructure expansions could lead to higher taxes or reduced social services, indirectly impacting my financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a low-vacancy rental market in PEI Rural, the policy could trigger speculative behavior and drive up rents, further reducing my housing affordability."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of displacement due to gentrification and development that targets higher-income housing in rural PEI."
+      },
+      {
+        "risk_index": 6,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as I am not part of an Indigenous community."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid scaling of construction could compromise building quality, which could impact the safety and stability of my rented accommodation."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a rural PEI resident, the policy's focus on large metro areas could divert infrastructure investments away from my community, leading to a deterioration in quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I am at risk of displacement and reduced affordability if property taxes increase due to rising property values in rural PEI."
+      },
+      {
+        "risk_index": 10,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "This risk does not apply to me as I am not located in Nunavut, but rather in rural PEI."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased competition for limited affordable housing units in rural areas",
+      "category": "affordability",
+      "severity": 3
+    }
+  },
+  {
+    "agent_id": 47,
+    "city": "Reserve Northern Ontario",
+    "tenure": "renter",
+    "age_bracket": "35-49",
+    "income_bracket": "very_low",
+    "immigration_status": "born_here",
+    "family_size": "large_family",
+    "employment_type": "unemployed",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As an unemployed individual in Reserve Northern Ontario, I am highly susceptible to labor shortages in the construction industry, which could limit my job prospects and income."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of a small city in Reserve Northern Ontario with a population of 25,000 and a vacancy rate of 0.2%, the rapid home construction is likely to strain the existing infrastructure, leading to inefficient service delivery and potentially lower quality of life."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a very_low income individual, I am concerned that the increased government debt from public investment in infrastructure expansions without proportional revenue increases could lead to higher taxes or reduced social services, further straining my financial situation."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "Given my low-income status and the rental nature of my housing, I am not likely to be affected by speculative behavior in the housing market."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Reserve Northern Ontario, I am at risk of being displaced due to gentrification and the development of higher-income housing in my area."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of an Indigenous community in Reserve Northern Ontario, I am concerned that the policy may overlook my community, leading to worsening socioeconomic disparities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "Given the rapid scaling of the housing construction and the potential contractor shortage, I am concerned about the quality of the new homes, which could impact my living conditions as a renter."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of a smaller city in Reserve Northern Ontario, the increased housing construction in larger metro areas could indirectly strain the infrastructure in my community, leading to deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in an Indigenous community in Reserve Northern Ontario, I am concerned that the increased property values and taxes due to new housing development could further strain my financial situation and increase the risk of displacement."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in an Indigenous community in Reserve Northern Ontario, I am at risk of being displaced due to gentrification and the development of higher-income housing in my area."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 48,
+    "city": "Reserve Northern Ontario",
+    "tenure": "renter",
+    "age_bracket": "18-24",
+    "income_bracket": "very_low",
+    "immigration_status": "born_here",
+    "family_size": "single",
+    "employment_type": "unemployed",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As an unemployed 18-24 year old renter in Reserve Northern Ontario with very low income, I would be highly vulnerable to labor shortages in the construction industry, which could lead to increased costs and delays in affordable housing projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The rapid construction of 500,000 homes is likely to outpace infrastructure expansion in my community, which already has a high population density and low vacancy rates, leading to strain on existing systems and inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be heavily impacted by increased government debt and reduced public spending on infrastructure and services in my area, which already has a high unemployment rate and low median income."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With a very low income and living in an area with high housing prices and low vacancy rates, I would be vulnerable to further increases in housing prices due to speculative behavior triggered by the large-scale construction project."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be at high risk of displacement due to gentrification and the development of higher-income housing in my community, which already has high rents and low vacancy rates."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of a Northern Ontario Reserve, I would be directly impacted by the risk of increased socioeconomic disparities if the policy does not specifically address the unique needs and challenges of my community, which has high unemployment and low rental vacancies."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter, I would be vulnerable to the potential for reduced building quality and construction issues due to the rapid scaling of the housing program, which could compromise the safety and livability of any new affordable housing units in my area."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The rapid increase in housing construction in large urban centers like those near my community could worsen the already strained infrastructure, leading to decreased quality of life and access to essential services."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in a Northern Ontario Reserve with high unemployment, I would be significantly impacted by the potential for increased property taxes due to rising property values, further eroding my ability to afford housing."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in a Northern Ontario Reserve, I would be at high risk of displacement due to gentrification and the development of higher-income housing in my community, which already faces significant affordability challenges."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 49,
+    "city": "Nunavut Remote",
+    "tenure": "renter",
+    "age_bracket": "25-34",
+    "income_bracket": "low",
+    "immigration_status": "born_here",
+    "family_size": "small_family",
+    "employment_type": "salaried",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried worker in Nunavut Remote, I may face increased competition for construction jobs, leading to delays in other infrastructure projects."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The rapid housing construction in my small community of Nunavut Remote, with a population of only 40,000 and low housing starts of 120, is likely to strain the existing infrastructure and utilities, leading to inefficient service delivery."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Nunavut Remote, I will be directly impacted by increased government debt and potential cuts to public services due to the infrastructure expansion required to support the rapid housing construction."
+      },
+      {
+        "risk_index": 4,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "With the low vacancy rate of 0.1% in Nunavut Remote, the influx of new housing supply could trigger speculative behavior, leading to increased housing prices and reduced affordability for low-income renters like myself."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Nunavut Remote, I am at risk of displacement due to gentrification and the development of higher-income housing."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As an Indigenous person living in Nunavut Remote, I am concerned that the national housing focus may overlook my community, which already has high unemployment and low rental vacancies, potentially worsening socioeconomic disparities."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "The rapid scaling of housing construction in Nunavut Remote, which has a small population of 40,000 and low housing starts of 120, could lead to rushed projects and compromised building quality, potentially affecting the safety and livability of my home."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a resident of the small community of Nunavut Remote, I am concerned that the increased housing construction without parallel infrastructure enhancements could lead to congestion, utility shortfalls, and a deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Nunavut Remote, I am at risk of displacement and affordability issues due to the potential increase in property taxes resulting from the new housing developments and rising property values."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 3,
+        "reason": "As a low-income renter in Nunavut Remote, I am at high risk of displacement due to gentrification and the development of housing that is not affordable for my demographic."
+      }
+    ],
+    "missed_risk": null
+  },
+  {
+    "agent_id": 50,
+    "city": "Nunavut Remote",
+    "tenure": "owner",
+    "age_bracket": "50-64",
+    "income_bracket": "medium",
+    "immigration_status": "born_here",
+    "family_size": "couple",
+    "employment_type": "salaried",
+    "population_weight": 0.01,
+    "validations": [
+      {
+        "risk_index": 1,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a salaried couple living in Nunavut Remote, the increased labor demand in the construction industry is unlikely to directly impact my employment."
+      },
+      {
+        "risk_index": 2,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid home construction in my area may strain the existing infrastructure and urban systems, leading to inefficient service delivery, which could impact my quality of life as a resident."
+      },
+      {
+        "risk_index": 3,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a salaried couple with medium income, the increased government debt from public investment in infrastructure expansions without proportional revenue increases could lead to higher taxes or reduced public services, affecting my household."
+      },
+      {
+        "risk_index": 4,
+        "applies": false,
+        "severity_for_me": 0,
+        "reason": "As a homeowner in Nunavut Remote, I am unlikely to be directly impacted by speculative behavior in other housing markets."
+      },
+      {
+        "risk_index": 5,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The policy may lead to gentrification and displacement of low-income residents in Nunavut Remote, which could impact the affordability of housing in my area."
+      },
+      {
+        "risk_index": 6,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a resident of Nunavut Remote, I could be affected by the increased socioeconomic disparities in Indigenous communities if the policy fails to address the unique needs of my region."
+      },
+      {
+        "risk_index": 7,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The rapid scaling of construction projects in my area could lead to building quality issues, which could impact the value and safety of my home."
+      },
+      {
+        "risk_index": 8,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The surge in housing construction in my region may worsen the existing infrastructure strain, leading to congestion, utility shortfalls, and a deteriorating quality of life."
+      },
+      {
+        "risk_index": 9,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "As a homeowner in Nunavut Remote, the potential increase in property taxes due to rising property values could negatively impact my household's affordability."
+      },
+      {
+        "risk_index": 10,
+        "applies": true,
+        "severity_for_me": 2,
+        "reason": "The displacement of low-income populations due to gentrification in Nunavut Remote could indirectly affect my community and social environment."
+      }
+    ],
+    "missed_risk": {
+      "risk": "Increased energy costs due to rapid population growth and infrastructure expansion",
+      "category": "affordability",
+      "severity": 3
+    }
+  }
+]

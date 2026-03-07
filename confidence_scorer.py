@@ -1,8 +1,8 @@
 def calculate_confidence(
     policy_classification: dict,
     city_profiles: dict,
-    round1_results: list,
-    round2_results: list
+    specialist_results: list,
+    validator_results: list
 ) -> dict:
     """
     Calculates simulation confidence score. Zero runtime cost — pure math.
@@ -13,31 +13,30 @@ def calculate_confidence(
     if policy_classification.get("market") == "non_housing":
         score -= 2
 
-    # Deduct for rural/remote heavy policies — sparse data
-    rural_agents = [r for r in round1_results if any(
-        x in r["city"] for x in ["Northern", "Nunavut", "Reserve", "PEI", "Rural"]
-    )]
-    if len(rural_agents) > 8:
+    # Deduct if specialists produced few risks (low signal)
+    total_risks = sum(len(sr.get("risks", [])) for sr in specialist_results)
+    if total_risks < 4:
         score -= 1
 
-    # Deduct for high variance between rounds (risk count shift)
-    r1_risks = sum(1 for r in round1_results if r["category"] != "none")
-    r2_risks = sum(1 for r in round2_results if r["category"] != "none")
-    if abs(r1_risks - r2_risks) > 15:
-        score -= 1
-
-    # Deduct for high no-response rate
-    no_response = [r for r in round1_results if r["risk"] == "no response received"]
+    # Deduct for high no-response rate in validators
+    no_response = [v for v in validator_results if not v.get("validations")]
     if len(no_response) > 5:
         score -= 2
 
-    # Deduct if all agents agree on same category (groupthink signal)
-    r2_cats = {}
-    for r in round2_results:
-        cat = r["category"]
-        r2_cats[cat] = r2_cats.get(cat, 0) + 1
-    if r2_cats and max(r2_cats.values()) > 40:
-        score -= 1
+    # Deduct if validators mostly disagree with specialists (low confirmation rate)
+    total_confirmations = sum(
+        1 for v in validator_results
+        for val in v.get("validations", [])
+        if val.get("applies")
+    )
+    total_validations = sum(
+        len(v.get("validations", []))
+        for v in validator_results
+    )
+    if total_validations > 0:
+        confirmation_rate = total_confirmations / total_validations
+        if confirmation_rate < 0.2:
+            score -= 1
 
     # Build reason string
     reasons = []
@@ -46,7 +45,9 @@ def calculate_confidence(
     if policy_classification.get("geography") == "national":
         reasons.append("national scope matches agent distribution well")
     if len(no_response) == 0:
-        reasons.append("all agents responded successfully")
+        reasons.append("all validators responded successfully")
+    if total_risks >= 8:
+        reasons.append("specialists identified diverse risk angles")
     if score < 7:
         reasons.append("limited data coverage for some demographic groups")
 

@@ -1,0 +1,1122 @@
+{
+  "seal_id": "41ee7ff3",
+  "timestamp": "2026-03-07T22:04:58.032868+00:00",
+  "policy": "Canada builds 500,000 new homes over 3 years",
+  "simulation_output": {
+    "policy": "Canada builds 500,000 new homes over 3 years",
+    "total_time_seconds": 593.24,
+    "specialists_total": 8,
+    "validators_total": 50,
+    "models": {
+      "specialist": "openai/gpt-4o",
+      "validator": "anthropic/claude-3-haiku-20240307",
+      "coordinator": "openai/gpt-4o"
+    },
+    "round_1_specialists": [
+      {
+        "specialist": "labor_economist",
+        "risks": [
+          {
+            "risk": "Increased labor shortages and wage inflation in the construction industry",
+            "mechanism": "The policy requires a substantial increase in construction workforce to build 500,000 homes in 3 years, exacerbating labor shortages, especially in cities like Toronto with an existing high unemployment rate of 8.4% but a significant number of new housing starts (28,421). This increased demand for construction workers can lead to wage inflation as employers compete for a limited pool of skilled labor.",
+            "severity": 3,
+            "category": "employment",
+            "most_exposed": "Construction workers and firms, as demand will lead to increased workload, but companies may face rising labor costs.",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Calgary"
+            ]
+          },
+          {
+            "risk": "Potential housing construction delays due to skills gaps",
+            "mechanism": "Rapid scaling of housing construction projects could expose significant skill gaps in the existing labor force, particularly where current housing starts are already high, such as in Vancouver with 33,542 starts. This could lead to delays and insufficient capacity to meet the construction targets, straining timelines and potentially increasing costs.",
+            "severity": 2,
+            "category": "timeline",
+            "most_exposed": "Developers and communities relying on timely completion of housing projects.",
+            "cities_most_affected": [
+              "Vancouver",
+              "Toronto",
+              "Montreal"
+            ]
+          },
+          {
+            "risk": "Exacerbation of inequities in smaller or under-represented communities",
+            "mechanism": "Rapid construction efforts may overlook smaller or rural areas, such as Sudbury or Indigenous Reserve Northern Ontario, where the vacancy rate is extremely low (1.3% and 0.2%, respectively), and unemployment remains high. This could lead to a neglect in addressing acute housing needs in these communities, exacerbating existing inequalities.",
+            "severity": 2,
+            "category": "equity",
+            "most_exposed": "Residents of smaller cities and Indigenous communities, who might not benefit equitably from large-scale urban development projects.",
+            "cities_most_affected": [
+              "Sudbury",
+              "Indigenous Reserve Northern Ontario",
+              "PEI"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "urban_planner",
+        "risks": [
+          {
+            "risk": "Infrastructure strain due to increased demand",
+            "mechanism": "The policy of building 500,000 homes is likely to stress existing infrastructure such as transit systems, utilities, and road networks. For instance, cities like Toronto and Vancouver have large populations (6,685,621 and 2,842,730 respectively) and relatively low vacancy rates (3.0% and 3.7%). Adding more homes without concurrent infrastructure development could lead to congestion, overused public systems, and insufficient public services.",
+            "severity": 3,
+            "category": "infrastructure",
+            "most_exposed": "Existing residents, especially low-income groups, due to increased congestion and pressure on public services",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Montreal",
+              "Calgary"
+            ]
+          },
+          {
+            "risk": "Exacerbation of regional inequalities",
+            "mechanism": "Concentrating new home developments in high-demand areas could draw resources and workforce away from underdeveloped regions like Indigenous Reserve Northern Ontario with a much lower population (25,000) and low starting activity (80 starts). This focus could worsen regional disparities in economic activity and living standards.",
+            "severity": 2,
+            "category": "equity",
+            "most_exposed": "Residents of remote and less developed areas who may face stagnation and insufficient investment",
+            "cities_most_affected": [
+              "Indigenous Reserve Northern Ontario",
+              "Northern Ontario",
+              "Nunavut"
+            ]
+          },
+          {
+            "risk": "Increased unemployment rates in certain regions",
+            "mechanism": "Mass homebuilding may lead to short-term construction booms, but after the project's completion, there might be a spike in unemployment in areas with an already high rate like Indigenous Reserve Northern Ontario (18.0%). This will occur if there are no sustainable long-term employment opportunities beyond construction.",
+            "severity": 2,
+            "category": "employment",
+            "most_exposed": "Construction workers and local labor markets in regions with limited industrial diversity",
+            "cities_most_affected": [
+              "Indigenous Reserve Northern Ontario",
+              "Nunavut",
+              "PEI"
+            ]
+          },
+          {
+            "risk": "Displacement of low-income populations",
+            "mechanism": "New developments in high-rent, low-vacancy areas, such as Toronto (rent $1,761, vacancy 3.0%), could drive up land values and property taxes, potentially displacing low-income residents who might not be able to afford increased costs.",
+            "severity": 3,
+            "category": "displacement",
+            "most_exposed": "Low-income renters and marginalized communities potentially facing eviction or forced relocations",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Ottawa",
+              "Victoria"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "fiscal_analyst",
+        "risks": [
+          {
+            "risk": "Government debt burden may increase to finance high construction costs.",
+            "mechanism": "Building 500,000 homes will require substantial upfront investment from the government, potentially leading to higher public debt levels. Cities with higher construction costs like Toronto and Vancouver, which have higher rents ($1761 and $1809 respectively), may require more financial support, increasing fiscal pressure.",
+            "severity": 2,
+            "category": "fiscal",
+            "most_exposed": "Future taxpayers who will bear the burden of increased public debt",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver"
+            ]
+          },
+          {
+            "risk": "Rapid urban expansion can lead to misaligned infrastructure and service investment.",
+            "mechanism": "With vacancy rates as low as 0.1% in places like Nunavut, rapid new housing development may outpace municipal capacity to provide infrastructure and public services, exacerbating service delivery issues.",
+            "severity": 3,
+            "category": "infrastructure",
+            "most_exposed": "Residents in rapidly expanding areas who may face diminished public service quality",
+            "cities_most_affected": [
+              "Nunavut",
+              "PEI"
+            ]
+          },
+          {
+            "risk": "Increased construction activity may exacerbate unemployment in non-construction sectors.",
+            "mechanism": "Cities like Edmonton have a relatively high unemployment rate of 7.4%. A construction boom could divert labor from other sectors, potentially increasing unemployment in non-construction sectors due to labor shortages.",
+            "severity": 2,
+            "category": "employment",
+            "most_exposed": "Workers in sectors competing for labor with construction",
+            "cities_most_affected": [
+              "Edmonton",
+              "Calgary"
+            ]
+          },
+          {
+            "risk": "Displacement risks for lower-income residents with inadequate housing support systems.",
+            "mechanism": "Despite an increase in general housing supply, areas with low vacancy rates such as Sudbury (1.3%) may see market pressures that lead to displacement of lower-income residents if housing support measures are not simultaneously strengthened.",
+            "severity": 2,
+            "category": "displacement",
+            "most_exposed": "Lower-income residents who are vulnerable to rising rents",
+            "cities_most_affected": [
+              "Sudbury",
+              "Northern Ontario"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "housing_economist",
+        "risks": [
+          {
+            "risk": "Increased speculative behavior leading to volatile housing prices",
+            "mechanism": "The policy to build 500,000 new homes may attract speculative investors seeking short-term gains, especially in cities like Vancouver and Toronto where rents are highest (e.g., $1809 in Vancouver) and vacancy rates are relatively low (e.g., 3.0% in Toronto). This can lead to erratic price surges as properties are traded frequently before being occupied.",
+            "severity": 2,
+            "category": "affordability",
+            "most_exposed": "First-time homebuyers and low-income families who may be priced out due to speculative price increases",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver"
+            ]
+          },
+          {
+            "risk": "Strain on infrastructure and public services",
+            "mechanism": "The rapid construction of new homes may outpace the development of necessary infrastructure and public services, particularly in smaller cities like Saskatoon and Kelowna. For instance, Saskatoon has a relatively low population (347,536) compared to larger markets, which may struggle with scaling up infrastructure rapidly.",
+            "severity": 2,
+            "category": "infrastructure",
+            "most_exposed": "Current residents in smaller urban areas who may experience reduced access to transport, health, and educational services",
+            "cities_most_affected": [
+              "Saskatoon",
+              "Kelowna"
+            ]
+          },
+          {
+            "risk": "Potential rise in unemployment due to construction labor demand fluctuations",
+            "mechanism": "The policy's rapid increase in housing starts could lead to a sudden influx of construction jobs, followed by steep declines post-construction. Cities like Northern Ontario with already high unemployment rates (7.5%) could become overly dependent on transient construction jobs, leading to potential unemployment spikes when projects conclude.",
+            "severity": 3,
+            "category": "employment",
+            "most_exposed": "Construction workers and related tradespeople who may face job insecurity once projects are completed",
+            "cities_most_affected": [
+              "Northern Ontario",
+              "Northern BC"
+            ]
+          },
+          {
+            "risk": "Exacerbation of regional demographic imbalances",
+            "mechanism": "This policy might disproportionately favor urban centers like Toronto (population 6,685,621) with already high housing starts (28,421), which can prompt further urbanization, leaving rural areas further depopulated and economically unsustainable.",
+            "severity": 2,
+            "category": "geographic",
+            "most_exposed": "Rural communities and Indigenous reserves as they might face population declines and reduced economic viability",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Montreal"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "social_equity_researcher",
+        "risks": [
+          {
+            "risk": "Increased gentrification and displacement of vulnerable communities in major urban areas.",
+            "mechanism": "With a focus on building new homes, the potential influx of developments could lead to higher property values and rents, particularly in cities like Toronto (rent_1br=$1761, vacancy=3.0%) and Vancouver (rent_1br=$1809, vacancy=3.7%). This can result in gentrification, pushing out lower-income residents and worsening displacement in these areas.",
+            "severity": 3,
+            "category": "displacement",
+            "most_exposed": "Low-income households and marginalized communities who are priced out of their neighborhoods.",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver"
+            ]
+          },
+          {
+            "risk": "Exacerbating income inequality due to uneven distribution of new housing between high-income and low-income areas.",
+            "mechanism": "The policy could prioritize developments in wealthier or rapidly growing areas, leading to a concentration of benefits there. For example, in Kelowna (rent_1br=$1596, vacancy=6.3%), the high vacancy rate means new homes may not meet urgent needs, while regions like Nunavut (rent_1br=$2200, vacancy=0.1%) might continue facing severe shortages, reinforcing regional economic disparities.",
+            "severity": 2,
+            "category": "equity",
+            "most_exposed": "Residents in remote or low-population regions where housing development does not match urgent local needs.",
+            "cities_most_affected": [
+              "Nunavut",
+              "Northern Ontario",
+              "Indigenous Reserve Northern Ontario"
+            ]
+          },
+          {
+            "risk": "Overburdened infrastructure and public services in cities with rapid population growth.",
+            "mechanism": "The rapid construction of new homes may strain existing infrastructure, particularly in cities already experiencing low vacancy rates and significant growth, such as Montreal (rent_1br=$1200, vacancy=3.3%) and Halifax (rent_1br=$1550, vacancy=2.5%). Increased population density without adequate infrastructure investments can lead to decreased quality of life and increased living costs.",
+            "severity": 2,
+            "category": "infrastructure",
+            "most_exposed": "Current city residents, especially those relying on public infrastructure and services.",
+            "cities_most_affected": [
+              "Montreal",
+              "Halifax"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "regional_development_analyst",
+        "risks": [
+          {
+            "risk": "Increased urban-rural inequality due to uneven distribution of new housing",
+            "mechanism": "New homes are likely to be concentrated in areas with higher demand and existing infrastructure, like Toronto (668,5621 pop) and Vancouver (2,842,730 pop), due to economics of scale, leaving rural areas underserved. Urban areas with higher development like Vancouver (33,542 starts) will see increased infrastructure, while rural areas may face stagnant growth.",
+            "severity": 2,
+            "category": "geographic",
+            "most_exposed": "Rural and northern communities, as they already face challenges with infrastructure and economic development.",
+            "cities_most_affected": [
+              "Northern Ontario",
+              "Northern BC",
+              "Nunavut"
+            ]
+          },
+          {
+            "risk": "Strain on urban infrastructure leading to longer construction timelines and increased congestion",
+            "mechanism": "The high concentration of new housing starts in cities like Toronto (28,421 starts) and Vancouver (33,542 starts) could overwhelm existing infrastructure, exacerbating congestion and extending construction timelines. This can lead to increased costs and delays in rollout.",
+            "severity": 3,
+            "category": "infrastructure",
+            "most_exposed": "Urban populations and local governments, as they must manage increased infrastructure demand without immediate enhancements.",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Montreal"
+            ]
+          },
+          {
+            "risk": "Gentrification leading to displacement in high-demand urban areas",
+            "mechanism": "The construction of new homes in already high-demand areas such as Toronto (rent_1br $1761) and Vancouver (rent_1br $1809) can drive property values up, leading to gentrification. As higher-income individuals move in, current residents, often lower-income, may be displaced due to rising living costs.",
+            "severity": 2,
+            "category": "displacement",
+            "most_exposed": "Low-income urban residents, who may not afford rising rents and cost of living, risking displacement.",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Ottawa"
+            ]
+          },
+          {
+            "risk": "Risk to Indigenous communities if allocation fails to meet specific local needs",
+            "mechanism": "Indigenous Reserve Northern Ontario shows a vacancy of 0.2% and high unemployment at 18.0%. If housing policy does not adequately address the unique needs of these communities, such as labor support and resource allocation, disparities could widen.",
+            "severity": 3,
+            "category": "equity",
+            "most_exposed": "Indigenous communities, due to historically unmet housing and employment resource needs.",
+            "cities_most_affected": [
+              "Indigenous Reserve Northern Ontario",
+              "Nunavut"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "construction_industry_analyst",
+        "risks": [
+          {
+            "risk": "Contractor unavailability due to increased demand from rapid scaling.",
+            "mechanism": "The policy aims to construct 500,000 homes, significantly raising demand for contractors. In cities like Toronto and Montreal, with high unemployment rates (8.4% and 6.7% respectively) and current starts of 28,421 and 17,594, there may not be enough skilled contractors available, leading to project delays and potential quality compromises.",
+            "severity": 2,
+            "category": "employment",
+            "most_exposed": "Construction workers due to increased pressure and potential job insecurity if projects are poorly managed.",
+            "cities_most_affected": [
+              "Toronto",
+              "Montreal"
+            ]
+          },
+          {
+            "risk": "Material supply chain bottlenecks escalating costs.",
+            "mechanism": "The rapid scaling to build 500,000 homes will strain existing supply chains, potentially increasing material costs and shortages. Cities like Vancouver and Calgary already have high annual starts of 33,542 and 25,627. The sudden increase in construction may lead to delays and cost overruns if supply chains cannot keep pace.",
+            "severity": 3,
+            "category": "infrastructure",
+            "most_exposed": "Construction firms and homebuyers due to increased costs and home prices.",
+            "cities_most_affected": [
+              "Vancouver",
+              "Calgary"
+            ]
+          },
+          {
+            "risk": "Increased regulatory bottlenecks due to surge in permitting applications.",
+            "mechanism": "Building 500,000 homes over 3 years will overload municipal zoning and permitting systems, especially in smaller cities like Regina and Saskatoon with only 921 and 2,291 starts respectively. Administrative delays could slow project timelines significantly.",
+            "severity": 2,
+            "category": "geographic",
+            "most_exposed": "Local governments and developers facing backlogs, potentially delaying project completion and occupancy.",
+            "cities_most_affected": [
+              "Regina",
+              "Saskatoon"
+            ]
+          },
+          {
+            "risk": "Potential quality risks from accelerated construction timelines.",
+            "mechanism": "Rapid scaling may incentivize speed over building quality, risking structural issues. In cities like Halifax and Winnipeg, with relatively low vacancy rates (2.5% and 2.8%), this rush could lead to quality compromises, affecting long-term building safety and durability.",
+            "severity": 3,
+            "category": "affordability",
+            "most_exposed": "Future homeowners and tenants facing potential maintenance costs and safety issues.",
+            "cities_most_affected": [
+              "Halifax",
+              "Winnipeg"
+            ]
+          }
+        ]
+      },
+      {
+        "specialist": "demographic_economist",
+        "risks": [
+          {
+            "risk": "Increased urban congestion and pressure on infrastructure",
+            "mechanism": "Building 500,000 new homes may increase population density, especially in urban areas with high demand like Toronto (population 6,685,621). These areas already have low vacancy rates (Toronto 3.0%) and high renter costs ($1761 for 1BR), stressing existing infrastructure. Increased population without commensurate infrastructure improvements could worsen congestion and reduce quality of life.",
+            "severity": 3,
+            "category": "infrastructure",
+            "most_exposed": "Urban population, including families and commuters, due to increased congestion and overburdened public services.",
+            "cities_most_affected": [
+              "Toronto",
+              "Vancouver",
+              "Montreal"
+            ]
+          },
+          {
+            "risk": "Potential increase in regional inequality",
+            "mechanism": "The construction focus on urban centers could divert resources from rural and less populated areas. Places like Indigenous Reserve Northern Ontario (0.2% vacancy, 18.0% unemployment) may not benefit from housing development, exacerbating existing socioeconomic disparities.",
+            "severity": 2,
+            "category": "equity",
+            "most_exposed": "Rural and Indigenous communities, as they may see less investment and continued high unemployment rates.",
+            "cities_most_affected": [
+              "Indigenous Reserve Northern Ontario",
+              "PEI",
+              "Nunavut"
+            ]
+          },
+          {
+            "risk": "Skewed labor market dynamics and potential unemployment",
+            "mechanism": "Massive construction projects may initially boost construction employment but could lead to oversupply and subsequent layoffs post-construction, affecting areas like Vancouver with current 6.3% unemployment. Post-project, the downturn in construction demand could increase unemployment.",
+            "severity": 2,
+            "category": "employment",
+            "most_exposed": "Construction workers and related industries dependent on continuous construction projects.",
+            "cities_most_affected": [
+              "Vancouver",
+              "Calgary",
+              "Edmonton"
+            ]
+          }
+        ]
+      }
+    ],
+    "round_2_validators": [
+      {
+        "agent_id": 1,
+        "city": "Toronto",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.18,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 2,
+        "city": "Toronto",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.18,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 3,
+        "city": "Toronto",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.18,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 4,
+        "city": "Toronto",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.18,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 5,
+        "city": "Toronto",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "recent_immigrant",
+        "family_size": "small_family",
+        "employment_type": "gig",
+        "population_weight": 0.18,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 6,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.16,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 7,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 8,
+        "city": "Montreal",
+        "tenure": "renter",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "recent_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 9,
+        "city": "Montreal",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.16,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 10,
+        "city": "Montreal",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.16,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 11,
+        "city": "Vancouver",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.13,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 12,
+        "city": "Vancouver",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.13,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 13,
+        "city": "Vancouver",
+        "tenure": "renter",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "salaried",
+        "population_weight": 0.13,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 14,
+        "city": "Vancouver",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "established_immigrant",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.13,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 15,
+        "city": "Calgary",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.1,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 16,
+        "city": "Calgary",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "very_high",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.1,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 17,
+        "city": "Calgary",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "established_immigrant",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.1,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 18,
+        "city": "Edmonton",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "recent_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 19,
+        "city": "Edmonton",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 20,
+        "city": "Edmonton",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.09,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 21,
+        "city": "Ottawa",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.07,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 22,
+        "city": "Ottawa",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "salaried",
+        "population_weight": 0.07,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 23,
+        "city": "Winnipeg",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.05,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 24,
+        "city": "Winnipeg",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "refugee",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.05,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 25,
+        "city": "Hamilton",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.04,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 26,
+        "city": "Hamilton",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "gig",
+        "population_weight": 0.04,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 27,
+        "city": "Kitchener-Waterloo",
+        "tenure": "owner",
+        "age_bracket": "25-34",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.04,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 28,
+        "city": "Kitchener-Waterloo",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "recent_immigrant",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.04,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 29,
+        "city": "Halifax",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.03,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 30,
+        "city": "Halifax",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "salaried",
+        "population_weight": 0.03,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 31,
+        "city": "Victoria",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "retired",
+        "population_weight": 0.03,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 32,
+        "city": "Victoria",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.03,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 33,
+        "city": "Saskatoon",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 34,
+        "city": "Saskatoon",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "student",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 35,
+        "city": "Regina",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "established_immigrant",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 36,
+        "city": "Regina",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "recent_immigrant",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 37,
+        "city": "Kelowna",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "retired",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 38,
+        "city": "Kelowna",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "high",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "self_employed",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 39,
+        "city": "Sudbury",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 40,
+        "city": "Sudbury",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "unemployed",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 41,
+        "city": "Northern Ontario Rural",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 42,
+        "city": "Northern Ontario Rural",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 43,
+        "city": "Northern BC Rural",
+        "tenure": "owner",
+        "age_bracket": "35-49",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 44,
+        "city": "Northern BC Rural",
+        "tenure": "owner",
+        "age_bracket": "65+",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "retired",
+        "population_weight": 0.02,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 45,
+        "city": "PEI Rural",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "self_employed",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 46,
+        "city": "PEI Rural",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 47,
+        "city": "Reserve Northern Ontario",
+        "tenure": "renter",
+        "age_bracket": "35-49",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "large_family",
+        "employment_type": "unemployed",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 48,
+        "city": "Reserve Northern Ontario",
+        "tenure": "renter",
+        "age_bracket": "18-24",
+        "income_bracket": "very_low",
+        "immigration_status": "born_here",
+        "family_size": "single",
+        "employment_type": "unemployed",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 49,
+        "city": "Nunavut Remote",
+        "tenure": "renter",
+        "age_bracket": "25-34",
+        "income_bracket": "low",
+        "immigration_status": "born_here",
+        "family_size": "small_family",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      },
+      {
+        "agent_id": 50,
+        "city": "Nunavut Remote",
+        "tenure": "owner",
+        "age_bracket": "50-64",
+        "income_bracket": "medium",
+        "immigration_status": "born_here",
+        "family_size": "couple",
+        "employment_type": "salaried",
+        "population_weight": 0.01,
+        "validations": [],
+        "missed_risk": null
+      }
+    ],
+    "risk_report": {
+      "risks": [
+        {
+          "rank": 1,
+          "title": "Increased urban congestion and pressure on infrastructure",
+          "severity": "HIGH",
+          "reasoning": "The policy's addition of 500,000 new homes in cities with high demand, like Toronto, exacerbates existing infrastructure constraints. Toronto's low vacancy rate of 3.0% and high rents ($1761 for 1BR) highlight the stress on public services. While the policy aims to solve housing shortages, unchecked urban growth deteriorates quality of life for residents by straining transit, utilities, and road networks.",
+          "affected_groups": "Urban population, including commuters and low-income residents",
+          "confirmed_by": 0,
+          "out_of": 50,
+          "cities": [
+            "Toronto",
+            "Vancouver",
+            "Montreal"
+          ],
+          "cascade_effect": "worsens infrastructure delays and congestion"
+        },
+        {
+          "rank": 2,
+          "title": "Displacement of low-income populations",
+          "severity": "MEDIUM",
+          "reasoning": "This policy may drive gentrification in high-demand areas like Toronto, where 1BR rents are $1761. New developments can increase property values and taxes, displacing low-income renters. While low vacancy rates (3.0%) suggest a need for housing, the lack of affordable units means marginalized communities face eviction risks.",
+          "affected_groups": "Low-income renters and marginalized communities",
+          "confirmed_by": 0,
+          "out_of": 50,
+          "cities": [
+            "Toronto",
+            "Vancouver",
+            "Halifax"
+          ],
+          "cascade_effect": "null"
+        },
+        {
+          "rank": 3,
+          "title": "Infrastructure strain due to increased demand",
+          "severity": "MEDIUM",
+          "reasoning": "Building 500,000 homes without concurrent infrastructure investments stresses existing systems. High population areas like Toronto and Vancouver show insufficient public service capacity given their large populations (6.7M and 2.8M, respectively) and low vacancy rates (3.0% and 3.7%). While the intent is to meet housing needs, the resulting infrastructure burden reduces service quality.",
+          "affected_groups": "Residents of cities with large populations and low infrastructure investment",
+          "confirmed_by": 0,
+          "out_of": 50,
+          "cities": [
+            "Toronto",
+            "Vancouver",
+            "Montreal"
+          ],
+          "cascade_effect": "leads to longer construction timelines and increased congestion"
+        }
+      ],
+      "blind_spots": "The lack of validation from diverse demographic groups leaves urban Indigenous communities underrepresented.",
+      "overall_risk_level": "MEDIUM",
+      "key_insight": "Policy transitioning without analyzing demographic-specific vulnerabilities can exacerbate displacement in targeted urban areas."
+    },
+    "confidence": {
+      "score": 8,
+      "out_of": 10,
+      "reason": "strong StatsCan data coverage for this policy type; national scope matches agent distribution well; specialists identified diverse risk angles",
+      "caveat": "This is a hypothesis generation tool. Findings should be validated against real survey data before informing policy decisions."
+    },
+    "policy_classification": {
+      "type": "supply",
+      "primary_affected": "all",
+      "market": "both",
+      "geography": "national",
+      "time_horizon": "short_term",
+      "key_attributes": [
+        "housing_affordability",
+        "population_growth",
+        "urbanization",
+        "family_sustainability",
+        "community_development"
+      ]
+    }
+  },
+  "validation_status": "pending",
+  "validated_against": null,
+  "validation_date": null,
+  "validation_match_score": null
+}
