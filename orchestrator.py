@@ -359,27 +359,20 @@ missed_risk: a risk the specialists missed that specifically affects your demogr
 
 
 async def run_validators(client, asst_id, agents, policy_text, validation_context):
-    """Run all demographic validators in batches."""
-    batch_size = 4
-    results = []
-
+    """Run all demographic validators fully in parallel."""
     threads = await asyncio.gather(
         *[client.create_thread(asst_id) for _ in agents]
     )
 
-    for i in range(0, len(agents), batch_size):
-        batch_agents = agents[i : i + batch_size]
-        batch_threads = threads[i : i + batch_size]
-        batch_results = await asyncio.gather(
-            *[
-                call_validator(client, t.thread_id, a, policy_text, validation_context)
-                for t, a in zip(batch_threads, batch_agents)
-            ],
-            return_exceptions=True,
-        )
-        results += [r for r in batch_results if not isinstance(r, Exception)]
+    results = await asyncio.gather(
+        *[
+            call_validator(client, t.thread_id, a, policy_text, validation_context)
+            for t, a in zip(threads, agents)
+        ],
+        return_exceptions=True,
+    )
 
-    return results
+    return [r for r in results if r is not None and not isinstance(r, Exception)]
 
 
 # --- Coordinator: Risk synthesis ---
@@ -497,7 +490,11 @@ async def run_coordinator(client, asst_id, policy_text, specialist_results, vali
 
 # --- Main simulation loop ---
 
-async def run_simulation(policy_text):
+async def run_simulation(policy_text, event_queue=None):
+    async def emit(event: dict):
+        if event_queue is not None:
+            await event_queue.put(event)
+
     client = BackboardClient(api_key=BACKBOARD_API_KEY)
 
     log(f"\nCivica Risk Analysis: '{policy_text}'")
@@ -518,11 +515,13 @@ async def run_simulation(policy_text):
 
     # Classify policy
     log("Classifying policy...")
+    await emit({"type": "status", "message": "Classifying policy..."})
     policy_classification = await classify_policy(client, asst_id, policy_text)
     log(f"Policy classified: {policy_classification['type']} | affects: {policy_classification['primary_affected']}")
 
     # ROUND 1: Domain specialist analysis
     log(f"\nRound 1: {len(SPECIALISTS)} domain specialists analyzing policy...")
+    await emit({"type": "status", "message": f"Round 1: {len(SPECIALISTS)} specialists analyzing policy..."})
     r1_start = time.time()
     specialist_results = await run_specialists(client, asst_id, policy_text, policy_classification)
     r1_time = time.time() - r1_start
@@ -539,9 +538,11 @@ async def run_simulation(policy_text):
     # Build validation context
     validation_context, specialist_risks = build_validation_context(specialist_results)
     log(f"\nSpecialist risks to validate: {len(specialist_risks)}")
+    await emit({"type": "r1_complete", "specialists": specialist_results, "specialist_risks": specialist_risks})
 
     # ROUND 2: Demographic validation
     log(f"\nRound 2: {len(AGENTS)} demographic validators checking risks...")
+    await emit({"type": "status", "message": f"Round 2: {len(AGENTS)} validators cross-checking risks..."})
     r2_start = time.time()
     validator_results = await run_validators(client, asst_id, AGENTS, policy_text, validation_context)
     r2_time = time.time() - r2_start
@@ -564,8 +565,11 @@ async def run_simulation(policy_text):
         )
         log(f"  Risk {i+1} [{risk['category']}]: {confirmed}/{len(validator_results)} confirmed — {risk['risk'][:80]}")
 
+    await emit({"type": "r2_complete", "validators": validator_results})
+
     # COORDINATOR: Synthesize risk report
     log("\nCoordinator synthesizing risk report...")
+    await emit({"type": "status", "message": "Coordinator synthesizing risk report..."})
     c_start = time.time()
     risk_report = await run_coordinator(client, asst_id, policy_text, specialist_results, validator_results, specialist_risks)
     log(f"Coordinator complete in {time.time() - c_start:.1f}s")
@@ -585,6 +589,7 @@ async def run_simulation(policy_text):
             "coordinator": f"{COORDINATOR_PROVIDER}/{COORDINATOR_MODEL}",
         },
         "round_1_specialists": specialist_results,
+        "specialist_risks": specialist_risks,
         "round_2_validators": validator_results,
         "risk_report": risk_report,
     }
@@ -595,9 +600,6 @@ async def run_simulation(policy_text):
         json.dump(validator_results, f, indent=2)
     with open("cache/full_simulation.json", "w") as f:
         json.dump(output, f, indent=2)
-
-    # --- PRINT FULL REPORT ---
-    print_report(specialist_results, specialist_risks, validator_results, risk_report, policy_text)
 
     # Confidence score
     confidence = calculate_confidence(
@@ -618,5 +620,7 @@ async def run_simulation(policy_text):
 
     log(f"\nConfidence: {confidence['score']}/10 — {confidence['reason']}")
     log(f"Seal ID: {seal_id}")
+
+    await emit({"type": "done", "data": output})
 
     return output

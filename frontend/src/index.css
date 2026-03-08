@@ -1,0 +1,84 @@
+:root {
+  /* Vibe: Deep warm black */
+  --bg-color: #080706;
+  --bg-panel: #111111;
+  --bg-input: #151515;
+  
+  /* Primary Text: Slightly aged off-white */
+  --text-primary: #ebe8e0;
+  --text-secondary: #a3a199;
+  --text-muted: #555555;
+  
+  /* Structural Dark Greys */
+  --card-bg: #141414;
+  --card-border: #2a2a2a;
+  --border-sharp: #333333;
+  --border-subtle: #1f1f1f;
+  
+  /* Signals */
+  --signal-positive: #00ff41; /* Radioactive green */
+  --signal-negative: #ff2a00; /* Emergency red */
+  --signal-mixed: #ffaa00;    /* Warning amber */
+  
+  /* Fonts */
+  --font-display: 'Oswald', 'Impact', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
+
+input, textarea {
+  font-family: var(--font-mono);
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-border);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-sharp);
+}

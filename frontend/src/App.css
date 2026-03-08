@@ -1,0 +1,26 @@
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* All stage root elements sit in the same layer for crossfade */
+.stage1-container,
+.stage2-container,
+.stage3-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* Stage3 needs to scroll independently */
+.stage3-container {
+  overflow-y: auto;
+  height: 100vh;
+}
