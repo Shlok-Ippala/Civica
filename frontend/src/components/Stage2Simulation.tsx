@@ -139,7 +139,7 @@ export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNu
                 <span className="log-geo">{entry.label.toUpperCase()}</span>
                 <span className="log-demo">{entry.sublabel}</span>
                 <span className="log-sentiment" style={{ color: getSignalColor(entry.signal) }}>
-                  {entry.signal.toUpperCase()}
+                  {entry.signal === 'negative' ? 'HIGH' : entry.signal === 'mixed' ? 'MED' : 'LOW'}
                 </span>
                 <span className="log-concern">"{entry.concern}"</span>
               </div>

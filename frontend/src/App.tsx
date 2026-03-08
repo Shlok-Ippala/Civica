@@ -44,11 +44,18 @@ function validatorsToEntries(validators: ValidatorResult[]): AnimationEntry[] {
     const total = v.validations.length;
     const ratio = total > 0 ? confirmed / total : 0;
     const signal: AnimationEntry['signal'] = ratio > 0.6 ? 'negative' : ratio > 0.3 ? 'mixed' : 'positive';
+    // Show top confirmed risk, or missed risk, or fallback
+    const topConfirmed = v.validations
+      .filter(val => val.applies && val.severity_for_me > 0)
+      .sort((a, b) => b.severity_for_me - a.severity_for_me)[0];
+    const concern = topConfirmed?.reason?.substring(0, 90)
+      ?? v.missed_risk?.risk?.substring(0, 90)
+      ?? `${confirmed}/${total} risks confirmed`;
     return {
       id: v.agent_id,
       label: v.city.substring(0, 3).toUpperCase(),
       sublabel: `${v.tenure} / ${v.age_bracket}`,
-      concern: v.missed_risk?.risk?.substring(0, 90) ?? 'validation complete',
+      concern,
       signal,
     };
   });
