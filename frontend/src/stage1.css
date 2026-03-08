@@ -4,14 +4,43 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
+  height: 100vh;
 }
 
 .center-content {
   width: 100%;
-  max-width: 800px;
+  max-width: 860px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-actions {
+  display: flex;
   align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btn-submit {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-sharp);
+  padding: 0.4rem 1.25rem;
+  letter-spacing: 0.08em;
+  transition: all 0.15s;
+}
+
+.btn-submit:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(235, 232, 224, 0.05);
+}
+
+.btn-submit:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 
 .prompt-header {

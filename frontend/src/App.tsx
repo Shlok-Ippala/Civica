@@ -59,6 +59,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState('');
   const [error, setError] = useState('');
+  const [reviewMode, setReviewMode] = useState(false);
 
   const [r1Entries, setR1Entries] = useState<AnimationEntry[]>([]);
   const [r2Entries, setR2Entries] = useState<AnimationEntry[]>([]);
@@ -142,19 +143,47 @@ function App() {
   };
 
   const handleR1Complete = () => {
+    setReviewMode(false);
     setStage('SIMULATION_R2');
   };
 
   const handleR2Complete = () => {
     if (simulationData) {
+      setReviewMode(false);
       setStage('FINDINGS');
     }
-    // If data not yet ready, doneReady effect will trigger once it arrives
   };
 
-  // If R2 animation completes before done event, transition as soon as data arrives
+  // Back navigation
+  const handleBackFromR1 = () => {
+    setStage('INPUT');
+    setReviewMode(false);
+  };
+
+  const handleBackFromR2 = () => {
+    setReviewMode(true);
+    setStage('SIMULATION_R1');
+  };
+
+  const handleBackFromFindings = () => {
+    setReviewMode(true);
+    setStage('SIMULATION_R2');
+  };
+
+  // Forward navigation (from review mode)
+  const handleForwardFromR1 = () => {
+    setReviewMode(true);
+    setStage('SIMULATION_R2');
+  };
+
+  const handleForwardFromR2 = () => {
+    setReviewMode(false);
+    setStage('FINDINGS');
+  };
+
   const handleRestart = () => {
     setStage('INPUT');
+    setReviewMode(false);
     setSimulationData(null);
     setR1Entries([]);
     setR2Entries([]);
@@ -185,6 +214,9 @@ function App() {
             roundLabel="SPECIALIST ANALYSIS"
             canAdvance={r2Ready}
             onComplete={handleR1Complete}
+            reviewMode={reviewMode}
+            onBack={handleBackFromR1}
+            onForward={r2Entries.length > 0 ? handleForwardFromR1 : undefined}
           />
         )}
 
@@ -196,6 +228,9 @@ function App() {
             roundLabel="DEMOGRAPHIC VALIDATION"
             canAdvance={doneReady}
             onComplete={handleR2Complete}
+            reviewMode={reviewMode}
+            onBack={handleBackFromR2}
+            onForward={simulationData ? handleForwardFromR2 : undefined}
           />
         )}
 
@@ -204,6 +239,7 @@ function App() {
             key="stage3"
             data={simulationData}
             onRestart={handleRestart}
+            onBack={handleBackFromFindings}
           />
         )}
       </AnimatePresence>

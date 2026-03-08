@@ -9,9 +9,12 @@ interface Props {
   roundNum: number;
   roundLabel: string;
   canAdvance: boolean;
+  reviewMode?: boolean;
+  onBack?: () => void;
+  onForward?: () => void;
 }
 
-export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNum, roundLabel, canAdvance }) => {
+export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNum, roundLabel, canAdvance, reviewMode = false, onBack, onForward }) => {
   const [activeEntries, setActiveEntries] = useState<AnimationEntry[]>([]);
   const [animationDone, setAnimationDone] = useState(false);
   const logFeedRef = useRef<HTMLDivElement>(null);
@@ -19,19 +22,23 @@ export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNu
 
   // Reset when entries change
   useEffect(() => {
-    setActiveEntries([]);
-    setAnimationDone(false);
-    completedRef.current = false;
-  }, [entries]);
+    if (reviewMode) {
+      // Show all entries instantly in review mode
+      setActiveEntries(entries.filter(Boolean));
+      setAnimationDone(true);
+    } else {
+      setActiveEntries([]);
+      setAnimationDone(false);
+      completedRef.current = false;
+    }
+  }, [entries, reviewMode]);
 
-  // Stream entries in one by one
+  // Stream entries in one by one (live mode only)
   useEffect(() => {
-    if (entries.length === 0) return;
+    if (reviewMode || entries.length === 0) return;
     let currentIndex = 0;
     let isCancelled = false;
 
-    // R1 has few entries (specialists) — spread them out so they're visible
-    // R2 has many entries (validators) — faster stream is fine
     const intervalMs = entries.length <= 10 ? 800 : 150;
 
     const interval = setInterval(() => {
@@ -54,15 +61,16 @@ export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNu
       isCancelled = true;
       clearInterval(interval);
     };
-  }, [entries]);
+  }, [entries, reviewMode]);
 
-  // Advance only when BOTH animation is done AND backend signals ready
+  // Advance only when BOTH animation is done AND backend signals ready (live mode only)
   useEffect(() => {
+    if (reviewMode) return;
     if (animationDone && canAdvance && !completedRef.current) {
       completedRef.current = true;
       setTimeout(onComplete, 800);
     }
-  }, [animationDone, canAdvance, onComplete]);
+  }, [animationDone, canAdvance, onComplete, reviewMode]);
 
   // Auto-scroll log
   useEffect(() => {
@@ -87,10 +95,24 @@ export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNu
       transition={{ duration: 0.3 }}
       className="stage2-container"
     >
+      {/* Nav bar */}
+      <div className="sim-nav">
+        <button className="btn-nav" onClick={onBack}>[ ← BACK ]</button>
+        <div className="sim-nav-center">
+          <span className="sim-nav-round">ROUND {roundNum} OF 2 — {roundLabel}</span>
+          {reviewMode && <span className="sim-nav-review-badge">REVIEW MODE</span>}
+        </div>
+        {onForward && (
+          <button className="btn-nav" onClick={onForward}>[ FORWARD → ]</button>
+        )}
+      </div>
+
       <div className="status-header">
         <div className="status-item">
           <span className="label">STATE</span>
-          <span className="value blink">SIMULATION RUNNING</span>
+          <span className={`value ${!reviewMode ? 'blink' : ''}`}>
+            {reviewMode ? 'REVIEW' : 'SIMULATION RUNNING'}
+          </span>
         </div>
         <div className="status-item">
           <span className="label">ROUND</span>
@@ -103,7 +125,7 @@ export const Stage2Simulation: React.FC<Props> = ({ entries, onComplete, roundNu
         <div className="status-item">
           <span className="label">BACKEND</span>
           <span className="value" style={{ color: canAdvance ? 'var(--signal-positive)' : 'var(--signal-mixed)' }}>
-            {canAdvance ? 'READY' : 'PROCESSING'}
+            {reviewMode ? 'COMPLETE' : canAdvance ? 'READY' : 'PROCESSING'}
           </span>
         </div>
       </div>

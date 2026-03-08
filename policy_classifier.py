@@ -31,4 +31,14 @@ Return exactly this JSON and nothing else:
         stream=False,
     )
     raw = response.content.strip().replace("```json", "").replace("```", "").strip()
-    return json.loads(raw)
+    try:
+        return json.loads(raw)
+    except Exception:
+        return {
+            "type": "other",
+            "primary_affected": "all",
+            "market": "non_housing",
+            "geography": "national",
+            "time_horizon": "short_term",
+            "key_attributes": ["age_bracket", "income_bracket", "employment_type"],
+        }
