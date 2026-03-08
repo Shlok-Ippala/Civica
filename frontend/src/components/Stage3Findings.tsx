@@ -192,9 +192,10 @@ const SpecialistRiskCard: React.FC<RiskCardProps> = ({ risk, riskIndex, validato
 interface Props {
   data: SimulationOutput;
   onRestart: () => void;
+  onBack?: () => void;
 }
 
-export const Stage3Findings: React.FC<Props> = ({ data, onRestart }) => {
+export const Stage3Findings: React.FC<Props> = ({ data, onRestart, onBack }) => {
   const { risk_report, round_2_validators, specialist_risks } = data;
 
   const riskLevelColor = severityColor(risk_report.overall_risk_level);
@@ -216,6 +217,12 @@ export const Stage3Findings: React.FC<Props> = ({ data, onRestart }) => {
       className="stage3-container"
     >
       <div className="stage3-inner">
+      {/* ── Nav ── */}
+      <div className="report-nav">
+        <button className="btn-nav-report" onClick={onBack}>[ ← REVIEW SIMULATION ]</button>
+        <button className="btn-nav-report" onClick={onRestart}>[ ✕ NEW SIMULATION ]</button>
+      </div>
+
       {/* ── Header ── */}
       <header className="report-header">
         <div className="report-meta">
@@ -367,9 +374,10 @@ export const Stage3Findings: React.FC<Props> = ({ data, onRestart }) => {
           </section>
         )}
 
-        <button className="btn-restart" onClick={onRestart}>
-          [ INITIALIZE NEW SIMULATION ]
-        </button>
+        <div className="report-footer-nav">
+          <button className="btn-nav-report" onClick={onBack}>[ ← REVIEW SIMULATION ]</button>
+          <button className="btn-nav-report" onClick={onRestart}>[ INITIALIZE NEW SIMULATION ]</button>
+        </div>
       </div>
       </div>
     </motion.div>

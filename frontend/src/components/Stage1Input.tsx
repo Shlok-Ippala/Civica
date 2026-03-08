@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import '../stage1.css';
 
 interface Props {
   onSubmit: (policy: string) => void;
@@ -89,7 +90,16 @@ export const Stage1Input: React.FC<Props> = ({ onSubmit, loading = false, status
         )}
 
         {!loading && !error && (
-          <div className="submit-hint">ENTER to submit · SHIFT+ENTER for new line</div>
+          <div className="input-actions">
+            <button
+              className="btn-submit"
+              disabled={!policy.trim()}
+              onClick={() => { if (policy.trim()) onSubmit(policy.trim()); }}
+            >
+              [ SUBMIT ]
+            </button>
+            <span className="submit-hint">ENTER to submit · SHIFT+ENTER for new line</span>
+          </div>
         )}
       </div>
 

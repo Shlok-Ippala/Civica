@@ -1,7 +1,54 @@
+/* Nav bar */
+.sim-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sim-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sim-nav-round {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.sim-nav-review-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--signal-mixed);
+  border: 1px solid var(--signal-mixed);
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.btn-nav {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-sharp);
+  padding: 0.3rem 0.9rem;
+  letter-spacing: 0.06em;
+  transition: all 0.15s;
+}
+
+.btn-nav:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
 /* Stage 2 Simulation Layout */
 .stage2-container {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color);
@@ -53,7 +100,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   flex: 1;
-  min-height: 0; /* Important constraint for scrolling inner containers */
+  min-height: 600px;
 }
 
 /* Agent Grid */
@@ -108,7 +155,7 @@
   background-color: var(--bg-panel);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 500px;
 }
 
 .log-header {

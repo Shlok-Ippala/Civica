@@ -19,7 +19,8 @@
   background-color: var(--bg-color);
 }
 
-/* Stage3 needs to scroll independently */
+/* Stage2 and Stage3 need to scroll independently */
+.stage2-container,
 .stage3-container {
   overflow-y: auto;
   height: 100vh;
