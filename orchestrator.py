@@ -184,7 +184,11 @@ Return only valid JSON:
         }}
     ]
 }}
-Where severity means: 1=minor concern, 2=significant risk, 3=severe risk"""
+Where severity means:
+  1 = LOW — affects a small or narrow group, manageable with existing supports, unlikely to compound
+  2 = MEDIUM — affects a meaningful share of a demographic group in multiple cities, limited mitigation available
+  3 = HIGH — affects a large share of a vulnerable population nationally, likely to compound with other risks, hard to mitigate
+Only use severity 3 if you would be comfortable defending it with specific population percentages and city data. When in doubt, use 2."""
 
     fallback = {
         "specialist": specialist["id"],
@@ -309,7 +313,12 @@ Return only valid JSON:
     ],
     "missed_risk": null or {{"risk": "one sentence", "category": "{"|".join(c for c in RISK_CATEGORIES if c != 'none')}", "severity": 1|2|3}}
 }}
-severity_for_me: 0=doesn't apply, 1=minor, 2=significant, 3=severe
+severity_for_me:
+  0 = does not apply to my situation at all
+  1 = minor inconvenience — I would adjust and cope without major hardship
+  2 = significant impact — this would meaningfully affect my finances, housing, or employment
+  3 = severe — this would cause serious hardship: housing instability, inability to afford essentials, or job loss
+Be honest about your situation. Most policies affect most people at 0 or 1. Only use 3 if this risk would genuinely destabilize your life given your income and city data.
 missed_risk: a risk the specialists missed that specifically affects your demographic. null if none."""
 
     fallback = {
@@ -443,6 +452,13 @@ Produce the final risk report. Rank risks by:
 CRITICAL: Only include risks the policy CREATES or WORSENS, not pre-existing problems.
 
 For each risk, provide a REASONING CHAIN: (1) what economic mechanism this policy triggers, (2) specific data points that support it, (3) which demographics confirmed it and why they're vulnerable, (4) confidence level based on validation breadth.
+
+OVERALL RISK LEVEL — use this exact formula, do not deviate:
+- Compute a weighted score for each risk: (original_severity / 3) × (validators_confirmed / validators_total)
+- Average the weighted scores across all risks
+- Map to: score >= 0.45 → HIGH, score >= 0.25 → MEDIUM, score < 0.25 → LOW
+- A specialist identifying a risk means nothing on its own. If validators did not confirm it, it does not drive the overall level up.
+- A well-designed policy with low validator confirmation rates MUST score LOW even if specialists raised concerns.
 
 Return exactly this JSON:
 {{
