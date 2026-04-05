@@ -1,8 +1,14 @@
 # Civica
 
+> 🏆 **Winner — Google Track: Best Implementation of AI** at [Hack Canada 2026](https://devpost.com/software/civica-s8adcq)
+
+**[Watch the demo on YouTube](https://www.youtube.com/watch?v=Ic8XNInKIG0)** · **[View on Devpost](https://devpost.com/software/civica-s8adcq)**
+
+---
+
 A multi-agent policy simulation engine that stress-tests Canadian government policies before they reach the public. You describe a policy. Civica deploys 8 domain specialists and 50 demographically grounded validators to find what goes wrong — and who gets hurt most.
 
-Built for Hack Canada 2026.
+![Hack Canada](https://img.shields.io/badge/Hack%20Canada%202026-Google%20Track%20Winner-4285F4?style=for-the-badge&logo=google) ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge) ![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
 
 ---
 
